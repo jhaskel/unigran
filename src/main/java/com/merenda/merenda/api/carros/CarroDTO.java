@@ -13,7 +13,7 @@ public class CarroDTO {
     private String urlVideo;
     private String latitude;
     private String longitude;
-    private String teste;
+    //private String teste;
 
 
     public static CarroDTO create(Carro carro) {
