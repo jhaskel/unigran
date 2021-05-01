@@ -16,6 +16,8 @@ public class CategoriaDTO {
     private String nome;
     private String image;
     private Boolean isativo;
+    private Boolean createdAt;
+    private Boolean modifiedAt;
     @JsonInclude
     private String teste;
 
