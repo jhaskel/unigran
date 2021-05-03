@@ -20,6 +20,7 @@ public class Fornecedor {
     private String alias;
     private String cnpj;
     private String email;
+    private String celular;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
