@@ -8,8 +8,8 @@ public class NivelEscolarDTO {
     private Long id;
     private String nome;
     private Boolean isativo;
-    private String createdAt;
-    private String modifiedAt;
+    private String created;
+    private String modified;
 
     public static NivelEscolarDTO create(NivelEscolar nivelEscolar) {
         ModelMapper modelMapper = new ModelMapper();
