@@ -19,7 +19,6 @@ public class UserDTO {
     private String senha;
     private Long escola;
     private String nivel;
-    private String recuperar;
     private String role;
     private Boolean isativo;
     private String createdAt;
