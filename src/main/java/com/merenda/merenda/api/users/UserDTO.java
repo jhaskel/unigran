@@ -21,9 +21,9 @@ public class UserDTO {
     private String nivel;
     private String recuperar;
     private String role;
-    private Boolean ativo;
-    private String created;
-    private String modified;
+    private Boolean isativo;
+    private String createdAt;
+    private String modifiedAt;
     // token jwt
     private String token;
     private List<String> roles;

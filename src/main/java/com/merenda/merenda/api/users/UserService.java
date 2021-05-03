@@ -40,9 +40,15 @@ public class UserService {
         if(optional.isPresent()) {
             User db = optional.get();
             // Copiar as propriedades
-            db.setAtivo(user.getAtivo());
+            db.setIsativo(user.getIsativo());
             db.setNome(user.getNome());
             db.setEmail(user.getEmail());
+            db.setSenha(user.getSenha());
+            db.setEscola(user.getEscola());
+            db.setNivel(user.getNivel());
+            db.setModifiedAt(user.getModifiedAt());
+            db.setRole(user.getRole());
+
 
             System.out.println("Nivel id " + db.getId());
             // Atualiza o carro
