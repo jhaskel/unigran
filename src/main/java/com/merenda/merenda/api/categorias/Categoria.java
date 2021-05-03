@@ -26,10 +26,12 @@ public class Categoria {
     private String createdAt;
     private String modifiedAt;
 
+/*
 
-   // @Transient
+    @Transient
     @JsonIgnore
     private String teste;
+*/
 
 
 

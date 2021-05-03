@@ -18,8 +18,8 @@ public class CategoriaDTO {
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
-    @JsonInclude
-    private String teste;
+  /*  @JsonInclude
+    private String teste;*/
 
 
     public static CategoriaDTO create(Categoria categoria) {
