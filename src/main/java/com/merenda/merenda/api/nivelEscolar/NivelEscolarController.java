@@ -17,15 +17,15 @@ public class NivelEscolarController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<NivelEscolarDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<NivelEscolarDTO> niveis = service.getNivels();
+        return ResponseEntity.ok(niveis);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        NivelEscolarDTO carro = service.getCarroById(id);
+        NivelEscolarDTO nivel = service.getNivelById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(nivel);
     }
 
     @GetMapping("/nome/{id}")
@@ -35,10 +35,10 @@ public class NivelEscolarController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity getId(@PathVariable("id") Long id) {
-        List<NivelEscolarDTO> carros = service.getId(id);
-        return carros.isEmpty() ?
+        List<NivelEscolarDTO> niveis = service.getId(id);
+        return niveis.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(niveis);
     }
 
 
