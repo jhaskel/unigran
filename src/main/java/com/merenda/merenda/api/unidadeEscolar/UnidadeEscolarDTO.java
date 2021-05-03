@@ -13,8 +13,6 @@ public class UnidadeEscolarDTO {
     private String bairro;
     private Long alunos;
     private Boolean isativo;
-    private Boolean createdAt;
-    private Boolean modifiedAt;
 
     private Double quant;
 
