@@ -18,8 +18,8 @@ public class NivelEscolar {
     private Long id;
     private String nome;
     private Boolean isativo;
-    private Boolean createdAt;
-    private Boolean modifiedAt;
+    private Boolean created;
+    private Boolean modified;
 
 
 

@@ -48,7 +48,7 @@ public class NivelEscolarService {
             NivelEscolar db = optional.get();
             // Copiar as propriedades
             db.setNome(nivelEscolar.getNome());
-            db.setModifiedAt(nivelEscolar.getModifiedAt());
+            db.setModified(nivelEscolar.getModified());
             db.setIsativo(nivelEscolar.getIsativo());
             System.out.println("Nivel id " + db.getId());
             rep.save(db);
