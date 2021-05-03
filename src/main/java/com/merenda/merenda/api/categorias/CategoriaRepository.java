@@ -8,7 +8,7 @@ import java.util.List;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
 
-    @Query(value = "sELECT cat.*,user.nome as teste FROM categoria cat inner join user on user.id = cat.id WHERE cat.id = 2 and cat.isativo = TRUE  ;", nativeQuery = true)
+    @Query(value = "sELECT * FROM categoria  ;", nativeQuery = true)
     List<Categoria> findAll();
 
     @Query(value = "sELECT * FROM categoria  WHERE isativo = TRUE  ;", nativeQuery = true)
