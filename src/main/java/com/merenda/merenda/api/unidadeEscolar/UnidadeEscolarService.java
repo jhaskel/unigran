@@ -65,9 +65,8 @@ public class UnidadeEscolarService {
             db.setEndereco(unidadeEscolar.getEndereco());
             db.setBairro(unidadeEscolar.getBairro());
             db.setAlunos(unidadeEscolar.getAlunos());
-            db.setModified(unidadeEscolar.getModified());
-            db.setCreated(unidadeEscolar.getCreated());
-            db.setAtivo(unidadeEscolar.getAtivo());
+            db.setModifiedAt(unidadeEscolar.getModifiedAt());
+            db.setIsativo(unidadeEscolar.getIsativo());
             System.out.println("Nivel id " + db.getId());
             // Atualiza o carro
             rep.save(db);

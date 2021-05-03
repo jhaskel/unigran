@@ -12,9 +12,9 @@ public class UnidadeEscolarDTO {
     private String endereco;
     private String bairro;
     private Long alunos;
-    private Boolean ativo;
-    private String created;
-    private String modified;
+    private Boolean isativo;
+    private Boolean createdAt;
+    private Boolean modifiedAt;
 
     private Double quant;
 
