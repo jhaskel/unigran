@@ -23,8 +23,8 @@ public class Categoria {
     private String nome;
     private String image;
     private Boolean isativo;
-    private Boolean createdAt;
-    private Boolean modifiedAt;
+    private String createdAt;
+    private String modifiedAt;
 
 
    // @Transient
