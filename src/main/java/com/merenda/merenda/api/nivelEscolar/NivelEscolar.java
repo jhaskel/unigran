@@ -17,9 +17,9 @@ public class NivelEscolar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private Boolean isativo;
-    private Boolean created;
-    private Boolean modified;
+    private Boolean ativo;
+    private String created;
+    private String modified;
 
 
 

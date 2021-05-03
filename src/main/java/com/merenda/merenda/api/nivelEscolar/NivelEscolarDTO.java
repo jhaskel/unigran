@@ -7,9 +7,9 @@ import org.modelmapper.ModelMapper;
 public class NivelEscolarDTO {
     private Long id;
     private String nome;
-    private Boolean isativo;
-    private Boolean created;
-    private Boolean modified;
+    private Boolean ativo;
+    private String created;
+    private String modified;
 
     public static NivelEscolarDTO create(NivelEscolar nivelEscolar) {
         ModelMapper modelMapper = new ModelMapper();
