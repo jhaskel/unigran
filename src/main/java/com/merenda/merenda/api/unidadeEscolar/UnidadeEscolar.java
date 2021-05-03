@@ -23,6 +23,9 @@ public class UnidadeEscolar {
     private String bairro;
     private Long alunos;
     private Boolean isativo;
+    private String createdAt;
+    private String modifiedAt;
+
 
 }
 
