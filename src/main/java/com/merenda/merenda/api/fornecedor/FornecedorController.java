@@ -24,7 +24,6 @@ public class FornecedorController {
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         FornecedorDTO carro = service.getCarroById(id);
-
         return ResponseEntity.ok(carro);
     }
 
@@ -37,15 +36,9 @@ public class FornecedorController {
                 ResponseEntity.ok(carros);
     }
 
-
-
-
     @PostMapping
-
     public ResponseEntity post(@RequestBody Fornecedor fornecedor) {
-
         FornecedorDTO c = service.insert(fornecedor);
-
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }
@@ -57,11 +50,8 @@ public class FornecedorController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Fornecedor fornecedor) {
-
         fornecedor.setId(id);
-
         FornecedorDTO c = service.update(fornecedor, id);
-
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
@@ -70,7 +60,6 @@ public class FornecedorController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         service.delete(id);
-
         return ResponseEntity.ok().build();
     }
 }
