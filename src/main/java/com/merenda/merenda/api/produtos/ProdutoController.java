@@ -36,6 +36,8 @@ public class ProdutoController {
                 ResponseEntity.ok(carros);
     }
 
+
+
     @GetMapping("/escola/{escola}")
     public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
         List<ProdutoDTO> carros = service.getCarrosByEscola(escola);
