@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
 
-    @Query(value = "SELECT *  FROM cart WHERE escola = :escola ;", nativeQuery = true)
+    @Query(value = "SELECT *  FROM cart WHERE escola = :escola order by id desc;", nativeQuery = true)
     List<Cart> findByEcola(Long escola);
 
     @Query(value = "SELECT count(id) as item FROM cart WHERE escola = :escola ", nativeQuery = true)
