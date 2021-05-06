@@ -74,7 +74,8 @@ public class PedidoService {
         if(optional.isPresent()) {
             Pedido db = optional.get();
             // Copiar as propriedades
-            db.setAtivo(pedido.getAtivo());
+            db.setIsativo(pedido.getIsativo());
+            db.setModifiedAt(pedido.getModifiedAt());
             db.setCode(pedido.getCode());
             db.setIscheck(pedido.getIscheck());
             db.setStatus(pedido.getStatus());

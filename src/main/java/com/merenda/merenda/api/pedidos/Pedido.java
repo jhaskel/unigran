@@ -25,9 +25,9 @@ public class Pedido {
     private String status;
     private Long semana;
     private Boolean isaf;
-    private String created;
-    private String modified;
-    private Boolean ativo;
+    private String createdAt;
+    private String modifiedAt;
+    private Boolean isativo;
     private Boolean ischeck;
     private Boolean iscart;
 
