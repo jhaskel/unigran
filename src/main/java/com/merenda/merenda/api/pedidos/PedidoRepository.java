@@ -10,7 +10,6 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
     @Query(value = "SELECT ped.*,esc.alias as nomedaescola FROM pedido ped\n" +
             "INNER JOIN unidade_escolar esc ON esc.id = ped.escola\n" +
-            " WHERE ped.escola = 3\n" +
             " ORDER BY ped.id desc", nativeQuery = true)
     List<Pedido> findAll();
 
