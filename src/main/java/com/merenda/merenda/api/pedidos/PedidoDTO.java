@@ -23,6 +23,8 @@ public class PedidoDTO {
 
     private Long totalCart;
     private Long temCart;
+    private String nomedaescola;
+
 
 
     public static PedidoDTO create(Pedido pedido) {
