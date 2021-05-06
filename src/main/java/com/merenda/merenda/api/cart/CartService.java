@@ -61,8 +61,8 @@ public class CartService {
             /*db.setValor(cart.getValor());*/
             db.setTotal(cart.getTotal());
             /*db.setObs(cart.getObs());*/
-            db.setCreatedAt(cart.getCreatedAt());
-            System.out.println("Carro id " + db.getId());
+            //db.setCreatedAt(cart.getCreatedAt());
+            System.out.println("Cart id " + db.getId());
 
             // Atualiza o cart
             rep.save(db);
