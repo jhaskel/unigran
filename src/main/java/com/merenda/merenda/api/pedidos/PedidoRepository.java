@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
-    @Query(value = "SELECT * FROM pedido where iscart = false order by id desc", nativeQuery = true)
+    @Query(value = "SELECT * FROM pedido  order by id desc", nativeQuery = true)
     List<Pedido> findAll();
 
     @Query(value = "SELECT *  FROM pedido where code = :code order by id desc;", nativeQuery = true)
