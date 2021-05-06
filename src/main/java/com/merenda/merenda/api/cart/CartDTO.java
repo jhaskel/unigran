@@ -8,6 +8,10 @@ public class CartDTO {
     private Long id;
     private Long escola;
     private Long produto;
+    private Long fornecedor;
+    private String unidade;
+    private String cod;
+    private String processo;
     private String alias;
     private Double quantidade;
     private Double valor;

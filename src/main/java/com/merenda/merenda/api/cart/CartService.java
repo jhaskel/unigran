@@ -52,6 +52,10 @@ public class CartService {
             // Copiar as propriedades
             db.setEscola(cart.getEscola());
             db.setProduto(cart.getProduto());
+            db.setCategoria(cart.getCategoria());
+            db.setFornecedor(cart.getFornecedor());
+            db.setUnidade(cart.getUnidade());
+            db.setProcesso(cart.getProcesso());
             db.setQuantidade(cart.getQuantidade());
             db.setValor(cart.getValor());
             db.setTotal(cart.getTotal());

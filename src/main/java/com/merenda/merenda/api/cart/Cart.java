@@ -18,8 +18,12 @@ public class Cart {
     private Long id;
     private Long escola;
     private Long produto;
+    private Long categoria;
+    private Long fornecedor;
+    private String unidade;
+    private String cod;
+    private String processo;
     private String alias;
-
     private Double quantidade;
     private Double valor;
     private Double total;
