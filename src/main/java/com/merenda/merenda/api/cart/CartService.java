@@ -50,21 +50,21 @@ public class CartService {
         if(optional.isPresent()) {
             Cart db = optional.get();
             // Copiar as propriedades
-            db.setEscola(cart.getEscola());
+           /* db.setEscola(cart.getEscola());
             db.setProduto(cart.getProduto());
             db.setCategoria(cart.getCategoria());
             db.setFornecedor(cart.getFornecedor());
             db.setUnidade(cart.getUnidade());
             db.setCod(cart.getCod());
-            db.setProcesso(cart.getProcesso());
+            db.setProcesso(cart.getProcesso());*/
             db.setQuantidade(cart.getQuantidade());
-            db.setValor(cart.getValor());
+            /*db.setValor(cart.getValor());*/
             db.setTotal(cart.getTotal());
-            db.setObs(cart.getObs());
+            /*db.setObs(cart.getObs());*/
             db.setCreatedAt(cart.getCreatedAt());
             System.out.println("Carro id " + db.getId());
 
-            // Atualiza o carro
+            // Atualiza o cart
             rep.save(db);
 
             return CartDTO.create(db);
