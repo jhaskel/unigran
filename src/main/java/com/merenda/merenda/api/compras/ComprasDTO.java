@@ -21,7 +21,8 @@ public class ComprasDTO {
     private Double total;
     private Long af;
     private String obs;
-    private String created;
+    private String createdAt;
+    private String modifiedAt;
     private Long categoria;
     private Long fornecedor;
     private Boolean ischeck;
@@ -29,7 +30,7 @@ public class ComprasDTO {
     private Boolean isagro;
     private String status;
     private String mes;
-    private Boolean ativo;
+    private Boolean isativo;
     private Long licitacao;
     private String processo;
 

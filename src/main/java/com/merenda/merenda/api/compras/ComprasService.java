@@ -228,7 +228,7 @@ public class ComprasService {
             db.setAlias(compras.getAlias());
             db.setObs(compras.getObs());
             db.setStatus(compras.getStatus());
-            db.setCreated(compras.getCreated());
+            db.setModifiedAt(compras.getModifiedAt());
             db.setNomeescola(compras.getNomeescola());
             db.setNomenivel(compras.getNomenivel());
             db.setUnidade(compras.getUnidade());
@@ -240,7 +240,7 @@ public class ComprasService {
             db.setIscheck(compras.getIscheck());
             db.setCod(compras.getCod());
             db.setMes(compras.getMes());
-            db.setAtivo(compras.getAtivo());
+            db.setIsativo(compras.getIsativo());
 
             System.out.println("Carro id " + db.getId());
 
