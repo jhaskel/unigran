@@ -55,6 +55,7 @@ public class CartService {
             db.setCategoria(cart.getCategoria());
             db.setFornecedor(cart.getFornecedor());
             db.setUnidade(cart.getUnidade());
+            db.setCod(cart.getCod());
             db.setProcesso(cart.getProcesso());
             db.setQuantidade(cart.getQuantidade());
             db.setValor(cart.getValor());
