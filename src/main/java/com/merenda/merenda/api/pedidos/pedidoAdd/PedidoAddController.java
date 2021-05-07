@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/pedidos")
+@RequestMapping("/api/v1/pedidoAdd")
 public class PedidoAddController {
     @Autowired
     private PedidoAddService service;
