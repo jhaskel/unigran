@@ -28,8 +28,9 @@ public class Pedido {
     private Boolean isativo;
     private Boolean ischeck;
     private Boolean iscart;
-    //@JsonInclude()
+
     @Transient
+    @JsonInclude()
     private String nomedaescola;
 
 
