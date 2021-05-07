@@ -7,7 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface AfRepository extends JpaRepository<Af, Long> {
-    @Query(value = "SELECT * FROM af WHERE isativo = TRUE ORDER BY id desc", nativeQuery = true)
+    @Query(value = "SELECT af.*,SUM(ite.total) as tot,forn.nome as nomefor FROM af \n" +
+            "INNER JOIN itens ite ON ite.af = af.code\n" +
+            "INNER JOIN fornecedor forn ON forn.id = ite.fornecedor\n" +
+            "GROUP BY af.code", nativeQuery = true)
     List<Af> findAll();
 
     @Query(value = "SELECT * FROM af\n" +

@@ -1,10 +1,10 @@
-package com.merenda.merenda.api.af;
+package com.merenda.merenda.api.af.afAdd;
 
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
 @Data
-public class AfDTO {
+public class AfAddDTO {
     private Long id;
     private Long code;
     private Long fornecedor;
@@ -21,14 +21,11 @@ public class AfDTO {
     private Long despesax;
     private String numero;
 
-    //não esta no banco
     private Long totalAf;
-    private String nomefor;
-    private Double tot;
 
 
-    public static AfDTO create(Af af) {
+    public static AfAddDTO create(AfAdd afAdd) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(af, AfDTO.class);
+        return modelMapper.map(afAdd, AfAddDTO.class);
     }
 }

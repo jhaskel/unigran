@@ -1,10 +1,20 @@
-package com.merenda.merenda.api.af;
+package com.merenda.merenda.api.af.afAdd;
 
 import lombok.Data;
-import org.modelmapper.ModelMapper;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@NoArgsConstructor
 @Data
-public class AfDTO {
+@Entity
+public class AfAdd {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long code;
     private Long fornecedor;
@@ -13,22 +23,24 @@ public class AfDTO {
     private String nomenivel;
     private String createdAt;
     private Boolean isautorizado;
-    private String status;
     private Boolean isativo;
+    private String status;
     private String pedido;
     private Double total;
     private Long despesa;
     private Long despesax;
     private String numero;
 
-    //não esta no banco
-    private Long totalAf;
-    private String nomefor;
-    private Double tot;
 
 
-    public static AfDTO create(Af af) {
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(af, AfDTO.class);
-    }
+
+
+
+
+
+
+
+
+
 }
+

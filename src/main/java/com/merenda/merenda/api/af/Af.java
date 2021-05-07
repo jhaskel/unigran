@@ -31,6 +31,11 @@ public class Af {
     private Long despesax;
     private String numero;
 
+    //não esta no banco
+    private String nomefor;
+    private Double tot;
+
+
 
 
 
