@@ -38,6 +38,14 @@ public class AfController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/af/{af}")
+    public ResponseEntity getByAf(@PathVariable("af") Long af) {
+        List<AfDTO> carros = service.getByAf(af);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/af")
     public long getAf() {
         return service.getAf();
