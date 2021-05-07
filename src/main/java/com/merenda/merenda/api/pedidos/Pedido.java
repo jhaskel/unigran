@@ -29,7 +29,7 @@ public class Pedido {
     private Boolean ischeck;
     private Boolean iscart;
     //@JsonInclude()
-    //@Transient
+    @Transient
     private String nomedaescola;
 
 
