@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/af")
+@RequestMapping("/api/v1/afAdd")
 public class AfAddController {
     @Autowired
     private AfAddService service;
@@ -28,19 +28,6 @@ public class AfAddController {
         AfAddDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
-    }
-
-    @GetMapping("/fornecedor/{fornecedor}")
-    public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
-        List<AfAddDTO> carros = service.getByFornecedor(fornecedor);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
-
-    @GetMapping("/af")
-    public long getAf() {
-        return service.getAf();
     }
 
 
