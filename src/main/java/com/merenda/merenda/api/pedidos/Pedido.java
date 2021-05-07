@@ -28,9 +28,7 @@ public class Pedido {
     private Boolean isativo;
     private Boolean ischeck;
     private Boolean iscart;
-
-    @Transient
-    @JsonInclude()
+    //não vai pro banco
     private String nomedaescola;
 
 
