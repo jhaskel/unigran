@@ -150,6 +150,10 @@ public class ItensService {
     public double getFamiliar(Long ano){
         return rep.findFamiliar(ano);
     }
+    //verificado
+    public double getFamiliarEscola(Long escola,Long ano){
+        return rep.findFamiliarEscola(escolaano);
+    }
 
 
     public double getTotalNivel(Long nivel,Long ano){

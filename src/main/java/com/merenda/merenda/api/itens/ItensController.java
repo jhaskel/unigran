@@ -224,6 +224,11 @@ public class ItensController {
     public double getFamiliar(@PathVariable("ano") Long ano) {
         return service.getFamiliar(ano);
     }
+    //verificado
+    @GetMapping("/familiarEscola/{escola}/{ano}")
+    public double getFamiliar(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
+        return service.getFamiliarEscola(escola,ano);
+    }
 
 
     @GetMapping("/totalNivel/{nivel}/{ano}")
