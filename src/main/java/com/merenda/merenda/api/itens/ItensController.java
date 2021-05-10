@@ -111,10 +111,18 @@ public class ItensController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-
+     //verificado
     @GetMapping("/totalMes/{ano}")
     public ResponseEntity getTotalMes(@PathVariable("ano") Long ano) {
         List<ItensDTO> carros = service.getTotalMes(ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+    //verificado
+    @GetMapping("/totalCategoria/{ano}")
+    public ResponseEntity getTotalCategoria(@PathVariable("ano") Long ano) {
+        List<ItensDTO> carros = service.getTotalCategoria(ano);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
@@ -140,13 +148,7 @@ public class ItensController {
 
 
 
-    @GetMapping("/totalCategoria/{ano}")
-    public ResponseEntity getTotalCategoria(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalCategoria(ano);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
+
 
     @GetMapping("/totalCategoriaNivel/{nivel}/{ano}")
     public ResponseEntity getTotalCategoriaNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
@@ -180,6 +182,7 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
+    //verificado
     @GetMapping("/mediaAlunos/{ano}")
     public ResponseEntity getMediaAlunos(@PathVariable("ano") Long ano) {
         List<ItensDTO> carros = service.getMediaAlunos(ano);
@@ -228,7 +231,7 @@ public class ItensController {
         return service.getTotalNivel(nivel,ano);
     }
 
-
+//verificado
     @GetMapping("/totalEscola/{escola}/{ano}")
     public double getTotalEscola(@PathVariable("escola") Long escola, @PathVariable("ano") Long ano) {
         return service.getTotalEscola(escola,ano);
@@ -271,7 +274,7 @@ public class ItensController {
     public double getTradicionalNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
         return service.getTradicionalNivel(nivel,ano);
     }
-
+    //verificado
     @GetMapping("/tradicionalEscola/{escola}/{ano}")
     public double getTradicionalEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
         return service.getTradicionalEscola(escola,ano);

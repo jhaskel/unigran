@@ -36,6 +36,7 @@ public class UnidadeEscolarService {
 
     public long getQuantAlunosNivel(Long nivel){ return rep.findQuantAlunosNivel(nivel); }
 
+    //verificado
     public long getQuantAlunosEscola(Long id){ return rep.findQuantAlunosEscola(id); }
 
     public long getQuantEscolaNivel(Long nivel){ return rep.findQuantEscolaNivel(nivel); }

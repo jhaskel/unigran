@@ -71,6 +71,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "ORDER BY tot DESC ,ite.categoria,ite.alias", nativeQuery = true)
     List<Itens> findItensAno(Long ano);
 
+    //verificado
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano\n" +
@@ -104,6 +105,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "GROUP BY ite.categoria ", nativeQuery = true)
     List<Itens> findTotalCategoriaEscola(Long escola, Long ano);
 
+    //verificado
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
@@ -126,6 +128,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findTotalEscolaNivel(Long nivel, Long ano);
 
 
+    //verificado
     @Query(value = "SELECT ite.*,sum(ite.total/esc.alunos) AS tot, esc.alias as nomec FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
@@ -159,6 +162,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "WHERE af.isativo= true   and ite.ano = :ano AND ite.af > 0 AND ite.nivel = :nivel ", nativeQuery = true)
     double findTotalNivel(Long nivel, Long ano);
 
+    //verificado
     @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo= true   and ite.ano = :ano AND ite.af > 0 AND ite.escola = :escola ", nativeQuery = true)
@@ -225,13 +229,14 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "OR ite.categoria = 6) AND ite.isagro = FALSE and ite.nivel = :nivel", nativeQuery = true)
     double findTradicionalNivel(Long nivel, Long ano);
 
-    @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +
+    //verificado
+    @Query(value = "SELECT sum(ite.total) as tot  \n" +
+            "            FROM itens ite\n" +
             "            INNER JOIN af ON af.code = ite.af\n" +
-            "            WHERE af.isativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
-            "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
-            "OR ite.categoria = 3 \n" +
-            "OR ite.categoria = 5\n" +
-            "OR ite.categoria = 6) AND ite.isagro = FALSE and ite.escola = :escola", nativeQuery = true)
+            "            INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
+            "            INNER JOIN produto pro ON pro.id = ite.produto\n" +
+            "            WHERE af.isativo= true   AND ite.ano = 2021 AND ite.af > 0 \n" +
+            "            AND cat.isalimento = TRUE AND pro.agrofamiliar = FALSE and ite.escola = :escola", nativeQuery = true)
     double findTradicionalEscola(Long escola, Long ano);
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +

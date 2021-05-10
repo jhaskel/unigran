@@ -34,6 +34,8 @@ public class UnidadeEscolarController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
+    //verificado
     @GetMapping("/quantidade")
     public long getQuantidade() {
         return service.getQuantidade();
@@ -49,7 +51,7 @@ public class UnidadeEscolarController {
     public long getQuantAlunosNivel(@PathVariable("nivelescolar") Long nivel) {
         return service.getQuantAlunosNivel(nivel);
     }
-
+    //verificado
     @GetMapping("/quantAlunosEscola/{id}")
     public long getQuantAlunosEscola(@PathVariable("id") Long id) {
         return service.getQuantAlunosEscola(id);

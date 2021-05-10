@@ -82,7 +82,7 @@ public class ItensService {
     }
 
 
-
+//verificado
     public List<ItensDTO> getTotalMes(Long ano) {
         return rep.findTotalMes(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
@@ -97,7 +97,7 @@ public class ItensService {
         return rep.findTotalMesEscola(escola,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
-
+    //verificado
     public List<ItensDTO> getTotalCategoria(Long ano) {
         return rep.findTotalCategoria(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
@@ -123,7 +123,7 @@ public class ItensService {
 
 
 
-
+   //verificado
     public List<ItensDTO> getMediaAlunos(Long ano) {
         return rep.findMediaAlunos(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
@@ -156,7 +156,7 @@ public class ItensService {
         return rep.findTotalNivel(nivel,ano);
     }
 
-
+   //verificado
     public double getTotalEscola(Long escola,Long ano){
         return rep.findTotalEscola(escola,ano);
     }
@@ -196,7 +196,7 @@ public class ItensService {
         return rep.findTradicionalNivel(nivel,ano);
     }
 
-
+    //verificado
     public double getTradicionalEscola(Long escola,Long ano){
         return rep.findTradicionalEscola(escola,ano);
     }
