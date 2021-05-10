@@ -216,6 +216,12 @@ public class ItensController {
         return service.getTradicional(ano);
     }
 
+    //verificado
+    @GetMapping("/familiar/{ano}")
+    public double getFamiliar(@PathVariable("ano") Long ano) {
+        return service.getFamiliar(ano);
+    }
+
 
     @GetMapping("/totalNivel/{nivel}/{ano}")
     public double getTotalNivel(@PathVariable("nivel") Long nivel, @PathVariable("ano") Long ano) {
