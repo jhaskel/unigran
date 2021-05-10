@@ -152,7 +152,7 @@ public class ItensService {
     }
     //verificado
     public double getFamiliarEscola(Long escola,Long ano){
-        return rep.findFamiliarEscola(escolaano);
+        return rep.findFamiliarEscola(escola,ano);
     }
 
 
