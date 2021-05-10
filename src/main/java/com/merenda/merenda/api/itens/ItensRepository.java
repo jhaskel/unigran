@@ -235,7 +235,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "            INNER JOIN af ON af.code = ite.af\n" +
             "            INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
             "            INNER JOIN produto pro ON pro.id = ite.produto\n" +
-            "            WHERE af.isativo= true   AND ite.ano = 2021 AND ite.af > 0 \n" +
+            "            WHERE af.isativo= true   AND ite.ano = :ano AND ite.af > 0 \n" +
             "            AND cat.isalimento = TRUE AND pro.agrofamiliar = FALSE and ite.escola = :escola", nativeQuery = true)
     double findTradicionalEscola(Long escola, Long ano);
 
