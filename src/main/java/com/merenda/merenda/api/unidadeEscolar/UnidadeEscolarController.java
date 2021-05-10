@@ -39,6 +39,7 @@ public class UnidadeEscolarController {
         return service.getQuantidade();
     }
 
+    //verificado
     @GetMapping("/quantAlunos")
     public long getQuantAlunos() {
         return service.getQuantAlunos();

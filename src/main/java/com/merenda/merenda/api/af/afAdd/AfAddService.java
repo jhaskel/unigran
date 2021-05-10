@@ -48,7 +48,6 @@ public class AfAddService {
             db.setFornecedor(afAdd.getFornecedor());
             db.setNivel(afAdd.getNivel());
             db.setNomenivel(afAdd.getNomenivel());
-
             db.setIsautorizado(afAdd.getIsautorizado());
             db.setStatus(afAdd.getStatus());
             db.setIsativo(afAdd.getIsativo());
