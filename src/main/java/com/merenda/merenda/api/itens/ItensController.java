@@ -104,6 +104,7 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
+   //verificado
     @GetMapping("/maispedidos/{ano}")
     public ResponseEntity getMaisPedidos(@PathVariable("ano") Long ano) {
         List<ItensDTO> carros = service.getMaisPedidos(ano);
@@ -138,6 +139,7 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
+    //verificado
     @GetMapping("/totalMesEscola/{escola}/{ano}")
     public ResponseEntity getTotalMesEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
         List<ItensDTO> carros = service.getTotalMesEscola(escola,ano);
@@ -158,6 +160,7 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
+    //verificado
     @GetMapping("/totalCategoriaEscola/{escola}/{ano}")
     public ResponseEntity getTotalCategoriaEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
         List<ItensDTO> carros = service.getTotalCategoriaEscola(escola,ano);

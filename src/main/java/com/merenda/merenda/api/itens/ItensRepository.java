@@ -40,6 +40,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findByEscola(Long escola, Long pedido);
 
 
+    //verificado
     @Query(value = "SELECT ite.*,sum(ite.quantidade) AS tot,ite.cod AS nomec FROM itens ite \n" +
             " WHERE ite.ano = :ano \n" +
             " GROUP BY ite.produto \n" +
@@ -84,6 +85,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "GROUP BY ite.mes ", nativeQuery = true)
     List<Itens> findTotalMesNivel(Long nivel, Long ano);
 
+   //verificado
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano and ite.escola = :escola\n" +
@@ -98,6 +100,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "GROUP BY ite.categoria ", nativeQuery = true)
     List<Itens> findTotalCategoriaNivel(Long nivel, Long ano);
 
+    //verificado
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
