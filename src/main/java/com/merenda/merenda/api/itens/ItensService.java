@@ -142,6 +142,10 @@ public class ItensService {
     public double getTotal(Long ano){
         return rep.findTotal(ano);
     }
+    //verificado
+    public double getTradicional(Long ano){
+        return rep.findTradicional(ano);
+    }
 
 
     public double getTotalNivel(Long nivel,Long ano){
@@ -181,9 +185,7 @@ public class ItensService {
         return rep.findTotalAf(af);
     }
 
-    public double getTradicional(Long ano){
-        return rep.findTradicional(ano);
-    }
+
 
 
     public double getTradicionalNivel(Long nivel,Long ano){

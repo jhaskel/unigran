@@ -210,6 +210,13 @@ public class ItensController {
         return service.getTotal(ano);
     }
 
+//verificado
+    @GetMapping("/tradicional/{ano}")
+    public double getTradicional(@PathVariable("ano") Long ano) {
+        return service.getTradicional(ano);
+    }
+
+
     @GetMapping("/totalNivel/{nivel}/{ano}")
     public double getTotalNivel(@PathVariable("nivel") Long nivel, @PathVariable("ano") Long ano) {
         return service.getTotalNivel(nivel,ano);
@@ -252,11 +259,6 @@ public class ItensController {
         return service.getTotalAf(af);
     }
 
-
-    @GetMapping("/tradicional/{ano}")
-    public double getTradicional(@PathVariable("ano") Long ano) {
-        return service.getTradicional(ano);
-    }
 
 
     @GetMapping("/tradicionalNivel/{nivel}/{ano}")

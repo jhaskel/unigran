@@ -197,13 +197,14 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "            WHERE af.isativo= true  and ite.af = :af AND ite.af > 0 ", nativeQuery = true)
     double findTotalAf(Long af);
 
-    @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +
-            "            INNER JOIN af ON af.code = ite.af\n" +
-            "            WHERE af.isativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
-            "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
-            "OR ite.categoria = 3 \n" +
-            "OR ite.categoria = 5\n" +
-            "OR ite.categoria = 6) AND ite.isagro = FALSE ", nativeQuery = true)
+   //verificado
+    @Query(value = "SELECT sum(ite.total) as tot  \n" +
+            "FROM itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
+            "INNER JOIN produto pro ON pro.id = ite.produto\n" +
+            "WHERE af.isativo= true   AND ite.ano = :ano AND ite.af > 0 \n" +
+            "AND cat.isalimento = TRUE AND pro.agrofamiliar = FALSE ", nativeQuery = true)
     double findTradicional(Long ano);
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +
