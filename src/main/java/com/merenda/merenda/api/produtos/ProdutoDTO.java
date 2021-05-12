@@ -19,7 +19,6 @@ public class ProdutoDTO {
     private String unidade;
     private String image;
     private Boolean agrofamiliar;
-    private List<String> escolas;
     private Long ano;
     private Boolean isativo;
     private String createdAt;

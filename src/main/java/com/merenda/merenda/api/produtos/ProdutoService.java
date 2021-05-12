@@ -69,7 +69,7 @@ public class ProdutoService {
             db.setAgrofamiliar(produto.getAgrofamiliar());
             db.setAno(produto.getAno());
             db.setModifiedAt(produto.getModifiedAt());
-            db.setEscolas(produto.getEscolas());
+
             db.setIsativo(produto.getIsativo());
             db.setValor(produto.getValor());
 

@@ -27,7 +27,6 @@ public class Produto {
     private String unidade;
     private String image;
     private Boolean agrofamiliar;
-    private String escolas;
     private Long ano;
     private Boolean isativo;
     private String createdAt;
