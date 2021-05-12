@@ -11,5 +11,8 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
     @Query(value = "SELECT *  FROM itens WHERE  af = 0;", nativeQuery = true)
     List<Compras> findAll();
 
+    @Query(value = "SELECT * FROM itens WHERE pedido = :pedido order by id desc ", nativeQuery = true)
+    List<Compras> findByPedido(String pedido);
+
 
 }

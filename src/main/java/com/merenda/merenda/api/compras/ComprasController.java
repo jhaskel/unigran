@@ -20,6 +20,13 @@ public class ComprasController {
         List<ComprasDTO> carros = service.getCompras();
         return ResponseEntity.ok(carros);
     }
+    @GetMapping("/pedido/{pedido}")
+    public ResponseEntity getCarrosByPedido(@PathVariable("pedido") String pedido) {
+        List<ComprasDTO> carros = service.getCarrosByPedido(pedido);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
 
 
     @PostMapping

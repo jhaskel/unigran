@@ -19,6 +19,9 @@ public class ComprasService {
         List<ComprasDTO> list = rep.findAll().stream().map(ComprasDTO::create).collect(Collectors.toList());
         return list;
     }
+    public List<ComprasDTO> getCarrosByPedido(String pedido) {
+        return rep.findByPedido(pedido).stream().map(ComprasDTO::create).collect(Collectors.toList());
+    }
 
 
 
