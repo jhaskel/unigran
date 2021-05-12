@@ -36,7 +36,7 @@ public class ItensService {
     }
 
    //verificado
-    public List<ItensDTO> getCarrosByPedido(String pedido) {
+    public List<ItensDTO> getCarrosByPedido(Long pedido) {
         return rep.findByPedido(pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
@@ -180,7 +180,7 @@ public class ItensService {
         return rep.findTotalAgro(ano);
     }
 
-    public double getTotalPedido(String pedido){
+    public double getTotalPedido(Long pedido){
         return rep.findTotalPedido(pedido);
     }
 

@@ -26,7 +26,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             " AND ite.isativo = true  \n" +
             " GROUP BY ite.id\n" +
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)
-    List<Itens> findByPedido(String pedido);
+    List<Itens> findByPedido(Long pedido);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens ite\n" +
             " WHERE ite.af = :af\n" +
@@ -192,7 +192,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     @Query(value = "SELECT sum(ite.total) as totalPedido  FROM itens ite \n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo= true   and ite.pedido = :pedido AND ite.af > 0 ", nativeQuery = true)
-    double findTotalPedido(String pedido);
+    double findTotalPedido(Long pedido);
 
     @Query(value = "SELECT sum(ite.total) as totalPedido  FROM itens ite \n" +
             "            INNER JOIN af ON af.code = ite.af\n" +

@@ -18,7 +18,7 @@ public class Compras {
     private Long id;
     private Long escola;
     private Long produto;
-    private String pedido;
+    private Long pedido;
     private String alias;
     private Long categoria;
     private Long fornecedor;
