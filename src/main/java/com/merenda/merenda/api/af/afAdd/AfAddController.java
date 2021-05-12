@@ -42,6 +42,7 @@ public class AfAddController {
         return ResponseEntity.created(location).body(c);
     }
 
+
     private URI getUri(Long id) {
         return ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(id).toUri();
