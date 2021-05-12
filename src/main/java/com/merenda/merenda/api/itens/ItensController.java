@@ -48,7 +48,7 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
-
+   //verificado
     @GetMapping("/pedidoall/{pedido}")
     public ResponseEntity getCarrosByPedidoAll(@PathVariable("pedido") String pedido) {
         List<ItensDTO> carros = service.getCarrosByPedidoAll(pedido);

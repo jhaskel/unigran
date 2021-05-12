@@ -40,7 +40,7 @@ public class ItensService {
         return rep.findByPedido(pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
-
+   //verificado
     public List<ItensDTO> getCarrosByPedidoAll(String pedido) {
         return rep.findByPedidoAll(pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
