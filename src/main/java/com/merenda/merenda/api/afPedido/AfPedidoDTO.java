@@ -9,7 +9,7 @@ public class AfPedidoDTO {
     private Long af;
     private String pedido;
     private Double total;
-    private Long nivel;
+
     private Long fornecedor;
 
 

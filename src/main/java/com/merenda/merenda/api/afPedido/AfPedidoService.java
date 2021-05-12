@@ -45,9 +45,8 @@ public class AfPedidoService {
             db.setAf(afPedido.getAf());
             db.setPedido(afPedido.getPedido());
             db.setTotal(afPedido.getTotal());
-            db.setNivel(afPedido.getNivel());
             db.setFornecedor(afPedido.getFornecedor());
-            db.setNivel(afPedido.getNivel());
+
 
 
             System.out.println("Af id " + db.getId());

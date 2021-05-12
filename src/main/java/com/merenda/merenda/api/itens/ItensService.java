@@ -251,25 +251,21 @@ public class ItensService {
             db.setEscola(itens.getEscola());
             db.setProduto(itens.getProduto());
             db.setCategoria(itens.getCategoria());
-            db.setNivel(itens.getNivel());
+
             db.setFornecedor(itens.getFornecedor());
             db.setAno(itens.getAno());
             db.setAf(itens.getAf());
             db.setPedido(itens.getPedido());
             db.setAlias(itens.getAlias());
-            db.setObs(itens.getObs());
+
             db.setStatus(itens.getStatus());
             db.setMes(itens.getModifiedAt());
-            db.setNomeescola(itens.getNomeescola());
-            db.setNomenivel(itens.getNomenivel());
+
             db.setUnidade(itens.getUnidade());
             db.setQuantidade(itens.getQuantidade());
             db.setValor(itens.getValor());
             db.setTotal(itens.getTotal());
-            db.setIsagro(itens.getIsagro());
-            db.setIsautorizado(itens.getIsautorizado());
-            db.setIscheck(itens.getIscheck());
-            db.setCod(itens.getCod());
+
             db.setMes(itens.getMes());
             db.setIsativo(itens.getIsativo());
 

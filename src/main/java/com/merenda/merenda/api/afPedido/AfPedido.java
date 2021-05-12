@@ -19,7 +19,6 @@ public class AfPedido {
     private Long af;
     private String pedido;
     private Double total;
-    private Long nivel;
     private Long fornecedor;
 
 
