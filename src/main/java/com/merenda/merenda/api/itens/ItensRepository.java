@@ -21,7 +21,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     @Query(value = "SELECT * FROM itens WHERE pedido = :pedido", nativeQuery = true)
     List<Itens> findByPedido(String pedido);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens ite\n" +
             "\n" +
             " WHERE ite.pedido = :pedido\n" +
             " AND ite.isativo = true  \n" +
@@ -29,7 +29,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)
     List<Itens> findByPedidoAll(String pedido);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens ite\n" +
             " WHERE ite.af = :af\n" +
             " AND ite.isativo = true  \n" +
             " GROUP BY ite.id\n" +
@@ -41,7 +41,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
 
 
     //verificado
-    @Query(value = "SELECT ite.*,sum(ite.quantidade) AS tot,ite.cod AS nomec FROM itens ite \n" +
+    @Query(value = "SELECT ite.*,sum(ite.quantidade) AS tot,ite.pedido AS nomec FROM itens ite \n" +
             " WHERE ite.ano = :ano \n" +
             " GROUP BY ite.produto \n" +
             " ORDER BY tot desc", nativeQuery = true)
@@ -65,7 +65,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
 
 
 
-    @Query(value = "SELECT ite.*,sum(ite.quantidade) as tot,ite.cod AS nomec FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.quantidade) as tot,ite.pedido AS nomec FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE ite.ano = :ano and af > 0 AND af.isativo = TRUE\n" +
             "GROUP BY ite.produto\n" +
@@ -73,20 +73,20 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findItensAno(Long ano);
 
     //verificado
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido as nomec  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano\n" +
             "GROUP BY ite.mes ", nativeQuery = true)
     List<Itens> findTotalMes(Long ano);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido as nomec  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano and ite.nivel = :nivel\n" +
             "GROUP BY ite.mes ", nativeQuery = true)
     List<Itens> findTotalMesNivel(Long nivel, Long ano);
 
    //verificado
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido as nomec  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano and ite.escola = :escola\n" +
             "GROUP BY ite.mes ", nativeQuery = true)
@@ -146,7 +146,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "GROUP BY ite.escola ORDER BY ite.nivel ", nativeQuery = true)
     List<Itens> findMediaAlunosNivel(Long nivel, Long ano);
 
-    @Query(value = "SELECT *, SUM(ite.quantidade) AS tot , ite.cod AS nomec\n" +
+    @Query(value = "SELECT *, SUM(ite.quantidade) AS tot , ite.pedido AS nomec\n" +
             "FROM itens ite \n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE ite.ano = :ano and  af.isativo = true and ite.produto = :produto group BY ite.escola ORDER BY ite.nivel", nativeQuery = true)
