@@ -14,14 +14,14 @@ public interface AfRepository extends JpaRepository<Af, Long> {
     List<Af> findAll();
 
     @Query(value = "SELECT * FROM af\n" +
-            " WHERE fornecedor = :fornecedor AND isativo = TRUE AND isautorizado = true order by id desc", nativeQuery = true)
+            " WHERE fornecedor = :fornecedor AND isativo = TRUE AND isenviado = true order by id desc", nativeQuery = true)
     List<Af> findByFornecedor(Long fornecedor);
 
     @Query(value = "SELECT ite.* FROM itens ite\n" +
             "WHERE af = :af order by id desc", nativeQuery = true)
     List<Af> findByAf(Long af);
 
-    @Query(value = "SELECT COUNT(id) as total FROM af WHERE isativo = TRUE AND isautorizado = false", nativeQuery = true)
+    @Query(value = "SELECT COUNT(id) as total FROM af WHERE isativo = TRUE AND isenviado = false", nativeQuery = true)
     long findAf();
 
 
