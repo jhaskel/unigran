@@ -159,9 +159,6 @@ public class ItensService {
     }
 
 
-    public double getTotalNivel(Long nivel,Long ano){
-        return rep.findTotalNivel(nivel,ano);
-    }
 
    //verificado
     public double getTotalEscola(Long escola,Long ano){

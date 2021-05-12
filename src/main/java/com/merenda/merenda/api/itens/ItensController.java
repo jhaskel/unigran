@@ -234,17 +234,11 @@ public class ItensController {
     }
 
 
-    @GetMapping("/totalNivel/{nivel}/{ano}")
-    public double getTotalNivel(@PathVariable("nivel") Long nivel, @PathVariable("ano") Long ano) {
-        return service.getTotalNivel(nivel,ano);
-    }
-
 //verificado
     @GetMapping("/totalEscola/{escola}/{ano}")
     public double getTotalEscola(@PathVariable("escola") Long escola, @PathVariable("ano") Long ano) {
         return service.getTotalEscola(escola,ano);
     }
-
 
     @GetMapping("/somaAll/{escola}")
     public double getRep(@PathVariable("escola") Long escola) {
