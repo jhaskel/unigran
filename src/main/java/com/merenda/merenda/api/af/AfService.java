@@ -57,20 +57,10 @@ public class AfService {
             // Copiar as propriedades
             db.setCode(af.getCode());
             db.setFornecedor(af.getFornecedor());
-            db.setNomefornecedor(af.getNomefornecedor());
-            db.setNivel(af.getNivel());
             db.setFornecedor(af.getFornecedor());
-            db.setNivel(af.getNivel());
-            db.setNomenivel(af.getNomenivel());
-
-            db.setIsautorizado(af.getIsautorizado());
+            db.setIsenviado(af.getIsenviado());
             db.setStatus(af.getStatus());
             db.setIsativo(af.getIsativo());
-            db.setPedido(af.getPedido());
-            db.setTotal(af.getTotal());
-            db.setDespesa(af.getDespesa());
-            db.setDespesax(af.getDespesax());
-            db.setNumero(af.getNumero());
 
 
 

@@ -8,18 +8,10 @@ public class AfDTO {
     private Long id;
     private Long code;
     private Long fornecedor;
-    private String nomefornecedor;
-    private Long nivel;
-    private String nomenivel;
-    private String createdAt;
-    private Boolean isautorizado;
     private String status;
+    private Boolean isenviado;
+    private String createdAt;
     private Boolean isativo;
-    private String pedido;
-    private Double total;
-    private Long despesa;
-    private Long despesax;
-    private String numero;
 
     //não esta no banco
     private Long totalAf;
