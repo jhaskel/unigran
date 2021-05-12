@@ -120,7 +120,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "            INNER JOIN af ON af.code = ite.af\n" +
             "            INNER JOIN unidade_escolar esc ON esc.id = ite.escola \n" +
             "            WHERE af.isativo = TRUE AND ite.ano = :ano \n" +
-            "            GROUP BY ite.escola ORDER BY ite.nivel", nativeQuery = true)
+            "            GROUP BY ite.escola ORDER BY ite.escola", nativeQuery = true)
     List<Itens> findTotalEscolas(Long ano);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, esc.alias as nomec FROM itens ite\n" +
@@ -136,14 +136,14 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano AND esc.alunos > 0\n" +
-            "GROUP BY ite.escola ORDER BY ite.nivel ", nativeQuery = true)
+            "GROUP BY ite.escola ORDER BY ite.escola ", nativeQuery = true)
     List<Itens> findMediaAlunos(Long ano);
 
     @Query(value = "SELECT ite.*,sum(ite.total/esc.alunos) AS tot, esc.alias as nomec FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
             "WHERE af.isativo = TRUE AND ite.ano = :ano AND esc.alunos > 0 and ite.nivel = :nivel\n" +
-            "GROUP BY ite.escola ORDER BY ite.nivel ", nativeQuery = true)
+            "GROUP BY ite.escola ORDER BY ite.escola ", nativeQuery = true)
     List<Itens> findMediaAlunosNivel(Long nivel, Long ano);
 
     @Query(value = "SELECT *, SUM(ite.quantidade) AS tot , ite.pedido AS nomec\n" +
