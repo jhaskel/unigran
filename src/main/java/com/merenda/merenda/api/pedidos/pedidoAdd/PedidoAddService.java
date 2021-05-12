@@ -26,8 +26,6 @@ public class PedidoAddService {
     }
 
 
-
-
     public PedidoAddDTO insert(PedidoAdd pedido) {
         Assert.isNull(pedido.getId(),"Não foi possível inserir o registro");
         return PedidoAddDTO.create(rep.save(pedido));
@@ -43,12 +41,9 @@ public class PedidoAddService {
             // Copiar as propriedades
             db.setIsativo(pedido.getIsativo());
             db.setModifiedAt(pedido.getModifiedAt());
-            db.setCode(pedido.getCode());
-            db.setIscheck(pedido.getIscheck());
             db.setStatus(pedido.getStatus());
             db.setIsaf(pedido.getIsaf());
             db.setTotal(pedido.getTotal());
-            db.setIscart(pedido.getIscart());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
