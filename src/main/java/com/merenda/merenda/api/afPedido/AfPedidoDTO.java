@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 public class AfPedidoDTO {
     private Long id;
     private Long af;
-    private String pedido;
+    private Long pedido;
     private Double total;
 
     private Long fornecedor;
