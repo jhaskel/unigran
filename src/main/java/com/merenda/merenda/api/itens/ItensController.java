@@ -39,19 +39,12 @@ public class ItensController {
         return ResponseEntity.ok(carro);
     }
 
-    //verificado
+
+
+   //verificado
     @GetMapping("/pedido/{pedido}")
     public ResponseEntity getCarrosByPedido(@PathVariable("pedido") String pedido) {
         List<ItensDTO> carros = service.getCarrosByPedido(pedido);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
-
-   //verificado
-    @GetMapping("/pedidoall/{pedido}")
-    public ResponseEntity getCarrosByPedidoAll(@PathVariable("pedido") String pedido) {
-        List<ItensDTO> carros = service.getCarrosByPedidoAll(pedido);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

@@ -18,8 +18,6 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findAll3();
 
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens WHERE pedido = :pedido", nativeQuery = true)
-    List<Itens> findByPedido(String pedido);
 
     //verificado
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens ite\n" +
@@ -28,7 +26,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             " AND ite.isativo = true  \n" +
             " GROUP BY ite.id\n" +
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)
-    List<Itens> findByPedidoAll(String pedido);
+    List<Itens> findByPedido(String pedido);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens ite\n" +
             " WHERE ite.af = :af\n" +

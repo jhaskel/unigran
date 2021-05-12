@@ -35,14 +35,9 @@ public class ItensService {
         return carro.map(ItensDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
- //verificado
+   //verificado
     public List<ItensDTO> getCarrosByPedido(String pedido) {
         return rep.findByPedido(pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
-
-   //verificado
-    public List<ItensDTO> getCarrosByPedidoAll(String pedido) {
-        return rep.findByPedidoAll(pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
 
