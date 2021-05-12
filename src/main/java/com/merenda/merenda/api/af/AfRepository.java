@@ -10,7 +10,7 @@ public interface AfRepository extends JpaRepository<Af, Long> {
     @Query(value = "SELECT af.*,SUM(ite.total) as tot,forn.nome as nomefor FROM af \n" +
             "INNER JOIN itens ite ON ite.af = af.code\n" +
             "INNER JOIN fornecedor forn ON forn.id = ite.fornecedor\n" +
-            "GROUP BY af.code order by af.id desc", nativeQuery = true)
+            "GROUP BY af.code order by af.code desc ", nativeQuery = true)
     List<Af> findAll();
 
     @Query(value = "SELECT * FROM af\n" +
