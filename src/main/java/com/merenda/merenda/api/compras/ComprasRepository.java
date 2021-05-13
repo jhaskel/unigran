@@ -14,7 +14,7 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
     @Query(value = "SELECT * FROM itens WHERE pedido = :pedido order by id desc ", nativeQuery = true)
     List<Compras> findByPedido(String pedido);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.unidade AS nomec FROM itens ite\n" +
+    @Query(value = "SELECT ite.* FROM itens ite\n" +
             "            WHERE ite.af = :af\n" +
             "             AND ite.isativo = true  \n" +
             "             GROUP BY ite.id\n" +
