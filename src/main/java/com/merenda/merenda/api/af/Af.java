@@ -24,7 +24,6 @@ public class Af {
     private Boolean isativo;
 
 
-
     //não esta no banco
     private String nomefor;
     private Double tot;

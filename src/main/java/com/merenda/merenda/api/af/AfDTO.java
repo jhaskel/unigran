@@ -13,6 +13,10 @@ public class AfDTO {
     private String createdAt;
     private Boolean isativo;
 
+    //não esta no banco
+    private Long totalAf;
+    private String nomefor;
+    private Double tot;
 
 
     public static AfDTO create(Af af) {
