@@ -57,12 +57,9 @@ public class AfService {
             // Copiar as propriedades
             db.setCode(af.getCode());
             db.setFornecedor(af.getFornecedor());
-            db.setFornecedor(af.getFornecedor());
             db.setIsenviado(af.getIsenviado());
             db.setStatus(af.getStatus());
             db.setIsativo(af.getIsativo());
-
-
 
             System.out.println("Af id " + db.getId());
 
