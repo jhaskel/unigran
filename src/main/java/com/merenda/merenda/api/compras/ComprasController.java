@@ -28,6 +28,14 @@ public class ComprasController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/af/{af}")
+    public ResponseEntity getCarrosByAf(@PathVariable("af") Long af) {
+        List<ComprasDTO> carros = service.getCarrosByAf(af);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
     @PostMapping
     public ResponseEntity post(@RequestBody Compras compras) {

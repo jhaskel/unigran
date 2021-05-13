@@ -22,6 +22,9 @@ public class ComprasService {
     public List<ComprasDTO> getCarrosByPedido(String pedido) {
         return rep.findByPedido(pedido).stream().map(ComprasDTO::create).collect(Collectors.toList());
     }
+    public List<ComprasDTO> getCarrosByAf(Long af) {
+        return rep.findByAf(af).stream().map(ComprasDTO::create).collect(Collectors.toList());
+    }
 
 
 
