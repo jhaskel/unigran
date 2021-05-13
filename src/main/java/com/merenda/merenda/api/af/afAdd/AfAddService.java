@@ -43,7 +43,7 @@ public class AfAddService {
             // Copiar as propriedades
             db.setCode(afAdd.getCode());
             db.setFornecedor(afAdd.getFornecedor());
-            db.setFornecedor(afAdd.getFornecedor());
+            db.setIsenviado(afAdd.getIsenviado());
             db.setStatus(afAdd.getStatus());
             db.setIsativo(afAdd.getIsativo());
 
