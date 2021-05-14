@@ -152,7 +152,10 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findProduto(Long produto, Long ano);
 
 
-//verfiicado
+
+
+
+    //verfiicado
     @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.isativo= true   and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)

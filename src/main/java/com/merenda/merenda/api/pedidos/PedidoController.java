@@ -44,9 +44,9 @@ public class PedidoController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/cart")
-    public long getCart() {
-        return service.getCart();
+    @GetMapping("/pedidoSemAf")
+    public long getPedidoSemAf() {
+        return service.getPedidoSemAf();
     }
 
 

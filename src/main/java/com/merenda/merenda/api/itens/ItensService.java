@@ -136,6 +136,7 @@ public class ItensService {
         return rep.findProduto(produto,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
+
     //verificado
     public double getTotal(Long ano){
         return rep.findTotal(ano);

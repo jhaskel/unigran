@@ -36,8 +36,8 @@ public class PedidoService {
         return rep.findByEscola(escola).stream().map(PedidoDTO::create).collect(Collectors.toList());
     }
 
-    public long getCart(){
-        return rep.findCart();
+    public long getPedidoSemAf(){
+        return rep.findPedidoSemAf();
     }
 
     public long getUltimoId(){
