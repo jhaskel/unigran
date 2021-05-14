@@ -28,11 +28,12 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)
     List<Itens> findByPedido(Long pedido);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.pedido AS nomec FROM itens ite\n" +
-            " WHERE ite.af = :af\n" +
-            " AND ite.isativo = true  \n" +
-            " GROUP BY ite.id\n" +
-            " ORDER BY ite.fornecedor, ite.alias ", nativeQuery = true)
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,esc.alias AS nomec \n" +
+            "FROM itens ite\n" +
+            "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
+            "WHERE ite.af = :af AND ite.isativo = true \n" +
+            "GROUP BY ite.id\n" +
+            "ORDER BY nomec, ite.alias ", nativeQuery = true)
     List<Itens> findByAf(Long af);
 
     @Query(value = "SELECT * FROM itens  WHERE escola = :escola  AND pedido = :pedido ", nativeQuery = true)
