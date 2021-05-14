@@ -44,6 +44,8 @@ public class PedidoController {
                 ResponseEntity.ok(carros);
     }
 
+
+
     @GetMapping("/pedidoSemAf")
     public long getPedidoSemAf() {
         return service.getPedidoSemAf();
