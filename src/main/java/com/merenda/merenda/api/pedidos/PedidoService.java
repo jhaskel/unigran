@@ -40,18 +40,6 @@ public class PedidoService {
         return rep.findPedidoSemAf();
     }
 
-    public long getUltimoId(){
-        return rep.findUltimoId();
-    }
-
-    public long getTemCart(Long escola){
-        return rep.findTemCart(escola);
-    }
-
-    public long getTemCart1(Long escola){
-        return rep.findTemCart1(escola);
-    }
-
 
 
     public List<PedidoDTO> getId(Long id) {

@@ -46,10 +46,13 @@ public class AfController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/af")
-    public long getAf() {
-        return service.getAf();
+
+
+    @GetMapping("/afEnviada")
+    public long getAfEnviada() {
+        return service.getAfEnviada();
     }
+
 
 
 

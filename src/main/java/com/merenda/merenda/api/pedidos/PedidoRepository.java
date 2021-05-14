@@ -23,16 +23,6 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     @Query(value = "SELECT COUNT(id) AS totalCart FROM pedido where isaf = false", nativeQuery = true)
     long findPedidoSemAf();
 
-    @Query(value = "SELECT id FROM pedido order by id desc limit 1", nativeQuery = true)
-    long findUltimoId();
-
-
-    @Query(value = "SELECT count(id) as temCart FROM pedido where escola = :escola  ", nativeQuery = true)
-    long findTemCart(Long escola);
-
-
-    @Query(value = "SELECT id FROM pedido where escola = :escola limit 1", nativeQuery = true)
-    long findTemCart1(Long escola);
 
     @Query(value = "SELECT * FROM pedido WHERE id = :id ;", nativeQuery = true)
     List<Pedido> findId(Long id);

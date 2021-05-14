@@ -21,8 +21,9 @@ public interface AfRepository extends JpaRepository<Af, Long> {
             "WHERE af = :af order by id desc", nativeQuery = true)
     List<Af> findByAf(Long af);
 
+
     @Query(value = "SELECT COUNT(id) as total FROM af WHERE isativo = TRUE AND isenviado = false", nativeQuery = true)
-    long findAf();
+    long findAfEnviada();
 
 
 }

@@ -37,8 +37,10 @@ public class AfService {
     }
 
 
-    public long getAf(){
-        return rep.findAf();
+
+
+    public long getAfEnviada(){
+        return rep.findAfEnviada();
     }
 
 

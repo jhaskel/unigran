@@ -65,29 +65,6 @@ public class PedidoController {
                 .buildAndExpand(id).toUri();
     }
 
-    @GetMapping("/ultimoid")
-    public long getUltimoId() {
-        return service.getUltimoId();
-    }
-
-
-    @GetMapping("/temcart/{escola}")
-    public long getTemCart(@PathVariable("escola") Long escola) {
-        return service.getTemCart(escola);
-    }
-
-    @GetMapping("/temcart1/{escola}")
-    public long getTemCart1(@PathVariable("escola") Long escola) {
-        return service.getTemCart1(escola);
-    }
-
-    @GetMapping("/id/{id}")
-    public ResponseEntity getCId(@PathVariable("id") Long id) {
-        List<PedidoDTO> carros = service.getId(id);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
