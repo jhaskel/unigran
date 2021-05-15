@@ -31,7 +31,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,esc.alias AS nomec \n" +
             "FROM itens ite\n" +
             "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
-            "WHERE ite.af = 2105131 AND ite.isativo = true \n" +
+            "WHERE ite.af = :af AND ite.isativo = true \n" +
             "GROUP BY ite.id\n" +
             "ORDER BY nomec, ite.alias ", nativeQuery = true)
     List<Itens> findByAf(Long af);
