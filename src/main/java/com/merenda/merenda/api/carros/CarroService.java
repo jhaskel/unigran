@@ -35,8 +35,9 @@ public class CarroService {
         return CarroDTO.create(rep.save(carro));
     }
 
-    public CarroDTO update(Carro carro, Long id) {
-        Assert.notNull(id,"Não foi possível atualizar o registro");
+    public CarroDTO update(Carro carro) {
+
+        Long id = carro.getId();
 
         // Busca o carro no banco de dados
         Optional<Carro> optional = rep.findById(id);

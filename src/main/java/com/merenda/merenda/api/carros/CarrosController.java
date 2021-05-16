@@ -55,9 +55,9 @@ public class CarrosController {
     }
 
     @PutMapping()
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
+    public ResponseEntity put( @RequestBody Carro carro) {
 
-        CarroDTO c = service.update(carro, id);
+        CarroDTO c = service.update(carro);
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
