@@ -56,13 +56,13 @@ public class CarrosController {
 
     @PutMapping()
     public ResponseEntity put( @RequestBody List<Carro> carros) {
-        System.out.println("quant carros" + carros.size());
-
-        for (int i=0;i<=carros.size();i++){
+       
+        CarroDTO c = null;
+        Carro carro;
+        for (int i=0;i<carros.size();i++){
             System.out.println("entrou" + carros.get(i));
-            Carro carro = carros.get(i);
-            CarroDTO c = service.update(carro);
-
+            carro = carros.get(i);
+            c = service.update(carro);            
 
      }
         return c != null ?

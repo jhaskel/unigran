@@ -36,24 +36,18 @@ public class CarroService {
     }
 
     public CarroDTO update(Carro carro) {
-
-
         Long id = carro.getId();
-
         // Busca o carro no banco de dados
         Optional<Carro> optional = rep.findById(id);
         if(optional.isPresent()) {
             Carro db = optional.get();
-            // Copiar as propriedades
             db.setNome(carro.getNome());
             db.setTipo(carro.getTipo());
             db.setDescricao(carro.getDescricao());
-
             rep.save(db);
             return CarroDTO.create(db);
         } else {
             return null;
-            //throw new RuntimeException("Não foi possível atualizar o registro");
         }
     }
 
