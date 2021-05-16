@@ -52,7 +52,7 @@ public class CarrosController {
                 .buildAndExpand(id).toUri();
     }
 
-    @PutMapping()
+    /*@PutMapping()
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
 
         carro.setId(id);
@@ -62,9 +62,9 @@ public class CarrosController {
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
-    }
+    }*/
 
-    @GetMapping("/tipos/{tipo}")
+    @PutMapping("/tipos/{tipo}")
     public ResponseEntity getPutByTipo(@PathVariable("tipo") String tipo) {
         List<CarroDTO> carros = service.getPutByTipo(tipo);
         return carros.isEmpty() ?
