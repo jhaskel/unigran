@@ -1,6 +1,8 @@
 package com.merenda.merenda.api.carros;
 
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
+import com.merenda.merenda.api.nivelEscolar.NivelEscolar;
+import com.merenda.merenda.api.nivelEscolar.NivelEscolarDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -43,11 +45,9 @@ public class CarroService {
             // Copiar as propriedades
             db.setNome(carro.getNome());
             db.setTipo(carro.getTipo());
-            System.out.println("Carro id " + db.getId());
+            db.setDescricao(carro.getDescricao());
 
-            // Atualiza o carro
             rep.save(db);
-
             return CarroDTO.create(db);
         } else {
             return null;

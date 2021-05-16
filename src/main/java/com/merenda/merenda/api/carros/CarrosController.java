@@ -1,5 +1,7 @@
 package com.merenda.merenda.api.carros;
 
+import com.merenda.merenda.api.nivelEscolar.NivelEscolar;
+import com.merenda.merenda.api.nivelEscolar.NivelEscolarDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -52,13 +54,10 @@ public class CarrosController {
                 .buildAndExpand(id).toUri();
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
-
         carro.setId(id);
-
         CarroDTO c = service.update(carro, id);
-
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
