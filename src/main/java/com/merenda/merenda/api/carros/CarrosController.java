@@ -55,13 +55,23 @@ public class CarrosController {
     }
 
     @PutMapping()
-    public ResponseEntity put( @RequestBody Carro carro) {
+    public ResponseEntity put( @RequestBody List<Carro> carros) {
+        System.out.println("quant carros" + carros.size());
 
-        CarroDTO c = service.update(carro);
-        return c != null ?
-                ResponseEntity.ok(c) :
-                ResponseEntity.notFound().build();
+        for (int i=0;i<=carros.size();i++){
+            Carro carro = carros.get(i);
+            CarroDTO c = service.update(carro);
+            return c != null ?
+                    ResponseEntity.ok(c) :
+                    ResponseEntity.notFound().build();
+
+     }
+        return null;
     }
+
+
+
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
