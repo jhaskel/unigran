@@ -28,6 +28,10 @@ public class CarroService {
         return rep.findByTipo(tipo).stream().map(CarroDTO::create).collect(Collectors.toList());
     }
 
+    public List<CarroDTO> getPutByTipo(String tipo) {
+        return rep.findByPutTipo(tipo).stream().map(CarroDTO::create).collect(Collectors.toList());
+    }
+
     public CarroDTO insert(Carro carro) {
         Assert.isNull(carro.getId(),"Não foi possível inserir o registro");
         return CarroDTO.create(rep.save(carro));
@@ -54,6 +58,8 @@ public class CarroService {
             //throw new RuntimeException("Não foi possível atualizar o registro");
         }
     }
+
+
 
     public void delete(Long id) {
         rep.deleteById(id);

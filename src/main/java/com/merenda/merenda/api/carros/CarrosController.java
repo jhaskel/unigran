@@ -64,6 +64,15 @@ public class CarrosController {
                 ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/tipos/{tipo}")
+    public ResponseEntity getPutByTipo(@PathVariable("tipo") String tipo) {
+        List<CarroDTO> carros = service.getPutByTipo(tipo);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         service.delete(id);
