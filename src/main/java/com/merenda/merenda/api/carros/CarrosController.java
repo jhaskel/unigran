@@ -59,14 +59,15 @@ public class CarrosController {
         System.out.println("quant carros" + carros.size());
 
         for (int i=0;i<=carros.size();i++){
+            System.out.println("entrou" + carros.get(i));
             Carro carro = carros.get(i);
             CarroDTO c = service.update(carro);
-            return c != null ?
-                    ResponseEntity.ok(c) :
-                    ResponseEntity.notFound().build();
+
 
      }
-        return null;
+        return c != null ?
+                ResponseEntity.ok(c) :
+                ResponseEntity.notFound().build();
     }
 
 
