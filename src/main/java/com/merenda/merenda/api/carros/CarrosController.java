@@ -64,17 +64,14 @@ public class CarrosController {
                 ResponseEntity.notFound().build();
     }
 
-  @PutMapping("tt")
-    public ResponseEntity put2(@PathVariable("id") Long id, @RequestBody Carro carro) {
-
+ /* @PutMapping("tt")
+    public ResponseEntity put2(@PathVariable("tipo") Long id, @RequestBody Carro carro) {
         carro.setId(id);
-
         CarroDTO c = service.update2(carro, id);
-
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
-    }
+    }*/
 
 
 
