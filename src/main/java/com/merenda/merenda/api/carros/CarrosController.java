@@ -54,7 +54,7 @@ public class CarrosController {
                 .buildAndExpand(id).toUri();
     }
 
-    @PutMapping()
+    @PutMapping("all")
     public ResponseEntity put( @RequestBody List<Carro> carros) {
        
         CarroDTO c = null;
