@@ -19,11 +19,7 @@ public class AfController {
         List<AfDTO> afs = service.getAll();
         return ResponseEntity.ok(afs);
     }
-    @GetMapping()
-    public ResponseEntity get() {
-        List<AfDTO> afs = service.getAf();
-        return ResponseEntity.ok(afs);
-    }
+
 
 
     @GetMapping("/{id}")
