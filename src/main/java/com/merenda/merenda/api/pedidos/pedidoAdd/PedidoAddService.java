@@ -15,14 +15,14 @@ public class PedidoAddService {
     @Autowired
 
     private PedidoAddRepository rep;
-    public List<PedidoAddDTO> getCarros() {
+    public List<PedidoAddDTO> getPedido() {
         List<PedidoAddDTO> list = rep.findAll().stream().map(PedidoAddDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public PedidoAddDTO getCarroById(Long id) {
-        Optional<PedidoAdd> carro = rep.findById(id);
-        return carro.map(PedidoAddDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public PedidoAddDTO getPedidoById(Long id) {
+        Optional<PedidoAdd> pedido = rep.findById(id);
+        return pedido.map(PedidoAddDTO::create).orElseThrow(() -> new ObjectNotFoundException("Pedido não encontrado"));
     }
 
 
@@ -34,7 +34,7 @@ public class PedidoAddService {
     public PedidoAddDTO update(PedidoAdd pedido, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o pedido no banco de dados
         Optional<PedidoAdd> optional = rep.findById(id);
         if(optional.isPresent()) {
             PedidoAdd db = optional.get();
@@ -44,9 +44,9 @@ public class PedidoAddService {
             db.setStatus(pedido.getStatus());
             db.setIsaf(pedido.getIsaf());
             db.setTotal(pedido.getTotal());
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Pedido id " + db.getId());
 
-            // Atualiza o carro
+            // Atualiza o pedido
             rep.save(db);
 
             return PedidoAddDTO.create(db);

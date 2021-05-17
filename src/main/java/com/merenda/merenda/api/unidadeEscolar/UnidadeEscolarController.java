@@ -17,22 +17,22 @@ public class UnidadeEscolarController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<UnidadeEscolarDTO> carros = service.getNivel();
-        return ResponseEntity.ok(carros);
+        List<UnidadeEscolarDTO> escolas = service.getNivel();
+        return ResponseEntity.ok(escolas);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        UnidadeEscolarDTO carro = service.getNivelById(id);
+        UnidadeEscolarDTO escola = service.getNivelById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(escola);
     }
     @GetMapping("/id/{id}")
-    public ResponseEntity getCarrosById(@PathVariable("id") Long id) {
-        List<UnidadeEscolarDTO> carros = service.getCarrosById(id);
-        return carros.isEmpty() ?
+    public ResponseEntity getEscolasById(@PathVariable("id") Long id) {
+        List<UnidadeEscolarDTO> escolas = service.getEscolasById(id);
+        return escolas.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(escolas);
     }
 
     //verificado

@@ -17,15 +17,15 @@ public class ConfigController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ConfigDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<ConfigDTO> config = service.getConfig();
+        return ResponseEntity.ok(config);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ConfigDTO carro = service.getCarroById(id);
+        ConfigDTO config = service.getConfigById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(config);
     }
 
     @PostMapping

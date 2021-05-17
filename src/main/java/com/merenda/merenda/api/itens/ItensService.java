@@ -15,39 +15,39 @@ public class ItensService {
     @Autowired
 
     private ItensRepository rep;
-    public List<ItensDTO> getCarros() {
+    public List<ItensDTO> getItens() {
         List<ItensDTO> list = rep.findAll().stream().map(ItensDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public List<ItensDTO> getCarros2() {
+    public List<ItensDTO> getItens2() {
         List<ItensDTO> list = rep.findAll2().stream().map(ItensDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public List<ItensDTO> getCarros3() {
+    public List<ItensDTO> getItens3() {
         List<ItensDTO> list = rep.findAll3().stream().map(ItensDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public ItensDTO getCarroById(Long id) {
-        Optional<Itens> carro = rep.findById(id);
-        return carro.map(ItensDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public ItensDTO getItenById(Long id) {
+        Optional<Itens> item = rep.findById(id);
+        return item.map(ItensDTO::create).orElseThrow(() -> new ObjectNotFoundException("Iten não encontrado"));
     }
 
    //verificado
-    public List<ItensDTO> getCarrosByPedido(Long pedido) {
+    public List<ItensDTO> getItensByPedido(Long pedido) {
         return rep.findByPedido(pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
 
-    public List<ItensDTO> getCarrosByAf(Long af) {
+    public List<ItensDTO> getItensByAf(Long af) {
         return rep.findByAf(af).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
 
 
-    public List<ItensDTO> getCarrosByEscola(Long escola, Long pedido) {
+    public List<ItensDTO> getItensByEscola(Long escola, Long pedido) {
         return rep.findByEscola(escola,pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
@@ -236,7 +236,7 @@ public class ItensService {
     public ItensDTO update(Itens itens, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o item no banco de dados
         Optional<Itens> optional = rep.findById(id);
         if(optional.isPresent()) {
             Itens db = optional.get();
@@ -262,9 +262,9 @@ public class ItensService {
             db.setMes(itens.getMes());
             db.setIsativo(itens.getIsativo());
 
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Iten id " + db.getId());
 
-            // Atualiza o carro
+            // Atualiza o item
             rep.save(db);
 
             return ItensDTO.create(db);

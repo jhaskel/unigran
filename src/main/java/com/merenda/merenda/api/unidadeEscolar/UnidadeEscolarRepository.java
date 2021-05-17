@@ -10,7 +10,7 @@ public interface UnidadeEscolarRepository extends JpaRepository<UnidadeEscolar, 
     @Query(value = "SELECT *  FROM unidade_escolar order by id;", nativeQuery = true)
     List<UnidadeEscolar> findAll();
 
-    List<UnidadeEscolar> findCarroById(Long escola);
+    List<UnidadeEscolar> findEscolaById(Long escola);
 
     @Query(value = "SELECT count(id) as quant  FROM unidade_escolar ", nativeQuery = true)
     long findQuantidade();

@@ -17,15 +17,15 @@ public class PedidoAddController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<PedidoAddDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<PedidoAddDTO> pedido = service.getPedido();
+        return ResponseEntity.ok(pedido);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        PedidoAddDTO carro = service.getCarroById(id);
+        PedidoAddDTO pedido = service.getPedidoById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(pedido);
     }
 
 

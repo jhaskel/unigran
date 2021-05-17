@@ -27,15 +27,15 @@ public class UserService {
     }
 
     public UserDTO getUserById(Long id) {
-        Optional<User> carro = rep.findById(id);
-        return carro.map(UserDTO::create).orElseThrow(() -> new ObjectNotFoundException("Rotas não encontrado"));
+        Optional<User> usuario = rep.findById(id);
+        return usuario.map(UserDTO::create).orElseThrow(() -> new ObjectNotFoundException("Rotas não encontrado"));
     }
 
 
     public UserDTO update(User user, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o usuario no banco de dados
         Optional<User> optional = rep.findById(id);
         if(optional.isPresent()) {
             User db = optional.get();
@@ -51,7 +51,7 @@ public class UserService {
 
 
             System.out.println("Nivel id " + db.getId());
-            // Atualiza o carro
+            // Atualiza o usuario
             rep.save(db);
 
             return UserDTO.create(db);

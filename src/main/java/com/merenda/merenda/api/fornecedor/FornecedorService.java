@@ -15,14 +15,14 @@ public class FornecedorService {
     @Autowired
 
     private FornecedorRepository rep;
-    public List<FornecedorDTO> getCarros() {
+    public List<FornecedorDTO> getFornecedor() {
         List<FornecedorDTO> list = rep.findAll().stream().map(FornecedorDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public FornecedorDTO getCarroById(Long id) {
+    public FornecedorDTO getFornecedorById(Long id) {
         Optional<Fornecedor> carro = rep.findById(id);
-        return carro.map(FornecedorDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+        return carro.map(FornecedorDTO::create).orElseThrow(() -> new ObjectNotFoundException("Fornecedor não encontrado"));
     }
 
 
@@ -51,9 +51,9 @@ public class FornecedorService {
             db.setCelular(fornecedor.getCelular());
             db.setIsativo(fornecedor.getIsativo());
             db.setModifiedAt(fornecedor.getModifiedAt());
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Fornecedor id " + db.getId());
 
-            // Atualiza o carro
+            // Atualiza o fornecedor
             rep.save(db);
 
             return FornecedorDTO.create(db);

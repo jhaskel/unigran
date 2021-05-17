@@ -17,49 +17,49 @@ public class ProdutoController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ProdutoDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<ProdutoDTO> produtos = service.getProdutos();
+        return ResponseEntity.ok(produtos);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ProdutoDTO carro = service.getCarroById(id);
+        ProdutoDTO produto = service.getProdutoById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(produto);
     }
 
     @GetMapping("/code/{code}")
-    public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
-        List<ProdutoDTO> carros = service.getCarrosByCode(code);
-        return carros.isEmpty() ?
+    public ResponseEntity getProdutosByCode(@PathVariable("code") String code) {
+        List<ProdutoDTO> produtos = service.getProdutosByCode(code);
+        return produtos.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(produtos);
     }
 
 
 
     @GetMapping("/escola/{escola}")
-    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
-        List<ProdutoDTO> carros = service.getCarrosByEscola(escola);
-        return carros.isEmpty() ?
+    public ResponseEntity getProdutosByEscola(@PathVariable("escola") Long escola) {
+        List<ProdutoDTO> produtos = service.getProdutosByEscola(escola);
+        return produtos.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(produtos);
     }
 
     @GetMapping("/id/{id}")
     public ResponseEntity getId(@PathVariable("id") Long id) {
-        List<ProdutoDTO> carros = service.getId(id);
-        return carros.isEmpty() ?
+        List<ProdutoDTO> produtos = service.getId(id);
+        return produtos.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(produtos);
     }
 
     @GetMapping("/menos")
     public ResponseEntity getMenos() {
-        List<ProdutoDTO> carros = service.getMenos();
-        return carros.isEmpty() ?
+        List<ProdutoDTO> produtos = service.getMenos();
+        return produtos.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(produtos);
     }
 
 

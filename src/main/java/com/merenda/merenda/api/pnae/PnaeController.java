@@ -17,15 +17,15 @@ public class PnaeController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<PnaeDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<PnaeDTO> pnae = service.getPnae();
+        return ResponseEntity.ok(pnae);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        PnaeDTO carro = service.getCarroById(id);
+        PnaeDTO pnae = service.getPnaeById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(pnae);
     }
 
     @GetMapping("/soma/{ano}")

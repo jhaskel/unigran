@@ -17,31 +17,31 @@ public class PedidoController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<PedidoDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<PedidoDTO> pedido = service.getPedido();
+        return ResponseEntity.ok(pedido);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        PedidoDTO carro = service.getCarroById(id);
+        PedidoDTO pedido = service.getPedidoById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(pedido);
     }
 
     @GetMapping("/code/{code}")
-    public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
-        List<PedidoDTO> carros = service.getCarrosByCode(code);
-        return carros.isEmpty() ?
+    public ResponseEntity getPedidoByCode(@PathVariable("code") String code) {
+        List<PedidoDTO> pedido = service.getPedidoByCode(code);
+        return pedido.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(pedido);
     }
 
     @GetMapping("/escola/{escola}")
-    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
-        List<PedidoDTO> carros = service.getCarrosByEscola(escola);
-        return carros.isEmpty() ?
+    public ResponseEntity getPedidoByEscola(@PathVariable("escola") Long escola) {
+        List<PedidoDTO> pedido = service.getPedidoByEscola(escola);
+        return pedido.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(pedido);
     }
 
 

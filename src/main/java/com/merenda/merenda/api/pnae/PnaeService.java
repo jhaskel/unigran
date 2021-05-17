@@ -15,14 +15,14 @@ public class PnaeService {
     @Autowired
 
     private PnaeRepository rep;
-    public List<PnaeDTO> getCarros() {
+    public List<PnaeDTO> getPnae() {
         List<PnaeDTO> list = rep.findAll().stream().map(PnaeDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public PnaeDTO getCarroById(Long id) {
-        Optional<Pnae> carro = rep.findById(id);
-        return carro.map(PnaeDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public PnaeDTO getPnaeById(Long id) {
+        Optional<Pnae> pnae = rep.findById(id);
+        return pnae.map(PnaeDTO::create).orElseThrow(() -> new ObjectNotFoundException("Pnae não encontrado"));
     }
 
 
@@ -40,7 +40,7 @@ public class PnaeService {
     public PnaeDTO update(Pnae pnae, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o pnae no banco de dados
         Optional<Pnae> optional = rep.findById(id);
         if(optional.isPresent()) {
             Pnae db = optional.get();

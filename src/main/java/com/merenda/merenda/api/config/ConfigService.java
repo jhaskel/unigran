@@ -15,14 +15,14 @@ public class ConfigService {
     @Autowired
 
     private ConfigRepository rep;
-    public List<ConfigDTO> getCarros() {
+    public List<ConfigDTO> getConfig() {
         List<ConfigDTO> list = rep.findAll().stream().map(ConfigDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public ConfigDTO getCarroById(Long id) {
-        Optional<Config> carro = rep.findById(id);
-        return carro.map(ConfigDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public ConfigDTO getConfigById(Long id) {
+        Optional<Config> config = rep.findById(id);
+        return config.map(ConfigDTO::create).orElseThrow(() -> new ObjectNotFoundException("Config não encontrado"));
     }
 
 
@@ -35,16 +35,16 @@ public class ConfigService {
     public ConfigDTO update(Config config, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o config no banco de dados
         Optional<Config> optional = rep.findById(id);
         if(optional.isPresent()) {
             Config db = optional.get();
             // Copiar as propriedades
             db.setEntidade(config.getEntidade());
             db.setNomeContato(config.getNomeContato());
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Config id " + db.getId());
 
-            // Atualiza o carro
+            // Atualiza o config
             rep.save(db);
 
             return ConfigDTO.create(db);

@@ -17,130 +17,132 @@ public class ItensController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ItensDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<ItensDTO> itens = service.getItens();
+        return ResponseEntity.ok(itens);
     }
     @GetMapping("/afi")
     public ResponseEntity get2() {
-        List<ItensDTO> carros = service.getCarros2();
-        return ResponseEntity.ok(carros);
+        List<ItensDTO> itens = service.getItens2();
+        return ResponseEntity.ok(itens);
     }
 
     @GetMapping("/pedidos")
     public ResponseEntity get3() {
-        List<ItensDTO> carros = service.getCarros3();
-        return ResponseEntity.ok(carros);
+        List<ItensDTO> itens = service.getItens3();
+        return ResponseEntity.ok(itens);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ItensDTO carro = service.getCarroById(id);
+        ItensDTO iten = service.getItenById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(iten);
     }
 
 
 
    //verificado
     @GetMapping("/pedido/{pedido}")
-    public ResponseEntity getCarrosByPedido(@PathVariable("pedido") Long pedido) {
-        List<ItensDTO> carros = service.getCarrosByPedido(pedido);
-        return carros.isEmpty() ?
+    public ResponseEntity getItensByPedido(@PathVariable("pedido") Long pedido) {
+        List<ItensDTO> itens = service.getItensByPedido(pedido);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
 
     @GetMapping("/af/{af}")
-    public ResponseEntity getCarrosByAf(@PathVariable("af") Long af) {
-        List<ItensDTO> carros = service.getCarrosByAf(af);
-        return carros.isEmpty() ?
+    public ResponseEntity getItensByAf(@PathVariable("af") Long af) {
+        List<ItensDTO> itens = service.getItensByAf(af);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/escola/{escola}/{pedido}")
-    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola,@PathVariable("pedido") Long pedido) {
-        List<ItensDTO> carros = service.getCarrosByEscola(escola,pedido);
-        return carros.isEmpty() ?
+    public ResponseEntity getItensByEscola(@PathVariable("escola") Long escola,@PathVariable("pedido") Long pedido) {
+        List<ItensDTO> itens = service.getItensByEscola(escola,pedido);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
+
+    
 
     @GetMapping("/escolar/{escola}/{ano}")
     public ResponseEntity getEscolar(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getEscolar(escola,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getEscolar(escola,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/fornecedor/{fornecedor}")
     public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
-        List<ItensDTO> carros = service.getByFornecedor(fornecedor);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getByFornecedor(fornecedor);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/escolaAll/{ano}")
     public ResponseEntity getEscolaAll(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getEscolaAll(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getEscolaAll(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/ano/{ano}")
     public ResponseEntity getItensAno(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getItensAno(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getItensAno(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
    //verificado
     @GetMapping("/maispedidos/{ano}")
     public ResponseEntity getMaisPedidos(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getMaisPedidos(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getMaisPedidos(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
      //verificado
     @GetMapping("/totalMes/{ano}")
     public ResponseEntity getTotalMes(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalMes(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalMes(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
     //verificado
     @GetMapping("/totalCategoria/{ano}")
     public ResponseEntity getTotalCategoria(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalCategoria(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalCategoria(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
 
 
     @GetMapping("/totalMesNivel/{nivel}/{ano}")
     public ResponseEntity getTotalMesNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalMesNivel(nivel,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalMesNivel(nivel,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     //verificado
     @GetMapping("/totalMesEscola/{escola}/{ano}")
     public ResponseEntity getTotalMesEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalMesEscola(escola,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalMesEscola(escola,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
 
@@ -149,60 +151,60 @@ public class ItensController {
 
     @GetMapping("/totalCategoriaNivel/{nivel}/{ano}")
     public ResponseEntity getTotalCategoriaNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalCategoriaNivel(nivel,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalCategoriaNivel(nivel,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     //verificado
     @GetMapping("/totalCategoriaEscola/{escola}/{ano}")
     public ResponseEntity getTotalCategoriaEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalCategoriaEscola(escola,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalCategoriaEscola(escola,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/totalEscolas/{ano}")
     public ResponseEntity getTotalEScolas(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalEscolas(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalEscolas(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/totalEscolaNivel/{nivel}/{ano}")
     public ResponseEntity getTotalEScolaNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getTotalEscolaNivel(nivel,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getTotalEscolaNivel(nivel,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     //verificado
     @GetMapping("/mediaAlunos/{ano}")
     public ResponseEntity getMediaAlunos(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getMediaAlunos(ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getMediaAlunos(ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/mediaAlunosNivel/{nivel}/{ano}")
     public ResponseEntity getMediaAlunosNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getMediaAlunosNivel(nivel,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getMediaAlunosNivel(nivel,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
     @GetMapping("/produtos/{produto}/{ano}")
     public ResponseEntity getProdutos(@PathVariable("produto") Long produto,@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getProdutos(produto,ano);
-        return carros.isEmpty() ?
+        List<ItensDTO> itens = service.getProdutos(produto,ano);
+        return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(itens);
     }
 
 

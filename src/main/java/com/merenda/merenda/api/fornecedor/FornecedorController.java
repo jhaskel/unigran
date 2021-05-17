@@ -17,23 +17,23 @@ public class FornecedorController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<FornecedorDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<FornecedorDTO> fornecedor = service.getFornecedor();
+        return ResponseEntity.ok(fornecedor);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        FornecedorDTO carro = service.getCarroById(id);
-        return ResponseEntity.ok(carro);
+        FornecedorDTO fornecedor = service.getFornecedorById(id);
+        return ResponseEntity.ok(fornecedor);
     }
 
 
     @GetMapping("/id/{id}")
     public ResponseEntity getFornecId(@PathVariable("id") Long id) {
-        List<FornecedorDTO> carros = service.getFornecId(id);
-        return carros.isEmpty() ?
+        List<FornecedorDTO> fornecedor = service.getFornecId(id);
+        return fornecedor.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(fornecedor);
     }
 
     @PostMapping

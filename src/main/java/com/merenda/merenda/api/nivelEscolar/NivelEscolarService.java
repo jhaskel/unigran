@@ -15,14 +15,14 @@ public class NivelEscolarService {
     @Autowired
 
     private NivelEscolarRepository rep;
-    public List<NivelEscolarDTO> getCarros() {
+    public List<NivelEscolarDTO> getNivel() {
         List<NivelEscolarDTO> list = rep.findAll().stream().map(NivelEscolarDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public NivelEscolarDTO getCarroById(Long id) {
-        Optional<NivelEscolar> carro = rep.findById(id);
-        return carro.map(NivelEscolarDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public NivelEscolarDTO getNivelById(Long id) {
+        Optional<NivelEscolar> nivel = rep.findById(id);
+        return nivel.map(NivelEscolarDTO::create).orElseThrow(() -> new ObjectNotFoundException("Nivel não encontrado"));
     }
 
     public String getRe(Long id){
@@ -42,7 +42,7 @@ public class NivelEscolarService {
     public NivelEscolarDTO update(NivelEscolar nivelEscolar, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o nivel no banco de dados
         Optional<NivelEscolar> optional = rep.findById(id);
         if(optional.isPresent()) {
             NivelEscolar db = optional.get();
