@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/email","/api/v1/login","/api/v1/users")
+                .antMatchers(HttpMethod.GET, "/v2/api-docs", "/api/v1/login","/api/v1/users")
                 .permitAll()
                 .antMatchers(HttpMethod.POST, "/api/v1/usuarios","/email")
                 .permitAll()
