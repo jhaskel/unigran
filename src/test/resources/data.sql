@@ -32,3 +32,18 @@ insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VA
 insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VALUES('Mercedes SLR McLaren','Descrição Mercedes SLR McLaren','http://www.livroandroid.com.br/livro/carros/luxo/Mercedes_McLaren.png','http://www.livroandroid.com.br/livro/carros/luxo/mclaren_slr.mp4','-23.564224','-46.653156','luxo');
 insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VALUES('Rolls Royce Phantom','Descrição Rolls Royce Phantom','http://www.livroandroid.com.br/livro/carros/luxo/Rolls_Royce_Phantom.png','http://www.livroandroid.com.br/livro/carros/luxo/rolls_royce.mp4','-23.564224','-46.653156','luxo');
 insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VALUES('Lexus LFA','Descrição Lexus LFA','http://www.livroandroid.com.br/livro/carros/luxo/Lexus_LFA.png','http://www.livroandroid.com.br/livro/carros/luxo/lexus.mp4','-23.564224','-46.653156','luxo');
+
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (1, 21051311, 11, 'Pedido com fornececedor!', '1', '2021-05-13T16:07:26.569', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (2, 21051312, 11, 'Pedido com fornececedor!', '1', '2021-05-13T16:07:28.004', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (3, 21051317, 11, 'Pedido com fornececedor!', '1', '2021-05-13T16:45:20.560', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (4, 21051310, 11, 'Pedido com fornececedor!', '1', '2021-05-13T16:45:21.914', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (5, 2105134, 10, 'Pedido com fornececedor!', '1', '2021-05-13T16:45:39.014', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (6, 2105139, 10, 'Pedido com fornececedor!', '1', '2021-05-13T16:59:31.971', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (7, 21051316, 10, 'Pedido com fornececedor!', '1', '2021-05-13T16:59:33.985', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (8, 21051315, 10, 'Pedido com fornececedor!', '1', '2021-05-13T17:00:21.750', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (9, 2105131, 10, 'Aguardando Entrega', '1', '2021-05-13T17:00:25.677', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (10, 21051517, 17, 'Pedido com fornececedor!', '1', '2021-05-15T14:15:28.809', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (11, 21051617, 17, 'Pedido Processado!', '0', '2021-05-16T21:31:21.972', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (12, 2105164, 17, 'Pedido Processado!', '0', '2021-05-16T21:31:23.489', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (13, 21051616, 17, 'Pedido Processado!', '0', '2021-05-16T21:31:25.398', '1');
+INSERT INTO af (id, code, fornecedor, status, isenviado, created_at, isativo) VALUES (14, 21051610, 17, 'Pedido Processado!', '0', '2021-05-16T21:31:27.598', '1');

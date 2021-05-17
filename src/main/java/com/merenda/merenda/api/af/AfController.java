@@ -17,10 +17,13 @@ public class AfController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<AfDTO> afs = service.getAfs();
+        List<AfDTO> afs = service.getAf();
         return ResponseEntity.ok(afs);
     }
-
+    public ResponseEntity getAll() {
+        List<AfDTO> afs = service.getAll();
+        return ResponseEntity.ok(afs);
+    }
 
 
     @GetMapping("/{id}")

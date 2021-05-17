@@ -11,7 +11,7 @@ public interface AfRepository extends JpaRepository<Af, Long> {
             "INNER JOIN itens ite ON ite.af = af.code\n" +
             "INNER JOIN fornecedor forn ON forn.id = ite.fornecedor\n" +
             "GROUP BY af.code order by af.isenviado, af.id desc ", nativeQuery = true)
-    List<Af> findAll();
+    List<Af> findAll2();
 
     @Query(value = "SELECT af.*,SUM(ite.total) as tot,forn.nome as nomefor FROM af \n" +
             "            INNER JOIN itens ite ON ite.af = af.code\n" +
@@ -19,6 +19,10 @@ public interface AfRepository extends JpaRepository<Af, Long> {
             "            WHERE forn.id = :fornecedor\n" +
             "            GROUP BY af.code order by af.isenviado, af.id desc", nativeQuery = true)
     List<Af> findByFornecedor(Long fornecedor);
+
+    //somente para testes
+    @Query(value = "SELECT * FROM af WHERE fornecedor = :fornecedor", nativeQuery = true)
+    List<Af> findByFornecedorTest(Long fornecedor);
 
     @Query(value = "SELECT ite.* FROM itens ite\n" +
             "WHERE af = :af order by id desc", nativeQuery = true)

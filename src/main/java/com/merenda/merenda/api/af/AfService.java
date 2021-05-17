@@ -15,8 +15,13 @@ public class AfService {
     @Autowired
 
     private AfRepository rep;
-    public List<AfDTO> getAfs() {
+
+    public List<AfDTO> getAf() {
         List<AfDTO> list = rep.findAll().stream().map(AfDTO::create).collect(Collectors.toList());
+        return list;
+    }
+    public List<AfDTO> getAll() {
+        List<AfDTO> list = rep.findAll2().stream().map(AfDTO::create).collect(Collectors.toList());
         return list;
     }
 
@@ -30,6 +35,11 @@ public class AfService {
 
     public List<AfDTO> getByFornecedor(Long fornecedor) {
         return rep.findByFornecedor(fornecedor).stream().map(AfDTO::create).collect(Collectors.toList());
+    }
+
+
+    public List<AfDTO> getByFornecedorTest(Long fornecedor) {
+        return rep.findByFornecedorTest(fornecedor).stream().map(AfDTO::create).collect(Collectors.toList());
     }
 
     public List<AfDTO> getByAf(Long af) {

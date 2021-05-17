@@ -1,11 +1,10 @@
 package com.merenda.merenda;
 
-import com.merenda.merenda.api.af.afAdd.AfAdd;
-import com.merenda.merenda.api.af.afAdd.AfAddDTO;
-import com.merenda.merenda.api.af.afAdd.AfAddService;
 
+import com.merenda.merenda.api.af.Af;
+import com.merenda.merenda.api.af.AfDTO;
+import com.merenda.merenda.api.af.AfService;
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
-import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,33 +17,32 @@ import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AfAddServiceTest {
+public class AfServiceTest {
 
 	@Autowired
-	private AfAddService service;
+	private AfService service;
 
 	@Test
 	public void testSave() {
 
-		AfAdd af = new AfAdd();
+		Af af = new Af();
 		af.setCode(202105214L);
-		af.setFornecedor(10L);
+		af.setFornecedor(15L);
 		af.setStatus("Comprando!");
 		af.setIsenviado(true);
 		af.setCreatedAt("20/05/2021");
 		af.setIsativo(true);
+		af.setTot(15.98);
+		af.setNomefor("Uniao Distribuidora");
 
-
-
-		AfAddDTO c = service.insert(af);
-
+		AfDTO c = service.insert(af);
 		assertNotNull(c);
 
 		Long id = c.getId();
 		assertNotNull(id);
 
 		// Buscar o objeto
-		c = service.getAfAddById(id);
+		c = service.getAfById(id);
 		assertNotNull(c);
 		assertEquals("Comprando!",c.getStatus());
 
@@ -53,39 +51,31 @@ public class AfAddServiceTest {
 
 		// Verificar se deletou
 		try {
-			service.getAfAddById(id);
+			service.getAfById(id);
 			fail("A af não foi excluído");
 		} catch (ObjectNotFoundException e) {
 			// OK
 		}
 	}
 
-	/*@Test
+	@Test
 	public void testLista() {
-
-		List<CarroDTO> carros = service.getCarros();
-
-		assertEquals(30, carros.size());
+		List<AfDTO> afs = service.getAf();
+		assertEquals(14, afs.size());
 	}
 
 	@Test
-	public void testListaPorTipo() {
-
-		assertEquals(10, service.getCarrosByTipo("classicos").size());
-		assertEquals(10, service.getCarrosByTipo("esportivos").size());
-		assertEquals(10, service.getCarrosByTipo("luxo").size());
-
-		assertEquals(0, service.getCarrosByTipo("x").size());
+	public void testListaPorFornecedor() {
+		assertEquals(4, service.getByFornecedorTest(11L).size());
+		assertEquals(5, service.getByFornecedorTest(10L).size());
+		assertEquals(5, service.getByFornecedorTest(17L).size());
+		assertEquals(0, service.getByFornecedorTest(100L).size());
 	}
 
 	@Test
 	public void testGet() {
-
-		CarroDTO c = service.getCarroById(11L);
-
+		AfDTO c = service.getAfById(10L);
 		assertNotNull(c);
-
-
-		assertEquals("Ferrari FF", c.getNome());
-	}*/
+		assertEquals("Pedido com fornececedor!", c.getStatus());
+	}
 }
