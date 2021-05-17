@@ -21,7 +21,6 @@ public class AfController {
     }
 
 
-
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         AfDTO af = service.getAfById(id);
@@ -38,14 +37,6 @@ public class AfController {
                 ResponseEntity.ok(afs);
     }
 
-   //busca as af pelo code
-    @GetMapping("/af/{af}")
-    public ResponseEntity getByAf(@PathVariable("af") Long af) {
-        List<AfDTO> afs = service.getByAf(af);
-        return afs.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(afs);
-    }
 
 
     //soma o total e afs eviadas para os fornecedores
@@ -53,8 +44,6 @@ public class AfController {
     public long getAfEnviada() {
         return service.getAfEnviada();
     }
-
-
 
 
     //insere no banco

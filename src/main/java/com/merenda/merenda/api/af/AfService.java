@@ -42,9 +42,7 @@ public class AfService {
         return rep.findByFornecedorTest(fornecedor).stream().map(AfDTO::create).collect(Collectors.toList());
     }
 
-    public List<AfDTO> getByAf(Long af) {
-        return rep.findByAf(af).stream().map(AfDTO::create).collect(Collectors.toList());
-    }
+
 
 
     public long getAfEnviada(){

@@ -59,12 +59,14 @@ public class AfServiceTest {
 	}
 
 	@Test
+	//parametros inseridos no data.sql
 	public void testLista() {
 		List<AfDTO> afs = service.getAf();
 		assertEquals(14, afs.size());
 	}
 
 	@Test
+	//parametros inseridos no data.sql
 	public void testListaPorFornecedor() {
 		assertEquals(4, service.getByFornecedorTest(11L).size());
 		assertEquals(5, service.getByFornecedorTest(10L).size());
@@ -73,6 +75,7 @@ public class AfServiceTest {
 	}
 
 	@Test
+	//parametros inseridos no data.sql
 	public void testGet() {
 		AfDTO c = service.getAfById(10L);
 		assertNotNull(c);
