@@ -40,7 +40,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .contact(new Contact("JOão Haskel", "", ""))
+                .contact(new Contact("JOão Haskel", "", "johaskel@gmail.com"))
                 .title("Merenda Escolar")
                 .description("Documentação API da Merenda Escolar")
                 .license("Apache Licence Version 2.0")

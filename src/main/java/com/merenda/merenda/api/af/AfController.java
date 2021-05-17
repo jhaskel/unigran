@@ -14,14 +14,14 @@ public class AfController {
     @Autowired
     private AfService service;
 
-
+    @GetMapping()
+    public ResponseEntity getAll() {
+        List<AfDTO> afs = service.getAll();
+        return ResponseEntity.ok(afs);
+    }
     @GetMapping()
     public ResponseEntity get() {
         List<AfDTO> afs = service.getAf();
-        return ResponseEntity.ok(afs);
-    }
-    public ResponseEntity getAll() {
-        List<AfDTO> afs = service.getAll();
         return ResponseEntity.ok(afs);
     }
 
