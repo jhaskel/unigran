@@ -25,9 +25,6 @@ public class ProdutoService {
         return produto.map(ProdutoDTO::create).orElseThrow(() -> new ObjectNotFoundException("Produto não encontrado"));
     }
 
-    public List<ProdutoDTO> getProdutosByCode(String code) {
-        return rep.findByCode(code).stream().map(ProdutoDTO::create).collect(Collectors.toList());
-    }
 
 
     public List<ProdutoDTO> getProdutosByEscola(Long escola) {

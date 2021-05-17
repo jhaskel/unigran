@@ -23,22 +23,9 @@ public class Af {
     private String createdAt;
     private Boolean isativo;
 
-
     //não esta no banco
     private String nomefor;
     private Double tot;
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

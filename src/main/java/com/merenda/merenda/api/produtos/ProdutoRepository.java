@@ -22,8 +22,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
             "WHERE p.isativo = true and p.id NOT IN (SELECT produto FROM itens ) ORDER BY p.categoria,p.nome", nativeQuery = true)
     List<Produto> findMenos();
 
-    @Query(value = "select * from produto  where isativo = TRUE order by id desc ", nativeQuery = true)
-    List<Produto> findByCode(String code);
+
 
     @Query(value = "select * from produto  where id = :id", nativeQuery = true)
     List<Produto> findId(Long id);

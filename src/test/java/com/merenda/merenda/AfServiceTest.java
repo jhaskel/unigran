@@ -81,4 +81,10 @@ public class AfServiceTest {
 		assertNotNull(c);
 		assertEquals("Pedido com fornececedor!", c.getStatus());
 	}
+
+	@Test
+	//parametros inseridos no data.sql
+	public void testEnviado() {
+		assertEquals(4, service.getAfEnviada());
+	}
 }

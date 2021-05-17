@@ -28,14 +28,6 @@ public class ProdutoController {
         return ResponseEntity.ok(produto);
     }
 
-    @GetMapping("/code/{code}")
-    public ResponseEntity getProdutosByCode(@PathVariable("code") String code) {
-        List<ProdutoDTO> produtos = service.getProdutosByCode(code);
-        return produtos.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(produtos);
-    }
-
 
 
     @GetMapping("/escola/{escola}")

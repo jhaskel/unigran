@@ -47,29 +47,15 @@ public class UnidadeEscolarController {
         return service.getQuantAlunos();
     }
 
-    @GetMapping("/quantAlunosNivel/{nivelescolar}")
-    public long getQuantAlunosNivel(@PathVariable("nivelescolar") Long nivel) {
-        return service.getQuantAlunosNivel(nivel);
-    }
+
     //verificado
     @GetMapping("/quantAlunosEscola/{id}")
     public long getQuantAlunosEscola(@PathVariable("id") Long id) {
         return service.getQuantAlunosEscola(id);
     }
 
-    @GetMapping("/quantEscolaNivel/{nivelescolar}")
-    public long getQuantEscolaNivel(@PathVariable("nivelescolar") Long nivel) {
-        return service.getQuantEscolaNivel(nivel);
-    }
-
-    @GetMapping("/nome/{id}")
-    public String getNome(@PathVariable("id") Long id) {
-        return service.getNome(id);
-    }
-
 
     @PostMapping
-
     public ResponseEntity post(@RequestBody UnidadeEscolar unidadeEscolar) {
 
         UnidadeEscolarDTO c = service.insert(unidadeEscolar);

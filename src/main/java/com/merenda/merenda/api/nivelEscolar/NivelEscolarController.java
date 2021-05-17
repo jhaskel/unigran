@@ -44,7 +44,6 @@ public class NivelEscolarController {
 
 
     @PostMapping
-
     public ResponseEntity post(@RequestBody NivelEscolar nivelEscolar) {
         NivelEscolarDTO c = service.insert(nivelEscolar);
         URI location = getUri(c.getId());

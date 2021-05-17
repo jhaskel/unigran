@@ -28,13 +28,7 @@ public class ComprasController {
                 ResponseEntity.ok(compras);
     }
 
-    @GetMapping("/af/{af}")
-    public ResponseEntity getComprasByAf(@PathVariable("af") Long af) {
-        List<ComprasDTO> compras = service.getComprasByAf(af);
-        return compras.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(compras);
-    }
+
 
 
     @PostMapping

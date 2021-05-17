@@ -27,22 +27,15 @@ public class PedidoService {
 
 
 
-    public List<PedidoDTO> getPedidoByCode(String code) {
-        return rep.findByCode(code).stream().map(PedidoDTO::create).collect(Collectors.toList());
-    }
-
-
     public List<PedidoDTO> getPedidoByEscola(Long escola) {
         return rep.findByEscola(escola).stream().map(PedidoDTO::create).collect(Collectors.toList());
     }
 
 
 
-
     public long getPedidoSemAf(){
         return rep.findPedidoSemAf();
     }
-
 
 
     public List<PedidoDTO> getId(Long id) {

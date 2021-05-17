@@ -26,12 +26,6 @@ public class CategoriaService {
     }
 
 
-    public List<CategoriaDTO> getAtivo() {
-        return rep.findAtivo().stream().map(CategoriaDTO::create).collect(Collectors.toList());
-    }
-
-
-
     public CategoriaDTO insert(Categoria categoria) {
         Assert.isNull(categoria.getId(),"Não foi possível inserir o registro");
         return CategoriaDTO.create(rep.save(categoria));

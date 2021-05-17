@@ -20,15 +20,8 @@ public class ItensService {
         return list;
     }
 
-    public List<ItensDTO> getItens2() {
-        List<ItensDTO> list = rep.findAll2().stream().map(ItensDTO::create).collect(Collectors.toList());
-        return list;
-    }
 
-    public List<ItensDTO> getItens3() {
-        List<ItensDTO> list = rep.findAll3().stream().map(ItensDTO::create).collect(Collectors.toList());
-        return list;
-    }
+
 
     public ItensDTO getItenById(Long id) {
         Optional<Itens> item = rep.findById(id);
@@ -47,14 +40,6 @@ public class ItensService {
 
 
 
-    public List<ItensDTO> getItensByEscola(Long escola, Long pedido) {
-        return rep.findByEscola(escola,pedido).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
-
-
-    public List<ItensDTO> getEscolar(Long escola, Long ano) {
-        return rep.findEscolar(escola,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
 
 
     //verificado
@@ -63,29 +48,12 @@ public class ItensService {
     }
 
 
-    public List<ItensDTO> getByFornecedor(Long fornecedor) {
-        return rep.findByFornecedor(fornecedor).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
 
-
-    public List<ItensDTO> getEscolaAll(Long ano) {
-        return rep.findEscolaAll(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
-
-
-    public List<ItensDTO> getItensAno(Long ano) {
-        return rep.findItensAno(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
 
 
 //verificado
     public List<ItensDTO> getTotalMes(Long ano) {
         return rep.findTotalMes(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
-
-
-    public List<ItensDTO> getTotalMesNivel(Long nivel,Long ano) {
-        return rep.findTotalMesNivel(nivel,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
 
@@ -100,9 +68,6 @@ public class ItensService {
     }
 
 
-    public List<ItensDTO> getTotalCategoriaNivel(Long nivel,Long ano) {
-        return rep.findTotalCategoriaNivel(nivel,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
 
 
     //verificado
@@ -115,10 +80,6 @@ public class ItensService {
     }
 
 
-    public List<ItensDTO> getTotalEscolaNivel(Long nivel,Long ano) {
-        return rep.findTotalEscolaNivel(nivel,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
-
 
 
    //verificado
@@ -126,15 +87,6 @@ public class ItensService {
         return rep.findMediaAlunos(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
-
-    public List<ItensDTO> getMediaAlunosNivel(Long nivel,Long ano) {
-        return rep.findMediaAlunosNivel(nivel,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
-
-
-    public List<ItensDTO> getProdutos(Long produto,Long ano) {
-        return rep.findProduto(produto,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
 
 
     //verificado
@@ -162,39 +114,9 @@ public class ItensService {
     }
 
 
-    public double getSoma(Long escola){
-        return rep.findSoma(escola);
-    }
 
 
 
-    public double getTotalAgroEscola(Long escola,Long ano){
-        return rep.findTotalAgroEscola(escola,ano);
-    }
-
-    public double getTotalAgroNivel(Long nivel,Long ano){
-        return rep.findTotalAgroNivel(nivel,ano);
-    }
-
-
-    public double getTotalAgro(Long ano){
-        return rep.findTotalAgro(ano);
-    }
-
-    public double getTotalPedido(Long pedido){
-        return rep.findTotalPedido(pedido);
-    }
-
-    public double getTotalAf(Long af){
-        return rep.findTotalAf(af);
-    }
-
-
-
-
-    public double getTradicionalNivel(Long nivel,Long ano){
-        return rep.findTradicionalNivel(nivel,ano);
-    }
 
     //verificado
     public double getTradicionalEscola(Long escola,Long ano){
@@ -202,29 +124,6 @@ public class ItensService {
     }
 
 
-
-    public double getDiversos(Long ano){
-        return rep.findDiversos(ano);
-    }
-
-
-    public double getDiversosNivel(Long nivel,Long ano){
-        return rep.findDiversosNivel(nivel,ano);
-    }
-
-
-    public double getDiversosEscola(Long escola,Long ano){
-        return rep.findDiversosEscola(escola,ano);
-    }
-
-
-    public double getCart(Long escola){
-        return rep.findCart(escola);
-    }
-
-    public double getEstoque(Long id){
-        return rep.findEstoque(id);
-    }
 
 
 

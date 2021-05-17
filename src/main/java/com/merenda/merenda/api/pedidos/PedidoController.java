@@ -28,13 +28,7 @@ public class PedidoController {
         return ResponseEntity.ok(pedido);
     }
 
-    @GetMapping("/code/{code}")
-    public ResponseEntity getPedidoByCode(@PathVariable("code") String code) {
-        List<PedidoDTO> pedido = service.getPedidoByCode(code);
-        return pedido.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(pedido);
-    }
+
 
     @GetMapping("/escola/{escola}")
     public ResponseEntity getPedidoByEscola(@PathVariable("escola") Long escola) {
@@ -43,7 +37,6 @@ public class PedidoController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(pedido);
     }
-
 
 
     @GetMapping("/pedidoSemAf")
