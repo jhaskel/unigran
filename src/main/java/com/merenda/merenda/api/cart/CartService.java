@@ -15,17 +15,17 @@ public class CartService {
     @Autowired
 
     private CartRepository rep;
-    public List<CartDTO> getCarros() {
+    public List<CartDTO> getCart() {
         List<CartDTO> list = rep.findAll().stream().map(CartDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public CartDTO getCarroById(Long id) {
-        Optional<Cart> carro = rep.findById(id);
-        return carro.map(CartDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public CartDTO getCartById(Long id) {
+        Optional<Cart> cart = rep.findById(id);
+        return cart.map(CartDTO::create).orElseThrow(() -> new ObjectNotFoundException("Cart não encontrado"));
     }
 
-    public List<CartDTO> getCarrosByEscola(Long escola) {
+    public List<CartDTO> getCartsByEscola(Long escola) {
         return rep.findByEcola(escola).stream().map(CartDTO::create).collect(Collectors.toList());
     }
 
@@ -45,7 +45,7 @@ public class CartService {
     public CartDTO update(Cart cart, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o cart no banco de dados
         Optional<Cart> optional = rep.findById(id);
         if(optional.isPresent()) {
             Cart db = optional.get();

@@ -17,23 +17,23 @@ public class ComprasController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ComprasDTO> carros = service.getCompras();
-        return ResponseEntity.ok(carros);
+        List<ComprasDTO> compras = service.getCompras();
+        return ResponseEntity.ok(compras);
     }
     @GetMapping("/pedido/{pedido}")
-    public ResponseEntity getCarrosByPedido(@PathVariable("pedido") String pedido) {
-        List<ComprasDTO> carros = service.getCarrosByPedido(pedido);
-        return carros.isEmpty() ?
+    public ResponseEntity getComprasByPedido(@PathVariable("pedido") String pedido) {
+        List<ComprasDTO> compras = service.getComprasByPedido(pedido);
+        return compras.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(compras);
     }
 
     @GetMapping("/af/{af}")
-    public ResponseEntity getCarrosByAf(@PathVariable("af") Long af) {
-        List<ComprasDTO> carros = service.getCarrosByAf(af);
-        return carros.isEmpty() ?
+    public ResponseEntity getComprasByAf(@PathVariable("af") Long af) {
+        List<ComprasDTO> compras = service.getComprasByAf(af);
+        return compras.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(compras);
     }
 
 

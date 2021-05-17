@@ -1,8 +1,11 @@
 package com.merenda.merenda;
-import com.merenda.merenda.api.carros.Carro;
-import com.merenda.merenda.api.carros.CarroService;
-import com.merenda.merenda.api.carros.CarroDTO;
+
+import com.merenda.merenda.api.af.afAdd.AfAdd;
+import com.merenda.merenda.api.af.afAdd.AfAddDTO;
+import com.merenda.merenda.api.af.afAdd.AfAddService;
+
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
+import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +18,22 @@ import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MerendaServiceTest {
+public class AfAddServiceTest {
 
 	@Autowired
-	private CarroService service;
+	private AfAddService service;
 
 	@Test
 	public void testSave() {
 
-		Carro carro = new Carro();
-		carro.setNome("Porshe");
-		carro.setTipo("esportivos");
+		AfAdd af = new AfAdd();
+		af.setStatus("teste");
+		af.setIsenviado(true);
+		af.setCode(202105214L);
 
-		CarroDTO c = service.insert(carro);
+
+
+		AfAddDTO c = service.insert(af);
 
 		assertNotNull(c);
 
@@ -35,25 +41,23 @@ public class MerendaServiceTest {
 		assertNotNull(id);
 
 		// Buscar o objeto
-		c = service.getCarroById(id);
+		c = service.getAfAddById(id);
 		assertNotNull(c);
-
-		assertEquals("Porshe",c.getNome());
-		assertEquals("esportivos",c.getTipo());
+		assertEquals("teste",c.getStatus());
 
 		// Deletar o objeto
 		service.delete(id);
 
 		// Verificar se deletou
 		try {
-			service.getCarroById(id);
-			fail("O carro não foi excluído");
+			service.getAfAddById(id);
+			fail("A af não foi excluído");
 		} catch (ObjectNotFoundException e) {
 			// OK
 		}
 	}
 
-	@Test
+	/*@Test
 	public void testLista() {
 
 		List<CarroDTO> carros = service.getCarros();
@@ -80,5 +84,5 @@ public class MerendaServiceTest {
 
 
 		assertEquals("Ferrari FF", c.getNome());
-	}
+	}*/
 }

@@ -15,16 +15,16 @@ public class AfPedidoService {
     @Autowired
 
     private AfPedidoRepository rep;
-    public List<AfPedidoDTO> getCarros() {
+    public List<AfPedidoDTO> getAfPedidos() {
         List<AfPedidoDTO> list = rep.findAll().stream().map(AfPedidoDTO::create).collect(Collectors.toList());
         return list;
     }
 
 
 
-    public AfPedidoDTO getCarroById(Long id) {
+    public AfPedidoDTO getAfPedidoById(Long id) {
         Optional<AfPedido> carro = rep.findById(id);
-        return carro.map(AfPedidoDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+        return carro.map(AfPedidoDTO::create).orElseThrow(() -> new ObjectNotFoundException("AfPedido não encontrado"));
     }
 
 

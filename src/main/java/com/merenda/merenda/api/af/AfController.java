@@ -17,37 +17,39 @@ public class AfController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<AfDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<AfDTO> afs = service.getAfs();
+        return ResponseEntity.ok(afs);
     }
 
 
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        AfDTO carro = service.getCarroById(id);
+        AfDTO af = service.getAfById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(af);
     }
 
+   //busca as af por fornecedores
     @GetMapping("/fornecedor/{fornecedor}")
     public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
-        List<AfDTO> carros = service.getByFornecedor(fornecedor);
-        return carros.isEmpty() ?
+        List<AfDTO> afs = service.getByFornecedor(fornecedor);
+        return afs.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(afs);
     }
 
+   //busca as af pelo code
     @GetMapping("/af/{af}")
     public ResponseEntity getByAf(@PathVariable("af") Long af) {
-        List<AfDTO> carros = service.getByAf(af);
-        return carros.isEmpty() ?
+        List<AfDTO> afs = service.getByAf(af);
+        return afs.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(afs);
     }
 
 
-
+    //soma o total e afs eviadas para os fornecedores
     @GetMapping("/afEnviada")
     public long getAfEnviada() {
         return service.getAfEnviada();
@@ -56,7 +58,7 @@ public class AfController {
 
 
 
-
+    //insere no banco
     @PostMapping
     public ResponseEntity post(@RequestBody Af af) {
 
@@ -71,6 +73,7 @@ public class AfController {
                 .buildAndExpand(id).toUri();
     }
 
+    //edita no banco
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Af af) {
         af.setId(id);
@@ -80,7 +83,7 @@ public class AfController {
                 ResponseEntity.notFound().build();
     }
 
-
+    //deleta no banco
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         service.delete(id);

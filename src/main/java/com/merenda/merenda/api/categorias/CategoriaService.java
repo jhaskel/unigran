@@ -22,7 +22,7 @@ public class CategoriaService {
 
     public CategoriaDTO getCategoriaById(Long id) {
         Optional<Categoria> carro = rep.findById(id);
-        return carro.map(CategoriaDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+        return carro.map(CategoriaDTO::create).orElseThrow(() -> new ObjectNotFoundException("Categoria não encontrado"));
     }
 
 
@@ -49,7 +49,7 @@ public class CategoriaService {
             db.setImage(categoria.getImage());
             db.setIsativo(categoria.getIsativo());
             db.setModifiedAt(categoria.getModifiedAt());
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Categoria id " + db.getId());
 
             // Atualiza o carro
             rep.save(db);

@@ -18,24 +18,24 @@ public class CartController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<CartDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<CartDTO> carts = service.getCart();
+        return ResponseEntity.ok(carts);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        CartDTO carro = service.getCarroById(id);
+        CartDTO cart = service.getCartById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(cart);
     }
 
 
     @GetMapping("/escola/{escola}")
-    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
-        List<CartDTO> carros = service.getCarrosByEscola(escola);
-        return carros.isEmpty() ?
+    public ResponseEntity getCartsByEscola(@PathVariable("escola") Long escola) {
+        List<CartDTO> carts = service.getCartsByEscola(escola);
+        return carts.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(carts);
     }
 
     @GetMapping("/itensCart/{escola}")

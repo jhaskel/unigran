@@ -14,8 +14,16 @@ public class AfAddController {
     @Autowired
     private AfAddService service;
 
+    @GetMapping()
+    public ResponseEntity get() {
+        List<AfAddDTO> afAdds = service.getAfAdds();
+        return ResponseEntity.ok(afAdds);    }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity get(@PathVariable("id") Long id) {
+        AfAddDTO carro = service.getAfAddById(id);
+        return ResponseEntity.ok(carro);
+    }
 
 
     @PostMapping

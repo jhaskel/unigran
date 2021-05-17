@@ -15,16 +15,16 @@ public class AfService {
     @Autowired
 
     private AfRepository rep;
-    public List<AfDTO> getCarros() {
+    public List<AfDTO> getAfs() {
         List<AfDTO> list = rep.findAll().stream().map(AfDTO::create).collect(Collectors.toList());
         return list;
     }
 
 
 
-    public AfDTO getCarroById(Long id) {
+    public AfDTO getAfById(Long id) {
         Optional<Af> carro = rep.findById(id);
-        return carro.map(AfDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+        return carro.map(AfDTO::create).orElseThrow(() -> new ObjectNotFoundException("Af não encontrado"));
     }
 
 
@@ -35,8 +35,6 @@ public class AfService {
     public List<AfDTO> getByAf(Long af) {
         return rep.findByAf(af).stream().map(AfDTO::create).collect(Collectors.toList());
     }
-
-
 
 
     public long getAfEnviada(){

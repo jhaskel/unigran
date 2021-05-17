@@ -19,10 +19,10 @@ public class ComprasService {
         List<ComprasDTO> list = rep.findAll().stream().map(ComprasDTO::create).collect(Collectors.toList());
         return list;
     }
-    public List<ComprasDTO> getCarrosByPedido(String pedido) {
+    public List<ComprasDTO> getComprasByPedido(String pedido) {
         return rep.findByPedido(pedido).stream().map(ComprasDTO::create).collect(Collectors.toList());
     }
-    public List<ComprasDTO> getCarrosByAf(Long af) {
+    public List<ComprasDTO> getComprasByAf(Long af) {
         return rep.findByAf(af).stream().map(ComprasDTO::create).collect(Collectors.toList());
     }
 
@@ -38,7 +38,7 @@ public class ComprasService {
     public ComprasDTO update(Compras compras, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
-        // Busca o carro no banco de dados
+        // Busca o compra no banco de dados
         Optional<Compras> optional = rep.findById(id);
         if(optional.isPresent()) {
             Compras db = optional.get();
@@ -64,9 +64,9 @@ public class ComprasService {
             db.setMes(compras.getMes());
             db.setIsativo(compras.getIsativo());
 
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Compra id " + db.getId());
 
-            // Atualiza o carro
+            // Atualiza o compra
             rep.save(db);
 
             return ComprasDTO.create(db);

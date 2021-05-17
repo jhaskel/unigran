@@ -17,18 +17,16 @@ public class AfPedidoController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<AfPedidoDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<AfPedidoDTO> afPedidos = service.getAfPedidos();
+        return ResponseEntity.ok(afPedidos);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        AfPedidoDTO carro = service.getCarroById(id);
+        AfPedidoDTO afPedido = service.getAfPedidoById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(afPedido);
     }
-
-
 
 
     @PostMapping

@@ -17,22 +17,22 @@ public class CategoriaController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<CategoriaDTO> carros = service.getCategorias();
-        return ResponseEntity.ok(carros);
+        List<CategoriaDTO> categorias = service.getCategorias();
+        return ResponseEntity.ok(categorias);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        CategoriaDTO carro = service.getCategoriaById(id);
+        CategoriaDTO categoria = service.getCategoriaById(id);
 
-        return ResponseEntity.ok(carro);
+        return ResponseEntity.ok(categoria);
     }
     @GetMapping("/ativo")
     public ResponseEntity getAtivo() {
-        List<CategoriaDTO> carros = service.getAtivo();
-        return carros.isEmpty() ?
+        List<CategoriaDTO> categorias = service.getAtivo();
+        return categorias.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(categorias);
     }
 
 
