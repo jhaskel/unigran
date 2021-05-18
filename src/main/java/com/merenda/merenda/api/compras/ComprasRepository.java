@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ComprasRepository extends JpaRepository<Compras, Long> {
 
-    @Query(value = "SELECT *  FROM itens WHERE  af = 0;", nativeQuery = true)
+    @Query(value = "SELECT *  FROM itens WHERE  isativo = true order by id desc", nativeQuery = true)
     List<Compras> findAll();
 
     @Query(value = "SELECT * FROM itens WHERE pedido = :pedido order by id desc ", nativeQuery = true)

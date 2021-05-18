@@ -67,9 +67,6 @@ public class ItensService {
         return rep.findTotalCategoria(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
-
-
-
     //verificado
     public List<ItensDTO> getTotalCategoriaEscola(Long escola,Long ano) {
         return rep.findTotalCategoriaEscola(escola,ano).stream().map(ItensDTO::create).collect(Collectors.toList());

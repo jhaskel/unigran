@@ -74,6 +74,29 @@ public class CartService {
         }
     }
 
+    public CartDTO updateAll(Cart cart) {
+
+        Long id = cart.getId();
+        // Busca o cart no banco de dados
+        Optional<Cart> optional = rep.findById(id);
+        if(optional.isPresent()) {
+            Cart db = optional.get();
+            db.setQuantidade(cart.getQuantidade());
+            db.setTotal(cart.getTotal());
+            System.out.println("Cart id " + db.getId());
+
+            // Atualiza o cart
+            rep.save(db);
+
+            return CartDTO.create(db);
+        } else {
+            return null;
+            //throw new RuntimeException("Não foi possível atualizar o registro");
+        }
+    }
+
+
+
     public void delete(Long id) {
         rep.deleteById(id);
     }

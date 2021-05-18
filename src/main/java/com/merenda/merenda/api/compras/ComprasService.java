@@ -74,6 +74,43 @@ public class ComprasService {
         }
     }
 
+    public ComprasDTO updateAll(Compras compras) {
+        Long id = compras.getId();
+
+        // Busca o compra no banco de dados
+        Optional<Compras> optional = rep.findById(id);
+        if(optional.isPresent()) {
+            Compras db = optional.get();
+            // Copiar as propriedades
+            db.setEscola(compras.getEscola());
+            db.setProduto(compras.getProduto());
+            db.setCategoria(compras.getCategoria());
+            db.setFornecedor(compras.getFornecedor());
+            db.setAno(compras.getAno());
+            db.setAf(compras.getAf());
+            db.setPedido(compras.getPedido());
+            db.setAlias(compras.getAlias());
+            db.setStatus(compras.getStatus());
+            db.setModifiedAt(compras.getModifiedAt());
+            db.setUnidade(compras.getUnidade());
+            db.setQuantidade(compras.getQuantidade());
+            db.setValor(compras.getValor());
+            db.setTotal(compras.getTotal());
+            db.setMes(compras.getMes());
+            db.setIsativo(compras.getIsativo());
+
+            System.out.println("Compra id " + db.getId());
+
+            // Atualiza o compra
+            rep.save(db);
+
+            return ComprasDTO.create(db);
+        } else {
+            return null;
+            //throw new RuntimeException("Não foi possível atualizar o registro");
+        }
+    }
+
 
     public void delete(Long id) {
         rep.deleteById(id);

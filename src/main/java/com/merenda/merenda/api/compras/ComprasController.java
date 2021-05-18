@@ -54,6 +54,22 @@ public class ComprasController {
                 ResponseEntity.notFound().build();
     }
 
+    @PutMapping("all")
+    public ResponseEntity put( @RequestBody List<Compras> compras) {
+
+        ComprasDTO c = null;
+        Compras cart;
+        for (int i=0;i<compras.size();i++){
+            System.out.println("entrou" + compras.get(i));
+            cart = compras.get(i);
+            c = service.updateAll(cart);
+
+        }
+        return c != null ?
+                ResponseEntity.ok(c) :
+                ResponseEntity.notFound().build();
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
