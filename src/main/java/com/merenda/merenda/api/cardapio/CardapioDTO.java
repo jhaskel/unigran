@@ -13,6 +13,7 @@ public class CardapioDTO {
     private String escola;
     private String dia;
     private String periodo;
+    private String pratos;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;

@@ -48,6 +48,7 @@ public class CardapioService {
             db.setSemana(cardapio.getSemana());
             db.setDia(cardapio.getDia());
             db.setPeriodo(cardapio.getPeriodo());
+            db.setPratos(cardapio.getPratos());
             db.setIsativo(cardapio.getIsativo());
             db.setModifiedAt(cardapio.getModifiedAt());
             System.out.println("Cardapio id " + db.getId());
