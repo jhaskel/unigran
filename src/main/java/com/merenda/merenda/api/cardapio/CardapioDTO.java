@@ -10,7 +10,8 @@ import java.util.List;
 public class CardapioDTO {
     private Long id;
     private String semana;
-    private String escola;
+    private Long escola;
+    private String nomedaescola;
     private String dia;
     private String periodo;
     private String pratos;
