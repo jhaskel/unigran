@@ -107,7 +107,7 @@ public class ComprasService {
             return ComprasDTO.create(db);
         } else {
             return null;
-            //throw new RuntimeException("Não foi possível atualizar o registro");
+
         }
     }
 
