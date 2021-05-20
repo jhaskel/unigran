@@ -15,6 +15,8 @@ public class CardapioDTO {
     private String dia;
     private String periodo;
     private String pratos;
+    private String imagem;
+    private Long kcal;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;

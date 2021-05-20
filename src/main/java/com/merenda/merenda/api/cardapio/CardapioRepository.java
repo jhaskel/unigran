@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CardapioRepository extends JpaRepository<Cardapio, Long> {
 
-    @Query(value = "SELECT * FROM cardapio", nativeQuery = true)
+    @Query(value = "SELECT * FROM cardapio order by isativo DESC,semana", nativeQuery = true)
     List<Cardapio> findAll();
 
     @Query(value = "SELECT *  FROM cardapio WHERE id = :id ", nativeQuery = true)
