@@ -16,18 +16,15 @@ public class Cardapio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String semana;
     private Long escola;
     private String nomedaescola;
-    private String dia;
-    private String periodo;
-    private String pratos;
+    private String tipo;
     private String imagem;
-    private Long kcal;
+    private String title;
+    private String content;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
-
 
 }
 
