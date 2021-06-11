@@ -22,12 +22,10 @@ public class Cart {
     private Long fornecedor;
     private String unidade;
     private String cod;
-    private String processo;
     private String alias;
     private Double quantidade;
     private Double valor;
     private Double total;
-    private String obs;
     private String createdAt;
 
 }

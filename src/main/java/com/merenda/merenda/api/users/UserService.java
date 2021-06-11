@@ -21,14 +21,16 @@ public class UserService {
     }
 
 
-    public UserDTO insert(User user) {
-        Assert.isNull(user.getId(),"Não foi possível inserir o registro");
-        return UserDTO.create(rep.save(user));
-    }
+
 
     public UserDTO getUserById(Long id) {
         Optional<User> usuario = rep.findById(id);
         return usuario.map(UserDTO::create).orElseThrow(() -> new ObjectNotFoundException("Rotas não encontrado"));
+    }
+
+    public UserDTO insert(User user) {
+        Assert.isNull(user.getId(),"Não foi possível inserir o registro");
+        return UserDTO.create(rep.save(user));
     }
 
 

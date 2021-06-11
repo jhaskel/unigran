@@ -8,8 +8,11 @@ import java.util.List;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
 
-    @Query(value = "sELECT * FROM categoria  ;", nativeQuery = true)
+    @Query(value = "sELECT * FROM categoria  order by isativo desc ;", nativeQuery = true)
     List<Categoria> findAll();
+
+    @Query(value = "SELECT *  FROM categoria WHERE id = :id ", nativeQuery = true)
+    List<Categoria> findId(Long id);
 
 
 

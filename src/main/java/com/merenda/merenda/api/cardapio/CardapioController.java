@@ -27,7 +27,6 @@ public class CardapioController {
         return ResponseEntity.ok(cardapio);
     }
 
-
     @GetMapping("/id/{id}")
     public ResponseEntity getFornecId(@PathVariable("id") Long id) {
         List<CardapioDTO> cardapio = service.getFornecId(id);

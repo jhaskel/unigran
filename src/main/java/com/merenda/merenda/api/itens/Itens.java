@@ -1,12 +1,11 @@
 package com.merenda.merenda.api.itens;
 
+import com.merenda.merenda.api.fornecedor.Fornecedor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Columns;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Data
@@ -19,24 +18,24 @@ public class Itens {
     private Long escola;
     private Long produto;
     private Long pedido;
-    private String alias;
     private Long categoria;
     private Long fornecedor;
-    private String unidade;
     private Long ano;
     private Long af;
-    private String createdAt;
     private Double quantidade;
     private Double valor;
     private Double total;
-    private String status;
+    private String alias;
+    private String unidade;
     private String mes;
-    private Boolean isativo;
+    private String status;
+    private String createdAt;
     private String modifiedAt;
+    private Boolean isativo;
 
+    //join
     private Double tot;
     private String nomec;
-
 
 
 }

@@ -44,7 +44,6 @@ public class CartController {
     }
 
 
-
     @PostMapping
 
     public ResponseEntity post(@RequestBody Cart cart) {
@@ -76,7 +75,6 @@ public class CartController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         service.delete(id);
-
         return ResponseEntity.ok().build();
     }
 }

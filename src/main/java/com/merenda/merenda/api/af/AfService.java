@@ -26,7 +26,6 @@ public class AfService {
     }
 
 
-
     public AfDTO getAfById(Long id) {
         Optional<Af> carro = rep.findById(id);
         return carro.map(AfDTO::create).orElseThrow(() -> new ObjectNotFoundException("Af não encontrado"));
@@ -42,13 +41,9 @@ public class AfService {
         return rep.findByFornecedorTest(fornecedor).stream().map(AfDTO::create).collect(Collectors.toList());
     }
 
-
-
-
     public long getAfEnviada(){
         return rep.findAfEnviada();
     }
-
 
     public AfDTO insert(Af af) {
         Assert.isNull(af.getId(),"Não foi possível inserir o registro");
@@ -81,10 +76,8 @@ public class AfService {
         }
     }
 
-
     public void delete(Long id) {
         rep.deleteById(id);
     }
-
 
 }

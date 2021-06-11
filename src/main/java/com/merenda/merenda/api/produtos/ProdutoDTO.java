@@ -24,6 +24,8 @@ public class ProdutoDTO {
     private String createdAt;
     private String modifiedAt;
     private String processo;
+    //join
+    private Double estoq;
 
     public static ProdutoDTO create(Produto produto) {
         ModelMapper modelMapper = new ModelMapper();

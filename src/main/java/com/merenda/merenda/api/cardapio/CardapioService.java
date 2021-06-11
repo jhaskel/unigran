@@ -45,11 +45,10 @@ public class CardapioService {
             Cardapio db = optional.get();
             // Copiar as propriedades
 
-            db.setContent(cardapio.getContent());
+
             db.setEscola(cardapio.getEscola());
             db.setNomedaescola(cardapio.getNomedaescola());
             db.setTitle(cardapio.getTitle());
-            db.setTipo(cardapio.getTipo());
             db.setImagem(cardapio.getImagem());
             db.setIsativo(cardapio.getIsativo());
             db.setModifiedAt(cardapio.getModifiedAt());

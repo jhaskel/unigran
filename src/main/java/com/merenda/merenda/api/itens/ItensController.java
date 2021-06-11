@@ -21,15 +21,12 @@ public class ItensController {
         return ResponseEntity.ok(itens);
     }
 
-
-
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         ItensDTO iten = service.getItenById(id);
 
         return ResponseEntity.ok(iten);
     }
-
 
 
    //verificado
@@ -76,8 +73,6 @@ public class ItensController {
                 ResponseEntity.ok(itens);
     }
 
-
-
     //verificado
     @GetMapping("/totalMesEscola/{escola}/{ano}")
     public ResponseEntity getTotalMesEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
@@ -105,8 +100,6 @@ public class ItensController {
                 ResponseEntity.ok(itens);
     }
 
-
-
     //verificado
     @GetMapping("/mediaAlunos/{ano}")
     public ResponseEntity getMediaAlunos(@PathVariable("ano") Long ano) {
@@ -117,12 +110,30 @@ public class ItensController {
     }
 
     //verificado
+    @GetMapping("/produto/{produto}")
+    public ResponseEntity getProduto(@PathVariable("produto") Long produto) {
+        List<ItensDTO> itens = service.getProduto(produto);
+        return itens.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(itens);
+    }
+    //verificado
+    @GetMapping("/produto2/{produto}")
+    public ResponseEntity getProduto2(@PathVariable("produto") Long produto) {
+        List<ItensDTO> itens = service.getProduto2(produto);
+        return itens.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(itens);
+    }
+
+
+    //verificado testado
     @GetMapping("/total/{ano}")
     public double getTotal(@PathVariable("ano") Long ano) {
         return service.getTotal(ano);
     }
 
-    //verificado
+    //verificado testado
     @GetMapping("/tradicional/{ano}")
     public double getTradicional(@PathVariable("ano") Long ano) {
         return service.getTradicional(ano);

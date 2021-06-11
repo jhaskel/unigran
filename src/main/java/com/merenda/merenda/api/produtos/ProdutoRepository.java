@@ -8,7 +8,10 @@ import java.util.List;
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 
-    @Query(value = "SELECT * FROM produto WHERE isativo = true order by categoria, alias  ", nativeQuery = true)
+    @Query(value = "SELECT pro.*,SUM(pro.quantidade-ite.quantidade) AS estoque FROM produto pro\n" +
+            "left JOIN itens ite ON ite.produto = pro.id\n" +
+            "GROUP BY pro.id\n" +
+            "ORDER BY pro.isativo DESC,pro.categoria,pro.alias ", nativeQuery = true)
     List<Produto> findAll();
 
 

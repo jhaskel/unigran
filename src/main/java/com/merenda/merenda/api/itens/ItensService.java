@@ -75,15 +75,20 @@ public class ItensService {
     public List<ItensDTO> getTotalEscolas(Long ano) {
         return rep.findTotalEscolas(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
-
-
-
-
    //verificado
     public List<ItensDTO> getMediaAlunos(Long ano) {
         return rep.findMediaAlunos(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
+    //verificado
+    public List<ItensDTO> getProduto(Long produto) {
+        return rep.findProduto(produto).stream().map(ItensDTO::create).collect(Collectors.toList());
+    }
+
+    //verificado
+    public List<ItensDTO> getProduto2(Long produto) {
+        return rep.findProduto2(produto).stream().map(ItensDTO::create).collect(Collectors.toList());
+    }
 
 
     //verificado

@@ -24,10 +24,8 @@ public class ProdutoController {
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         ProdutoDTO produto = service.getProdutoById(id);
-
         return ResponseEntity.ok(produto);
     }
-
 
 
     @GetMapping("/escola/{escola}")
@@ -56,11 +54,8 @@ public class ProdutoController {
 
 
     @PostMapping
-
     public ResponseEntity post(@RequestBody Produto produto) {
-
         ProdutoDTO c = service.insert(produto);
-
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }

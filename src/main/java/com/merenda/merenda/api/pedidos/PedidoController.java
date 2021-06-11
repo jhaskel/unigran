@@ -28,8 +28,6 @@ public class PedidoController {
         return ResponseEntity.ok(pedido);
     }
 
-
-
     @GetMapping("/escola/{escola}")
     public ResponseEntity getPedidoByEscola(@PathVariable("escola") Long escola) {
         List<PedidoDTO> pedido = service.getPedidoByEscola(escola);

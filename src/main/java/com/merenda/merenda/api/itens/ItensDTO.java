@@ -24,10 +24,8 @@ public class ItensDTO {
     private Boolean isativo;
     private String modifiedAt;
 
+    //join
     private Double tot;
-    private Double totAgro;
-    private Double tots;
-    private Double totalPedido;
     private String nomec;
 
 

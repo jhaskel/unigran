@@ -28,6 +28,14 @@ public class CategoriaController {
         return ResponseEntity.ok(categoria);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getCategoriaId(@PathVariable("id") Long id) {
+        List<CategoriaDTO> categoria = service.getCategoriaId(id);
+        return categoria.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(categoria);
+    }
+
 
 
 

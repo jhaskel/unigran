@@ -20,10 +20,17 @@ public class CategoriaService {
         return list;
     }
 
+
     public CategoriaDTO getCategoriaById(Long id) {
         Optional<Categoria> carro = rep.findById(id);
         return carro.map(CategoriaDTO::create).orElseThrow(() -> new ObjectNotFoundException("Categoria não encontrado"));
     }
+
+
+    public List<CategoriaDTO> getCategoriaId(Long id) {
+        return rep.findId(id).stream().map(CategoriaDTO::create).collect(Collectors.toList());
+    }
+
 
 
     public CategoriaDTO insert(Categoria categoria) {
@@ -40,7 +47,7 @@ public class CategoriaService {
             Categoria db = optional.get();
             // Copiar as propriedades
             db.setNome(categoria.getNome());
-            db.setImage(categoria.getImage());
+
             db.setIsativo(categoria.getIsativo());
             db.setModifiedAt(categoria.getModifiedAt());
             System.out.println("Categoria id " + db.getId());

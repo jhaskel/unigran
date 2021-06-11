@@ -1,6 +1,6 @@
 package com.merenda.merenda.api.cardapio;
 
-import com.merenda.merenda.api.refeicao.Refeicao;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,13 +18,13 @@ public class Cardapio {
     private Long id;
     private Long escola;
     private String nomedaescola;
-    private String tipo;
     private String imagem;
     private String title;
-    private String content;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
+
+
 
 }
 

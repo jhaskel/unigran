@@ -9,16 +9,14 @@ public class CartDTO {
     private Long escola;
     private Long produto;
     private Long fornecedor;
+    private Long categoria;
     private String unidade;
     private String cod;
-    private String processo;
     private String alias;
     private Double quantidade;
     private Double valor;
     private Double total;
-    private String obs;
     private String createdAt;
-
 
     public static CartDTO create(Cart cart) {
         ModelMapper modelMapper = new ModelMapper();

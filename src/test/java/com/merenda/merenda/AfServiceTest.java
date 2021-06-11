@@ -5,6 +5,7 @@ import com.merenda.merenda.api.af.Af;
 import com.merenda.merenda.api.af.AfDTO;
 import com.merenda.merenda.api.af.AfService;
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
+import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +27,12 @@ public class AfServiceTest {
 	public void testSave() {
 
 		Af af = new Af();
-		af.setCode(202105214L);
+		af.setCode(500L);
 		af.setFornecedor(15L);
 		af.setStatus("Comprando!");
-		af.setIsenviado(true);
 		af.setCreatedAt("20/05/2021");
+		af.setIsenviado(false);
 		af.setIsativo(true);
-		af.setTot(15.98);
-		af.setNomefor("Uniao Distribuidora");
 
 		AfDTO c = service.insert(af);
 		assertNotNull(c);
@@ -44,7 +43,13 @@ public class AfServiceTest {
 		// Buscar o objeto
 		c = service.getAfById(id);
 		assertNotNull(c);
+		assertFalse("500 é maior que 4", c.getCode() < 4);
+		assertTrue("15 é maior que 4", c.getFornecedor() > 4);
 		assertEquals("Comprando!",c.getStatus());
+		assertEquals("20/05/2021",c.getCreatedAt());
+		assertFalse(c.getIsenviado());
+		assertTrue(c.getIsativo());
+
 
 		// Deletar o objeto
 		service.delete(id);

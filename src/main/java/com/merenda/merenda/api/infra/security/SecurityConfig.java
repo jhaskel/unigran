@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**")
                 .permitAll()
-                .antMatchers(HttpMethod.POST, "/api/v1/usuarios","/email")
+                .antMatchers(HttpMethod.POST, "/api/v1/usuarios","/email","/api/v1/users")
                 .permitAll()
                 .antMatchers(HttpMethod.PUT,"/api/v1/usuarios/{$id}")
                 .permitAll()
