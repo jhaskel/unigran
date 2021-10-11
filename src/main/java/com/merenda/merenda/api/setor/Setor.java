@@ -20,7 +20,6 @@ public class Setor {
     private Long id;
     private String nome;
     private Boolean isativo;
-    private Boolean isalimento;
     private String createdAt;
     private String modifiedAt;
 

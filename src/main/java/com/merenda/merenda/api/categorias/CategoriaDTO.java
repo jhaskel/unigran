@@ -13,6 +13,7 @@ import org.modelmapper.ModelMapper;
 public class CategoriaDTO {
     private Long id;
     private String nome;
+    private Long setor;
     private Boolean isativo;
     private Boolean isalimento;
     private String createdAt;

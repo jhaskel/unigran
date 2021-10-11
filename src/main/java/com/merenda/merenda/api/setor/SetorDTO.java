@@ -11,12 +11,9 @@ public class SetorDTO {
     private Long id;
     private String nome;
     private Boolean isativo;
-    private Boolean isalimento;
     private String createdAt;
     private String modifiedAt;
 
-  /*  @JsonInclude
-    private String teste;*/
 
 
     public static SetorDTO create(Setor setor) {

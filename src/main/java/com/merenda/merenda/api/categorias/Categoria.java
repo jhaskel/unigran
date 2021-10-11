@@ -18,6 +18,7 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private Long setor;
     private Boolean isativo;
     private Boolean isalimento;
     private String createdAt;
