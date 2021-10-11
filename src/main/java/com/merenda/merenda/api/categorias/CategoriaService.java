@@ -1,6 +1,7 @@
 package com.merenda.merenda.api.categorias;
 
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
+import com.merenda.merenda.api.itens.ItensDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -25,6 +26,9 @@ public class CategoriaService {
         Optional<Categoria> carro = rep.findById(id);
         return carro.map(CategoriaDTO::create).orElseThrow(() -> new ObjectNotFoundException("Categoria não encontrado"));
     }
+
+
+
 
 
     public List<CategoriaDTO> getCategoriaId(Long id) {
@@ -67,4 +71,7 @@ public class CategoriaService {
     }
 
 
+    public List<CategoriaDTO> getSetor(Long setor) {
+        return rep.findSetor(setor).stream().map(CategoriaDTO::create).collect(Collectors.toList());
+    }
 }

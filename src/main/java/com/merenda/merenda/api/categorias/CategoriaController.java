@@ -1,5 +1,6 @@
 package com.merenda.merenda.api.categorias;
 
+import com.merenda.merenda.api.itens.ItensDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,13 @@ public class CategoriaController {
                 ResponseEntity.ok(categoria);
     }
 
+    @GetMapping("/setor/{setor}")
+    public ResponseEntity getItensByPedido(@PathVariable("setor") Long setor) {
+        List<CategoriaDTO> itens = service.getSetor(setor);
+        return itens.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(itens);
+    }
 
 
 
