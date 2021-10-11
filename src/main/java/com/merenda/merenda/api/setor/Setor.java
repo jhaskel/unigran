@@ -1,4 +1,5 @@
-package com.merenda.merenda.api.afPedido;
+package com.merenda.merenda.api.setor;
+
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,17 +9,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @NoArgsConstructor
 @Data
 @Entity
-public class AfPedido {
 
+public class Setor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long af;
-    private Long pedido;
-    private Double total;
-    private Long fornecedor;
+    private String nome;
+    private Boolean isativo;
+    private Boolean isalimento;
+    private String createdAt;
+    private String modifiedAt;
+
+
+/*
+
+    @Transient
+    @JsonIgnore
+    private String teste;
+*/
+
+
+
+
+
+
+
 }
 
