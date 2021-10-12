@@ -71,7 +71,4 @@ public class CategoriaService {
     }
 
 
-    public List<CategoriaDTO> getSetor(Long setor) {
-        return rep.findSetor(setor).stream().map(CategoriaDTO::create).collect(Collectors.toList());
-    }
 }

@@ -1,26 +1,26 @@
-package com.merenda.merenda.api.categorias;
-
+package com.merenda.merenda.api.subcategoria;
 
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 @NoArgsConstructor
 @Data
 @Entity
 
-public class Categoria {
+public class Subcategoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String icone;
     private Boolean isativo;
-    private Boolean isalimento;
     private String createdAt;
     private String modifiedAt;
 

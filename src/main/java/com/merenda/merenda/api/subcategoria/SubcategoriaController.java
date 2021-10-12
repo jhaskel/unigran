@@ -1,6 +1,5 @@
-package com.merenda.merenda.api.categorias;
+package com.merenda.merenda.api.subcategoria;
 
-import com.merenda.merenda.api.itens.ItensDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,40 +10,47 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/categorias")
-public class CategoriaController {
+public class SubcategoriaController {
     @Autowired
-    private CategoriaService service;
+    private SubcategoriaService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<CategoriaDTO> categorias = service.getCategorias();
+        List<SubcategoriaDTO> categorias = service.getCategorias();
         return ResponseEntity.ok(categorias);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        CategoriaDTO categoria = service.getCategoriaById(id);
+        SubcategoriaDTO categoria = service.getCategoriaById(id);
 
         return ResponseEntity.ok(categoria);
     }
 
     @GetMapping("/id/{id}")
     public ResponseEntity getCategoriaId(@PathVariable("id") Long id) {
-        List<CategoriaDTO> categoria = service.getCategoriaId(id);
+        List<SubcategoriaDTO> categoria = service.getCategoriaId(id);
         return categoria.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(categoria);
     }
 
+    @GetMapping("/setor/{setor}")
+    public ResponseEntity getItensByPedido(@PathVariable("setor") Long setor) {
+        List<SubcategoriaDTO> itens = service.getSetor(setor);
+        return itens.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(itens);
+    }
 
 
 
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Categoria categoria) {
+    public ResponseEntity post(@RequestBody Subcategoria subcategoria) {
 
-        CategoriaDTO c = service.insert(categoria);
+        SubcategoriaDTO c = service.insert(subcategoria);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -56,11 +62,11 @@ public class CategoriaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Categoria categoria) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Subcategoria subcategoria) {
 
-        categoria.setId(id);
+        subcategoria.setId(id);
 
-        CategoriaDTO c = service.update(categoria, id);
+        SubcategoriaDTO c = service.update(subcategoria, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :
