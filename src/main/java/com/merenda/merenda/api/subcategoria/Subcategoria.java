@@ -18,6 +18,7 @@ public class Subcategoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long categoria;
     private String nome;
     private String icone;
     private Boolean isativo;

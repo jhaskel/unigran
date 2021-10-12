@@ -9,14 +9,13 @@ import org.modelmapper.ModelMapper;
 
 public class SubcategoriaDTO {
     private Long id;
+    private Long categoria;
     private String nome;
     private String icone;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
 
-  /*  @JsonInclude
-    private String teste;*/
 
 
     public static SubcategoriaDTO create(Subcategoria subcategoria) {

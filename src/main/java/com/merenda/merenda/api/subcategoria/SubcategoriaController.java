@@ -36,13 +36,7 @@ public class SubcategoriaController {
                 ResponseEntity.ok(categoria);
     }
 
-    @GetMapping("/setor/{setor}")
-    public ResponseEntity getItensByPedido(@PathVariable("setor") Long setor) {
-        List<SubcategoriaDTO> itens = service.getSetor(setor);
-        return itens.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(itens);
-    }
+
 
 
 
