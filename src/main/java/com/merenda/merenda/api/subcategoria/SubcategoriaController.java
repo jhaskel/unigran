@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/categorias")
+@RequestMapping("/api/v1/subcategorias")
 public class SubcategoriaController {
     @Autowired
     private SubcategoriaService service;
