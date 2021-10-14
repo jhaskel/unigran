@@ -1,4 +1,4 @@
-package com.merenda.merenda.api.nivelEscolar;
+package com.merenda.merenda.api.nivel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,20 +10,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/nivel")
-public class NivelEscolarController {
+public class NivelController {
     @Autowired
-    private NivelEscolarService service;
+    private NivelService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<NivelEscolarDTO> nivel = service.getNivel();
+        List<NivelDTO> nivel = service.getNivel();
         return ResponseEntity.ok(nivel);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        NivelEscolarDTO nivel = service.getNivelById(id);
+        NivelDTO nivel = service.getNivelById(id);
 
         return ResponseEntity.ok(nivel);
     }
@@ -35,7 +35,7 @@ public class NivelEscolarController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity getId(@PathVariable("id") Long id) {
-        List<NivelEscolarDTO> nivel = service.getId(id);
+        List<NivelDTO> nivel = service.getId(id);
         return nivel.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(nivel);
@@ -44,8 +44,8 @@ public class NivelEscolarController {
 
 
     @PostMapping
-    public ResponseEntity post(@RequestBody NivelEscolar nivelEscolar) {
-        NivelEscolarDTO c = service.insert(nivelEscolar);
+    public ResponseEntity post(@RequestBody Nivel nivel) {
+        NivelDTO c = service.insert(nivel);
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }
@@ -56,9 +56,9 @@ public class NivelEscolarController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody NivelEscolar nivelEscolar) {
-        nivelEscolar.setId(id);
-        NivelEscolarDTO c = service.update(nivelEscolar, id);
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Nivel nivel) {
+        nivel.setId(id);
+        NivelDTO c = service.update(nivel, id);
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
