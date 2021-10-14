@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 @Data
 public class UnidadeDTO {
     private Long id;
-    private Long nivelescolar;
+    private Long nivel;
     private String nome;
     private String alias;
     private String endereco;

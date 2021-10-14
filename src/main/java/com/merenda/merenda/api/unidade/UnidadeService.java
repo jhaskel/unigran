@@ -61,7 +61,7 @@ public class UnidadeService {
         if(optional.isPresent()) {
             Unidade db = optional.get();
             // Copiar as propriedades
-            db.setNivelescolar(unidade.getNivelescolar());
+            db.setNivel(unidade.getNivel());
             db.setNome(unidade.getNome());
             db.setAlias(unidade.getAlias());
             db.setEndereco(unidade.getEndereco());

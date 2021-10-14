@@ -16,7 +16,7 @@ public class Unidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long nivelescolar;
+    private Long nivel;
     private String nome;
     private String alias;
     private String endereco;
