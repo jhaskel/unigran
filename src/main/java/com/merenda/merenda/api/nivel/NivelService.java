@@ -50,6 +50,8 @@ public class NivelService {
             db.setNome(nivel.getNome());
             db.setIsativo(nivel.getIsativo());
             db.setModifiedAt(nivel.getModifiedAt());
+            db.setSetor(nivel.getSetor());
+            db.setModifiedBy(nivel.getModifiedBy());
             System.out.println("Nivel id " + db.getId());
             rep.save(db);
             return NivelDTO.create(db);
