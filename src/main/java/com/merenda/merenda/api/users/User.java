@@ -19,7 +19,7 @@ public class User implements UserDetails {
     private String email;
     private String login;
     private String senha;
-    private Long escola;
+    private Long unidade;
     private String nivel;
     private String role;
     private Boolean isativo;
