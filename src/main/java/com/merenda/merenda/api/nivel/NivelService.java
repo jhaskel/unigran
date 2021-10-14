@@ -1,6 +1,7 @@
 package com.merenda.merenda.api.nivel;
 
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
+import com.merenda.merenda.api.itens.ItensDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -33,8 +34,9 @@ public class NivelService {
         return rep.findId(id).stream().map(NivelDTO::create).collect(Collectors.toList());
     }
 
-    public String getSetor(Long setor){
-        return rep.findSetor(setor);
+    //verificado
+    public List<NivelDTO> getSetor(Long setor) {
+        return rep.findSetor(setor).stream().map(NivelDTO::create).collect(Collectors.toList());
     }
 
 

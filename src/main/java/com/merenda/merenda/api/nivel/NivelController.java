@@ -1,5 +1,6 @@
 package com.merenda.merenda.api.nivel;
 
+import com.merenda.merenda.api.itens.ItensDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,10 +29,15 @@ public class NivelController {
         return ResponseEntity.ok(nivel);
     }
 
+
     @GetMapping("/setor/{setor}")
-    public String getSetor(@PathVariable("setor") Long setor) {
-        return service.getSetor(setor);
+    public ResponseEntity getSetor(@PathVariable("setor") Long setor) {
+        List<NivelDTO> itens = service.getSetor(setor);
+        return itens.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(itens);
     }
+
 
     @GetMapping("/nome/{id}")
     public String getRe(@PathVariable("id") Long id) {
