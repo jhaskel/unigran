@@ -30,6 +30,10 @@ public class UnidadeService {
         return rep.findEscolaById(id).stream().map(UnidadeDTO::create).collect(Collectors.toList());
     }
 
+    public List<UnidadeDTO> getSetor(Long setor) {
+        return rep.findSetor(setor).stream().map(UnidadeDTO::create).collect(Collectors.toList());
+    }
+
     public long getQuantidade(){ return rep.findQuantidade(); }
 
     public long getQuantAlunos(){ return rep.findQuantAlunos(); }

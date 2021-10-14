@@ -12,6 +12,10 @@ public interface UnidadeRepository extends JpaRepository<Unidade, Long> {
 
     List<Unidade> findEscolaById(Long escola);
 
+    @Query(value = "SELECT *  FROM unidades where setor = :setor order by id;", nativeQuery = true)
+    List<Unidade> findSetor(Long setor);
+
+
     @Query(value = "SELECT count(id) as quant  FROM unidades ", nativeQuery = true)
     long findQuantidade();
 
