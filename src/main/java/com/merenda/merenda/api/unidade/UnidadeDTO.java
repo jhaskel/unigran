@@ -1,10 +1,10 @@
-package com.merenda.merenda.api.unidadeEscolar;
+package com.merenda.merenda.api.unidade;
 
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
 @Data
-public class UnidadeEscolarDTO {
+public class UnidadeDTO {
     private Long id;
     private Long nivelescolar;
     private String nome;
@@ -18,8 +18,8 @@ public class UnidadeEscolarDTO {
 
     private Double quant;
 
-    public static UnidadeEscolarDTO create(UnidadeEscolar unidadeEscolar) {
+    public static UnidadeDTO create(Unidade unidade) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(unidadeEscolar, UnidadeEscolarDTO.class);
+        return modelMapper.map(unidade, UnidadeDTO.class);
     }
 }

@@ -1,4 +1,4 @@
-package com.merenda.merenda.api.unidadeEscolar;
+package com.merenda.merenda.api.unidade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,27 +9,27 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/escolas")
-public class UnidadeEscolarController {
+@RequestMapping("/api/v1/unidades")
+public class UnidadeController {
     @Autowired
-    private UnidadeEscolarService service;
+    private UnidadeService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<UnidadeEscolarDTO> escolas = service.getNivel();
+        List<UnidadeDTO> escolas = service.getNivel();
         return ResponseEntity.ok(escolas);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        UnidadeEscolarDTO escola = service.getNivelById(id);
+        UnidadeDTO escola = service.getNivelById(id);
 
         return ResponseEntity.ok(escola);
     }
     @GetMapping("/id/{id}")
     public ResponseEntity getEscolasById(@PathVariable("id") Long id) {
-        List<UnidadeEscolarDTO> escolas = service.getEscolasById(id);
+        List<UnidadeDTO> escolas = service.getEscolasById(id);
         return escolas.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(escolas);
@@ -56,9 +56,9 @@ public class UnidadeEscolarController {
 
 
     @PostMapping
-    public ResponseEntity post(@RequestBody UnidadeEscolar unidadeEscolar) {
+    public ResponseEntity post(@RequestBody Unidade unidade) {
 
-        UnidadeEscolarDTO c = service.insert(unidadeEscolar);
+        UnidadeDTO c = service.insert(unidade);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -70,11 +70,11 @@ public class UnidadeEscolarController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody UnidadeEscolar unidadeEscolar) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Unidade unidade) {
 
-        unidadeEscolar.setId(id);
+        unidade.setId(id);
 
-        UnidadeEscolarDTO c = service.update(unidadeEscolar, id);
+        UnidadeDTO c = service.update(unidade, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :

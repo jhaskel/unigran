@@ -1,4 +1,4 @@
-package com.merenda.merenda.api.unidadeEscolar;
+package com.merenda.merenda.api.unidade;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class UnidadeEscolar {
+public class Unidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
