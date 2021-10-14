@@ -46,9 +46,9 @@ public class UserService {
             db.setNome(user.getNome());
             db.setEmail(user.getEmail());
             db.setSenha(user.getSenha());
-            db.setEscola(user.getEscola());
             db.setNivel(user.getNivel());
             db.setModifiedAt(user.getModifiedAt());
+            db.setUnidade(user.getUnidade());
             db.setRole(user.getRole());
 
 
