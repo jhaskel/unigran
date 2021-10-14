@@ -28,6 +28,11 @@ public class NivelController {
         return ResponseEntity.ok(nivel);
     }
 
+    @GetMapping("/setor/{setor}")
+    public String getSetor(@PathVariable("setor") Long setor) {
+        return service.getSetor(setor);
+    }
+
     @GetMapping("/nome/{id}")
     public String getRe(@PathVariable("id") Long id) {
         return service.getRe(id);

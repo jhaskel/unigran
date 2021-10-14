@@ -33,6 +33,10 @@ public class NivelService {
         return rep.findId(id).stream().map(NivelDTO::create).collect(Collectors.toList());
     }
 
+    public String getSetor(Long setor){
+        return rep.findSetor(setor);
+    }
+
 
     public NivelDTO insert(Nivel nivel) {
         Assert.isNull(nivel.getId(),"Não foi possível inserir o registro");
