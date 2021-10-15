@@ -12,7 +12,7 @@ public class UsuarioDTO {
     private String senha;
     private Long escola;
     private String nivel;
-    private String role;
+    private Long setor;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;

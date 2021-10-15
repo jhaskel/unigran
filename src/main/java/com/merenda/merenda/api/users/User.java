@@ -21,7 +21,7 @@ public class User implements UserDetails {
     private String senha;
     private Long unidade;
     private String nivel;
-    private String role;
+    private Long setor;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
