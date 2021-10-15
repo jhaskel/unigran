@@ -20,7 +20,7 @@ public class Subcategoria {
     private Long id;
     private Long categoria;
     private String nome;
-    private String icone;
+    private Boolean icone;
     private Boolean isativo;
     private String createdAt;
     private String modifiedAt;
