@@ -8,7 +8,11 @@ import java.util.List;
 public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
 
 
-    @Query(value = "Select * from estoque", nativeQuery = true)
+    @Query(value = "SELECT est.*,-(est.quantidade)*(-1)-SUM(ite.quantidade) AS estoq\n" +
+            "            FROM estoque est\n" +
+            "            left JOIN itens ite ON ite.produto = est.produto\n" +
+            "            GROUP BY est.produto\n" +
+            "            ORDER BY est.isativo DESC,est.categoria,est.alias", nativeQuery = true)
     List<Estoque> findAll();
 
 
