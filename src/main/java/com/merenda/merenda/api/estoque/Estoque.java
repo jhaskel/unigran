@@ -34,7 +34,8 @@ public class Estoque {
     private String modifiedAt;
     private String processo;
 
-
+    //join
+    private Double estoqu;
 
 
 
