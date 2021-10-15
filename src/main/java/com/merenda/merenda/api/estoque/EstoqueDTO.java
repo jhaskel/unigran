@@ -25,6 +25,9 @@ public class EstoqueDTO {
     private String processo;
     //join
     private Double comprado;
+    private String nomecategoria;
+    private String nomesubcategoria;
+
 
     public static EstoqueDTO create(Estoque estoque) {
         ModelMapper modelMapper = new ModelMapper();

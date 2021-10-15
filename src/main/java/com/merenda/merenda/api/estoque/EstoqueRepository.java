@@ -22,7 +22,7 @@ public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
     List<Estoque> findByEcola(Long escola);
 
 
-    @Query(value = "SELECT est.*,SUM(ite.quantidade) AS comprado,cat.nome,sub.nome\n" +
+    @Query(value = "SELECT est.*,SUM(ite.quantidade) AS comprado,cat.nome as nomecategoria,sub.nome as nomesubcategoria\n" +
             "FROM estoque est\n" +
             "left JOIN itens ite ON ite.produto = est.produto\n" +
             "INNER JOIN categoria cat ON cat.id = est.categoria\n" +
