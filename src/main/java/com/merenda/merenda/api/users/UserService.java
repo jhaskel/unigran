@@ -49,7 +49,7 @@ public class UserService {
             db.setNivel(user.getNivel());
             db.setModifiedAt(user.getModifiedAt());
             db.setUnidade(user.getUnidade());
-            db.setRole(user.getRole());
+            db.setSetor(user.getSetor());
 
 
             System.out.println("Nivel id " + db.getId());
