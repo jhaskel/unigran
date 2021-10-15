@@ -35,7 +35,7 @@ public class Estoque {
     private String processo;
 
     //join
-    private Double estoqu;
+    private Double comprado;
 
 
 
