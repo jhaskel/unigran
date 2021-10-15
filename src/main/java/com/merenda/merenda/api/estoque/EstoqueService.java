@@ -26,9 +26,14 @@ public class EstoqueService {
     }
 
 
-
     public List<EstoqueDTO> getProdutosByEscola(Long escola) {
         return rep.findByEcola(escola).stream().map(EstoqueDTO::create).collect(Collectors.toList());
+    }
+
+
+
+    public List<EstoqueDTO> getEstoqueByUnidade(Long setor) {
+        return rep.findEstoqueByUnidade(setor).stream().map(EstoqueDTO::create).collect(Collectors.toList());
     }
 
 

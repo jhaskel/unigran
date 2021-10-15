@@ -36,6 +36,16 @@ public class EstoqueController {
                 ResponseEntity.ok(produtos);
     }
 
+
+    @GetMapping("/estoque/{setor}")
+    public ResponseEntity getEstoqueByUnidade(@PathVariable("setor") Long setor) {
+        List<EstoqueDTO> produtos = service.getEstoqueByUnidade(setor);
+        return produtos.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(produtos);
+    }
+
+
     @GetMapping("/id/{id}")
     public ResponseEntity getId(@PathVariable("id") Long id) {
         List<EstoqueDTO> produtos = service.getId(id);

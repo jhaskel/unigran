@@ -22,6 +22,17 @@ public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
     List<Estoque> findByEcola(Long escola);
 
 
+    @Query(value = "SELECT est.*,SUM(ite.quantidade) AS comprado,cat.nome,sub.nome\n" +
+            "FROM estoque est\n" +
+            "left JOIN itens ite ON ite.produto = est.produto\n" +
+            "INNER JOIN categoria cat ON cat.id = est.categoria\n" +
+            "INNER JOIN subcategoria sub ON sub.id = est.subcategoria\n" +
+            "WHERE est.setor = :setor \n" +
+            "GROUP BY est.produto\n" +
+            "ORDER BY est.isativo DESC,est.categoria,est.alias", nativeQuery = true)
+    List<Estoque> findEstoqueByUnidade(Long setor);
+
+
     @Query(value = "SELECT * FROM estoque p\n" +
             "WHERE p.isativo = true and p.id NOT IN (SELECT produto FROM itens ) ORDER BY p.categoria,p.nome", nativeQuery = true)
     List<Estoque> findMenos();
