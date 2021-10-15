@@ -1,4 +1,4 @@
-package com.merenda.merenda.api.produtos;
+package com.merenda.merenda.api.estoque;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,29 +9,44 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/produtos")
-public class ProdutoController {
+@RequestMapping("/api/v1/estoque")
+public class EstoqueController {
     @Autowired
-    private ProdutoService service;
+    private EstoqueService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ProdutoDTO> produtos = service.getProdutos();
+        List<EstoqueDTO> produtos = service.getProdutos();
         return ResponseEntity.ok(produtos);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ProdutoDTO produto = service.getProdutoById(id);
+        EstoqueDTO produto = service.getProdutoById(id);
         return ResponseEntity.ok(produto);
     }
 
 
+    @GetMapping("/escola/{escola}")
+    public ResponseEntity getProdutosByEscola(@PathVariable("escola") Long escola) {
+        List<EstoqueDTO> produtos = service.getProdutosByEscola(escola);
+        return produtos.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(produtos);
+    }
 
     @GetMapping("/id/{id}")
     public ResponseEntity getId(@PathVariable("id") Long id) {
-        List<ProdutoDTO> produtos = service.getId(id);
+        List<EstoqueDTO> produtos = service.getId(id);
+        return produtos.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(produtos);
+    }
+
+    @GetMapping("/menos")
+    public ResponseEntity getMenos() {
+        List<EstoqueDTO> produtos = service.getMenos();
         return produtos.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(produtos);
@@ -39,8 +54,8 @@ public class ProdutoController {
 
 
     @PostMapping
-    public ResponseEntity post(@RequestBody Produto produto) {
-        ProdutoDTO c = service.insert(produto);
+    public ResponseEntity post(@RequestBody Estoque estoque) {
+        EstoqueDTO c = service.insert(estoque);
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }
@@ -51,11 +66,11 @@ public class ProdutoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Produto produto) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Estoque estoque) {
 
-        produto.setId(id);
+        estoque.setId(id);
 
-        ProdutoDTO c = service.update(produto, id);
+        EstoqueDTO c = service.update(estoque, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :

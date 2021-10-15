@@ -25,20 +25,8 @@ public class ProdutoService {
         return produto.map(ProdutoDTO::create).orElseThrow(() -> new ObjectNotFoundException("Produto não encontrado"));
     }
 
-
-
-    public List<ProdutoDTO> getProdutosByEscola(Long escola) {
-        return rep.findByEcola(escola).stream().map(ProdutoDTO::create).collect(Collectors.toList());
-    }
-
-
     public List<ProdutoDTO> getId(Long id) {
         return rep.findId(id).stream().map(ProdutoDTO::create).collect(Collectors.toList());
-    }
-
-
-    public List<ProdutoDTO> getMenos() {
-        return rep.findMenos().stream().map(ProdutoDTO::create).collect(Collectors.toList());
     }
 
     public ProdutoDTO insert(Produto produto) {
@@ -59,16 +47,10 @@ public class ProdutoService {
             db.setAlias(produto.getAlias());
             db.setUnidade(produto.getUnidade());
             db.setCategoria(produto.getCategoria());
+            db.setSubcategoria(produto.getSubcategoria());
             db.setFornecedor(produto.getFornecedor());
             db.setImage(produto.getImage());
-            db.setQuantidade(produto.getQuantidade());
-            db.setEstoque(produto.getEstoque());
-            db.setAgrofamiliar(produto.getAgrofamiliar());
-            db.setAno(produto.getAno());
             db.setModifiedAt(produto.getModifiedAt());
-
-            db.setIsativo(produto.getIsativo());
-            db.setValor(produto.getValor());
 
             System.out.println("Produto id " + db.getId());
 

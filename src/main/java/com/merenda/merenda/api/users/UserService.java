@@ -51,7 +51,6 @@ public class UserService {
             db.setUnidade(user.getUnidade());
             db.setSetor(user.getSetor());
 
-
             System.out.println("Nivel id " + db.getId());
             // Atualiza o usuario
             rep.save(db);
