@@ -24,7 +24,7 @@ public class EstoqueDTO {
     private String modifiedAt;
     private String processo;
     //join
-    private Double estoq;
+    private Double estoqu;
 
     public static EstoqueDTO create(Estoque estoque) {
         ModelMapper modelMapper = new ModelMapper();
