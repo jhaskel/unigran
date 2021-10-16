@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
 
-    @Query(value = "SELECT *  FROM cart WHERE escola = :escola order by id desc;", nativeQuery = true)
-    List<Cart> findByEcola(Long escola);
+    @Query(value = "SELECT *  FROM cart WHERE local = :local order by id desc;", nativeQuery = true)
+    List<Cart> findByLocal(Long escola);
 
-    @Query(value = "SELECT count(id) as item FROM cart WHERE escola = :escola ", nativeQuery = true)
+    @Query(value = "SELECT count(id) as item FROM cart WHERE local = :local ", nativeQuery = true)
     double findSoma(Long escola);
 
     

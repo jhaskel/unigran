@@ -25,13 +25,13 @@ public class CartService {
         return cart.map(CartDTO::create).orElseThrow(() -> new ObjectNotFoundException("Cart não encontrado"));
     }
 
-    public List<CartDTO> getCartsByEscola(Long escola) {
-        return rep.findByEcola(escola).stream().map(CartDTO::create).collect(Collectors.toList());
+    public List<CartDTO> getCartsByLocal(Long local) {
+        return rep.findByLocal(local).stream().map(CartDTO::create).collect(Collectors.toList());
     }
 
 
-    public double getSoma(Long escola){
-        return rep.findSoma(escola);
+    public double getSoma(Long local){
+        return rep.findSoma(local);
     }
 
 
