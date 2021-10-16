@@ -14,7 +14,7 @@ public class PedidoAdd {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long escola;
+    private Long unidade;
     private Double total;
     private String status;
     private Boolean isaf;
