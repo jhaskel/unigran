@@ -16,7 +16,7 @@ public class PedidoDTO {
 
     private Long totalCart;
     private Long temCart;
-    private String nomedaescola;
+    private String nomedaunidade;
 
 
 

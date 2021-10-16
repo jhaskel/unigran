@@ -41,7 +41,7 @@ public class ComprasService {
         if(optional.isPresent()) {
             Compras db = optional.get();
             // Copiar as propriedades
-            db.setEscola(compras.getEscola());
+            db.setLocal(compras.getLocal());
             db.setProduto(compras.getProduto());
             db.setCategoria(compras.getCategoria());
 
@@ -82,7 +82,7 @@ public class ComprasService {
         if(optional.isPresent()) {
             Compras db = optional.get();
             // Copiar as propriedades
-            db.setEscola(compras.getEscola());
+            db.setLocal(compras.getLocal());
             db.setProduto(compras.getProduto());
             db.setCategoria(compras.getCategoria());
             db.setFornecedor(compras.getFornecedor());
