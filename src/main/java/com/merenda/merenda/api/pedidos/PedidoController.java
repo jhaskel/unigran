@@ -28,9 +28,9 @@ public class PedidoController {
         return ResponseEntity.ok(pedido);
     }
 
-    @GetMapping("/escola/{escola}")
-    public ResponseEntity getPedidoByEscola(@PathVariable("escola") Long escola) {
-        List<PedidoDTO> pedido = service.getPedidoByEscola(escola);
+    @GetMapping("/unidade/{unidade}")
+    public ResponseEntity getPedidoByUnidade(@PathVariable("unidade") Long unidade) {
+        List<PedidoDTO> pedido = service.getPedidoByUnidade(unidade);
         return pedido.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(pedido);
