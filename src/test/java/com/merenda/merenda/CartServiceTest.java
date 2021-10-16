@@ -24,7 +24,7 @@ public class CartServiceTest {
 	@Test
 	public void testSave() {
 		Cart cart = new Cart();
-		cart.setEscola(5L);
+		cart.setLocal(5L);
 		cart.setProduto(215L);
 		cart.setCategoria(5L);
 		cart.setFornecedor(15L);
@@ -45,7 +45,7 @@ public class CartServiceTest {
 		// Buscar o objeto
 		c = service.getCartById(id);
 		assertNotNull(c);
-		assertTrue("5 é menor que 40", c.getEscola() < 40);
+		assertTrue("5 é menor que 40", c.getLocal() < 40);
 		assertTrue("215 é maior que 40", c.getProduto() > 40);
 		assertTrue("5 é menor que 40", c.getCategoria() < 40);
 		assertTrue("15 é maior que 1", c.getFornecedor() > 1);

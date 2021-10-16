@@ -28,7 +28,7 @@ public class PedidoServiceTest {
 		pedido.setStatus("Comprando!");
 		pedido.setModifiedAt("20/06/2021");
 		pedido.setCreatedAt("20/05/2021");
-		pedido.setEscola(5L);
+		pedido.setUnidade(5L);
 		pedido.setTotal(520.50);
 		pedido.setIsaf(false);
 		pedido.setIsativo(true);
@@ -43,7 +43,7 @@ public class PedidoServiceTest {
 		c = service.getPedidoById(id);
 		assertNotNull(c);
 		assertFalse("500 é maior que 200.60", c.getTotal() < 200.60);
-		assertTrue("15 é maior que 4", c.getEscola() > 4);
+		assertTrue("15 é maior que 4", c.getUnidade() > 4);
 		assertEquals("Comprando!",c.getStatus());
 		assertEquals("20/05/2021",c.getCreatedAt());
 		assertEquals("20/06/2021",c.getModifiedAt());
