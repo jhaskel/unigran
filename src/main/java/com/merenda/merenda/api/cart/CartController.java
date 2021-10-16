@@ -25,7 +25,6 @@ public class CartController {
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         CartDTO cart = service.getCartById(id);
-
         return ResponseEntity.ok(cart);
     }
 

@@ -50,13 +50,15 @@ public class CartService {
         if(optional.isPresent()) {
             Cart db = optional.get();
             // Copiar as propriedades
-           /* db.setEscola(cart.getEscola());
+           /*
+            db.setEscola(cart.getEscola());
             db.setProduto(cart.getProduto());
             db.setCategoria(cart.getCategoria());
             db.setFornecedor(cart.getFornecedor());
             db.setUnidade(cart.getUnidade());
             db.setCod(cart.getCod());
-            db.setProcesso(cart.getProcesso());*/
+            db.setProcesso(cart.getProcesso());
+            */
             db.setQuantidade(cart.getQuantidade());
             /*db.setValor(cart.getValor());*/
             db.setTotal(cart.getTotal());
@@ -74,26 +76,7 @@ public class CartService {
         }
     }
 
-    public CartDTO updateAll(Cart cart) {
 
-        Long id = cart.getId();
-        // Busca o cart no banco de dados
-        Optional<Cart> optional = rep.findById(id);
-        if(optional.isPresent()) {
-            Cart db = optional.get();
-            db.setQuantidade(cart.getQuantidade());
-            db.setTotal(cart.getTotal());
-            System.out.println("Cart id " + db.getId());
-
-            // Atualiza o cart
-            rep.save(db);
-
-            return CartDTO.create(db);
-        } else {
-            return null;
-            //throw new RuntimeException("Não foi possível atualizar o registro");
-        }
-    }
 
 
 
