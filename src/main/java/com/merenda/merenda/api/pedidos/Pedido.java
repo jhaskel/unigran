@@ -23,7 +23,7 @@ public class Pedido {
     private Boolean isativo;
 
     //não vai pro banco
-    private String nomedaescola;
+    private String nomedaunidade;
 
 
 
