@@ -25,7 +25,7 @@ public class ItensServiceTest {
 	@Test
 	public void testSave() {
 		Itens itens = new Itens();
-		itens.setEscola(5L);
+		itens.setLocal(5L);
 		itens.setProduto(215L);
 		itens.setPedido(215L);
 		itens.setCategoria(5L);
@@ -52,7 +52,7 @@ public class ItensServiceTest {
 		// Buscar o objeto
 		c = service.getItenById(id);
 		assertNotNull(c);
-		assertTrue("5 é menor que 40", c.getEscola() < 40);
+		assertTrue("5 é menor que 40", c.getLocal() < 40);
 		assertTrue("215 é maior que 40", c.getProduto() > 40);
 		assertTrue("215 é maior que 40", c.getPedido() > 40);
 		assertTrue("5 é menor que 40", c.getCategoria() < 40);
@@ -101,7 +101,7 @@ public class ItensServiceTest {
 
 	}
 
-	@Test
+	/*@Test
 	//parametros inseridos no data.sql
 	public void testTotalEscola() {
 		Long ano = 2021L;
@@ -111,7 +111,7 @@ public class ItensServiceTest {
 		assertNotNull(c);
 	   assertEquals(2566.66,c);
 
-	}
+	}*/
 
 	@Test
 	//parametros inseridos no data.sql

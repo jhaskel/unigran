@@ -74,9 +74,9 @@ public class ItensController {
     }
 
     //verificado
-    @GetMapping("/totalMesEscola/{escola}/{ano}")
-    public ResponseEntity getTotalMesEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        List<ItensDTO> itens = service.getTotalMesEscola(escola,ano);
+    @GetMapping("/totalMesLocal/{local}/{ano}")
+    public ResponseEntity getTotalMesLocal(@PathVariable("local") Long local,@PathVariable("ano") Long ano) {
+        List<ItensDTO> itens = service.getTotalMesLocal(local,ano);
         return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(itens);
@@ -84,17 +84,17 @@ public class ItensController {
 
 
     //verificado
-    @GetMapping("/totalCategoriaEscola/{escola}/{ano}")
-    public ResponseEntity getTotalCategoriaEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        List<ItensDTO> itens = service.getTotalCategoriaEscola(escola,ano);
+    @GetMapping("/totalCategoriaLocal/{local}/{ano}")
+    public ResponseEntity getTotalCategoriaLocal(@PathVariable("local") Long local,@PathVariable("ano") Long ano) {
+        List<ItensDTO> itens = service.getTotalCategoriaLocal(local,ano);
         return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(itens);
     }
 
-    @GetMapping("/totalEscolas/{ano}")
+    @GetMapping("/totalLocals/{ano}")
     public ResponseEntity getTotalEScolas(@PathVariable("ano") Long ano) {
-        List<ItensDTO> itens = service.getTotalEscolas(ano);
+        List<ItensDTO> itens = service.getTotalLocals(ano);
         return itens.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(itens);
@@ -145,22 +145,22 @@ public class ItensController {
         return service.getFamiliar(ano);
     }
     //verificado
-    @GetMapping("/familiarEscola/{escola}/{ano}")
-    public double getFamiliar(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        return service.getFamiliarEscola(escola,ano);
+    @GetMapping("/familiarLocal/{local}/{ano}")
+    public double getFamiliar(@PathVariable("local") Long local,@PathVariable("ano") Long ano) {
+        return service.getFamiliarLocal(local,ano);
     }
    //verificado
-    @GetMapping("/totalEscola/{escola}/{ano}")
-    public double getTotalEscola(@PathVariable("escola") Long escola, @PathVariable("ano") Long ano) {
-        return service.getTotalEscola(escola,ano);
+    @GetMapping("/totalLocal/{local}/{ano}")
+    public double getTotalLocal(@PathVariable("local") Long local, @PathVariable("ano") Long ano) {
+        return service.getTotalLocal(local,ano);
     }
 
 
 
     //verificado
-    @GetMapping("/tradicionalEscola/{escola}/{ano}")
-    public double getTradicionalEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        return service.getTradicionalEscola(escola,ano);
+    @GetMapping("/tradicionalLocal/{local}/{ano}")
+    public double getTradicionalLocal(@PathVariable("local") Long local,@PathVariable("ano") Long ano) {
+        return service.getTradicionalLocal(local,ano);
     }
 
 

@@ -58,8 +58,8 @@ public class ItensService {
 
 
     //verificado
-    public List<ItensDTO> getTotalMesEscola(Long escola,Long ano) {
-        return rep.findTotalMesEscola(escola,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
+    public List<ItensDTO> getTotalMesLocal(Long local,Long ano) {
+        return rep.findTotalMesLocal(local,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
     //verificado
@@ -68,12 +68,12 @@ public class ItensService {
     }
 
     //verificado
-    public List<ItensDTO> getTotalCategoriaEscola(Long escola,Long ano) {
-        return rep.findTotalCategoriaEscola(escola,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
+    public List<ItensDTO> getTotalCategoriaLocal(Long local,Long ano) {
+        return rep.findTotalCategoriaLocal(local,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
-    public List<ItensDTO> getTotalEscolas(Long ano) {
-        return rep.findTotalEscolas(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
+    public List<ItensDTO> getTotalLocals(Long ano) {
+        return rep.findTotalLocals(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
    //verificado
     public List<ItensDTO> getMediaAlunos(Long ano) {
@@ -104,15 +104,15 @@ public class ItensService {
         return rep.findFamiliar(ano);
     }
     //verificado
-    public double getFamiliarEscola(Long escola,Long ano){
-        return rep.findFamiliarEscola(escola,ano);
+    public double getFamiliarLocal(Long local,Long ano){
+        return rep.findFamiliarLocal(local,ano);
     }
 
 
 
    //verificado
-    public double getTotalEscola(Long escola,Long ano){
-        return rep.findTotalEscola(escola,ano);
+    public double getTotalLocal(Long local,Long ano){
+        return rep.findTotalLocal(local,ano);
     }
 
 
@@ -121,8 +121,8 @@ public class ItensService {
 
 
     //verificado
-    public double getTradicionalEscola(Long escola,Long ano){
-        return rep.findTradicionalEscola(escola,ano);
+    public double getTradicionalLocal(Long local,Long ano){
+        return rep.findTradicionalLocal(local,ano);
     }
 
 
@@ -142,7 +142,7 @@ public class ItensService {
         if(optional.isPresent()) {
             Itens db = optional.get();
             // Copiar as propriedades
-            db.setEscola(itens.getEscola());
+            db.setLocal(itens.getLocal());
             db.setProduto(itens.getProduto());
             db.setCategoria(itens.getCategoria());
 
