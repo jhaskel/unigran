@@ -16,6 +16,8 @@ public class Itens {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long local;
+    private Long nivel;
+    private Long setor;
     private Long produto;
     private Long pedido;
     private Long categoria;
