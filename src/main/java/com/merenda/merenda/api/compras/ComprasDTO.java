@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 public class ComprasDTO {
     private Long id;
     private Long local;
+    private Long nivel;
+    private Long setor;
     private Long produto;
     private Long pedido;
     private String alias;
