@@ -17,13 +17,13 @@ public class Licitacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long ano;
-    /*private String processo;
+    private String processo;
     private String edital;
     private String objeto;
     private String alias;
     private Double valorestimado;
     private Double valorfinal;
-    private Long prazo;
+    /*private Long prazo;
     private String status;
     private String aberturaAt;
     private String homologadodAt;

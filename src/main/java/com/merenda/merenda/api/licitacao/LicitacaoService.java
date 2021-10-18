@@ -72,10 +72,6 @@ public class LicitacaoService {
         }
     }
 
-
-
-
-
     public void delete(Long id) {
         rep.deleteById(id);
     }
