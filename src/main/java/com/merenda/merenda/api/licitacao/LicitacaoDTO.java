@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 public class LicitacaoDTO {
     private Long id;
     private Long ano;
-   /* private String processo;
+    private String processo;
     private String edital;
     private String objeto;
     private String alias;
@@ -15,7 +15,7 @@ public class LicitacaoDTO {
     private Double valorfinal;
     private Long prazo;
     private String status;
-    private String aberturaAt;
+    /*private String aberturaAt;
     private String homologadodAt;
     private String createdAt;
     private String modifiedAt;
