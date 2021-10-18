@@ -1,4 +1,5 @@
-package com.merenda.merenda.api.pedidos;
+package com.merenda.merenda.api.licitacao;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,45 +10,39 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/pedidos")
-public class PedidoController {
+@RequestMapping("/api/v1/licitacao")
+public class LicitacaoController {
     @Autowired
-    private PedidoService service;
+    private LicitacaoService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<PedidoDTO> pedido = service.getPedido();
-        return ResponseEntity.ok(pedido);
+        List<LicitacaoDTO> carts = service.getCart();
+        return ResponseEntity.ok(carts);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        PedidoDTO pedido = service.getPedidoById(id);
-
-        return ResponseEntity.ok(pedido);
+        LicitacaoDTO cart = service.getCartById(id);
+        return ResponseEntity.ok(cart);
     }
 
-    @GetMapping("/unidade/{unidade}")
-    public ResponseEntity getPedidoByUnidade(@PathVariable("unidade") Long unidade) {
-        List<PedidoDTO> pedido = service.getPedidoByUnidade(unidade);
-        return pedido.isEmpty() ?
+
+    @GetMapping("/processo/{processo}")
+    public ResponseEntity getProcesso(@PathVariable("processo") String processo) {
+        List<LicitacaoDTO> carts = service.getProcesso(processo);
+        return carts.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(pedido);
-    }
-
-
-    @GetMapping("/pedidoSemAf")
-    public long getPedidoSemAf() {
-        return service.getPedidoSemAf();
+                ResponseEntity.ok(carts);
     }
 
 
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Pedido pedido) {
+    public ResponseEntity post(@RequestBody Licitacao licitacao) {
 
-        PedidoDTO c = service.insert(pedido);
+        LicitacaoDTO c = service.insert(licitacao);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -58,15 +53,18 @@ public class PedidoController {
                 .buildAndExpand(id).toUri();
     }
 
-
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
-        pedido.setId(id);
-        PedidoDTO c = service.update(pedido, id);
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Licitacao licitacao) {
+
+        licitacao.setId(id);
+
+        LicitacaoDTO c = service.update(licitacao, id);
+
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {

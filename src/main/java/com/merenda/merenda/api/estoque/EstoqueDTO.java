@@ -13,7 +13,7 @@ public class EstoqueDTO {
     private Double quantidade;
     private String unidade;
     private Long categoria;
-    private Long subcategoria;
+    private Long licitacao;
     private Long fornecedor;
     private String image;
     private Boolean agrofamiliar;
@@ -26,7 +26,7 @@ public class EstoqueDTO {
     //join
     private Double comprado;
     private String nomecategoria;
-    private String nomesubcategoria;
+    private String nomelicitacao;
 
 
     public static EstoqueDTO create(Estoque estoque) {

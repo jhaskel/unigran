@@ -46,8 +46,7 @@ public class ProdutoService {
             db.setNome(produto.getNome());
             db.setAlias(produto.getAlias());
             db.setUnidade(produto.getUnidade());
-            db.setCategoria(produto.getCategoria());
-            db.setSubcategoria(produto.getSubcategoria());
+
             db.setFornecedor(produto.getFornecedor());
             db.setImage(produto.getImage());
             db.setModifiedAt(produto.getModifiedAt());

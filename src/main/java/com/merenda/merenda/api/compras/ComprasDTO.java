@@ -13,7 +13,7 @@ public class ComprasDTO {
     private Long pedido;
     private String alias;
     private Long categoria;
-    private Long subcategoria;
+    private Long licitacao;
     private Long fornecedor;
     private String unidade;
     private Long ano;

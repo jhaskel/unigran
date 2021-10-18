@@ -23,7 +23,7 @@ public class Estoque {
     private Double quantidade;
     private String unidade;
     private Long categoria;
-    private Long subcategoria;
+    private Long licitacao;
     private Long fornecedor;
     private String image;
     private Boolean agrofamiliar;
@@ -37,7 +37,7 @@ public class Estoque {
     //join
     private Double comprado;
     private String nomecategoria;
-    private String nomesubcategoria;
+    private String nomelicitacao;
 
 
 

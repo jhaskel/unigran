@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 
-    @Query(value = "SELECT * from produto ORDER BY subcategoria,alias", nativeQuery = true)
+    @Query(value = "SELECT * from produto ORDER BY alias", nativeQuery = true)
     List<Produto> findAll();
 
 
