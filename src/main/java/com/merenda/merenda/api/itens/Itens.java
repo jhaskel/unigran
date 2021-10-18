@@ -21,6 +21,7 @@ public class Itens {
     private Long produto;
     private Long pedido;
     private Long categoria;
+    private Long subcategoria;
     private Long fornecedor;
     private Long ano;
     private Long af;

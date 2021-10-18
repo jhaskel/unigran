@@ -10,6 +10,7 @@ public class CartDTO {
     private Long produto;
     private Long fornecedor;
     private Long categoria;
+    private Long subcategoria;
     private String unidade;
     private String cod;
     private String alias;

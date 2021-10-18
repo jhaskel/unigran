@@ -19,6 +19,7 @@ public class Cart {
     private Long local;
     private Long produto;
     private Long categoria;
+    private Long subcategoria;
     private Long fornecedor;
     private String unidade;
     private String cod;
