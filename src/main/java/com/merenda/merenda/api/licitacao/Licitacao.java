@@ -25,11 +25,11 @@ public class Licitacao {
     private Double valorfinal;
     private Long prazo;
     private String status;
-    /*private String aberturaAt;
-    private String homologadodAt;
+    private String aberturaAt;
+    private String homologadoAt;
     private String createdAt;
     private String modifiedAt;
-    private Boolean isativo;*/
+    private Boolean isativo;
 
 }
 

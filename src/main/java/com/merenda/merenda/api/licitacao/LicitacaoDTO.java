@@ -15,11 +15,11 @@ public class LicitacaoDTO {
     private Double valorfinal;
     private Long prazo;
     private String status;
-    /*private String aberturaAt;
-    private String homologadodAt;
+    private String aberturaAt;
+    private String homologadoAt;
     private String createdAt;
     private String modifiedAt;
-    private Boolean isativo;*/
+    private Boolean isativo;
 
     public static LicitacaoDTO create(Licitacao licitacao) {
         ModelMapper modelMapper = new ModelMapper();
