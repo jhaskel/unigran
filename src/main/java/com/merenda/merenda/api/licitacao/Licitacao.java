@@ -17,7 +17,7 @@ public class Licitacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long ano;
-    private String processo;
+    /*private String processo;
     private String edital;
     private String objeto;
     private String alias;
@@ -29,7 +29,7 @@ public class Licitacao {
     private String homologadodAt;
     private String createdAt;
     private String modifiedAt;
-    private Boolean isativo;
+    private Boolean isativo;*/
 
 }
 
