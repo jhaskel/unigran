@@ -54,6 +54,7 @@ public class CategoriaService {
 
             db.setIsativo(categoria.getIsativo());
             db.setModifiedAt(categoria.getModifiedAt());
+            db.setIcone(categoria.getIcone());
             System.out.println("Categoria id " + db.getId());
 
             // Atualiza o carro
