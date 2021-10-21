@@ -24,6 +24,7 @@ public class Pedido {
 
     //não vai pro banco
     private String nomedaunidade;
+    private Long idsetor;
 
 
 

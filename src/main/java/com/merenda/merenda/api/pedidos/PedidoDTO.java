@@ -17,6 +17,7 @@ public class PedidoDTO {
     private Long totalCart;
     private Long temCart;
     private String nomedaunidade;
+    private Long idsetor;
 
 
 
