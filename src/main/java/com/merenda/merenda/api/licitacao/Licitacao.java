@@ -21,11 +21,8 @@ public class Licitacao {
     private String edital;
     private String objeto;
     private String alias;
-    private Double valorestimado;
     private Double valorfinal;
-    private Long prazo;
-    private String status;
-    private String aberturaAt;
+    private String prazo;
     private String homologadoAt;
     private String createdAt;
     private String modifiedAt;
