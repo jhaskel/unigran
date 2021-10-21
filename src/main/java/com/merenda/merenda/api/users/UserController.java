@@ -38,7 +38,7 @@ public class UserController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity getId(@PathVariable("id") Long id) {
-        List<UsuarioDTO> coletando = service.getId(id);
+        List<UserDTO> coletando = service.getId(id);
         return coletando.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(coletando);

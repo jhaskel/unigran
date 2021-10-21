@@ -21,8 +21,8 @@ public class UserService {
         return rep.findAll().stream().map(UserDTO::create).collect(Collectors.toList());
     }
 
-    public List<UsuarioDTO> getId(Long id) {
-        return rep.findId(id).stream().map(UsuarioDTO::create).collect(Collectors.toList());
+    public List<UserDTO> getId(Long id) {
+        return rep.findId(id).stream().map(UserDTO::create).collect(Collectors.toList());
     }
 
 
