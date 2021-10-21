@@ -1,5 +1,6 @@
 package com.merenda.merenda.api.users;
 
+import com.merenda.merenda.api.usuario.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -33,6 +34,14 @@ public class UserController {
         UserDTO rota = service.getUserById(id);
 
         return ResponseEntity.ok(rota);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity getId(@PathVariable("id") Long id) {
+        List<UsuarioDTO> coletando = service.getId(id);
+        return coletando.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(coletando);
     }
 
     @PostMapping

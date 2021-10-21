@@ -2,6 +2,7 @@ package com.merenda.merenda.api.users;
 
 
 import com.merenda.merenda.api.infra.exception.ObjectNotFoundException;
+import com.merenda.merenda.api.usuario.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -20,7 +21,9 @@ public class UserService {
         return rep.findAll().stream().map(UserDTO::create).collect(Collectors.toList());
     }
 
-
+    public List<UsuarioDTO> getId(Long id) {
+        return rep.findId(id).stream().map(UsuarioDTO::create).collect(Collectors.toList());
+    }
 
 
     public UserDTO getUserById(Long id) {
