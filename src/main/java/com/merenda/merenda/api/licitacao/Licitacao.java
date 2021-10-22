@@ -16,7 +16,6 @@ public class Licitacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long licitacao;
     private Long ano;
     private String processo;
     private String edital;

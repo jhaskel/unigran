@@ -44,11 +44,8 @@ public class PedidoController {
 
 
     @PostMapping
-
     public ResponseEntity post(@RequestBody Pedido pedido) {
-
         PedidoDTO c = service.insert(pedido);
-
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }
