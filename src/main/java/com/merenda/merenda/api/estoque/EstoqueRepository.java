@@ -33,7 +33,8 @@ public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
             "left JOIN itens ite ON ite.produto = est.produto\n" +
             "INNER JOIN categoria cat ON cat.id = est.categoria\n" +
             "INNER JOIN licitacao sub ON sub.id = est.licitacao\n" +
-            "WHERE est.setor = :setor and sub.isativo = true  and cat.isativo = true \n" +
+            "INNER JOIN fornecedor forn ON forn.id = est.fornecedor\n" +
+            "WHERE est.setor = :setor and sub.isativo = true  and cat.isativo = true AND forn.isativo=true\n" +
             "GROUP BY est.produto\n" +
             "ORDER BY est.isativo DESC,est.categoria,est.alias", nativeQuery = true)
     List<Estoque> findEstoqueByUnidade(Long setor);
