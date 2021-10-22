@@ -35,6 +35,11 @@ public class CartService {
     }
 
 
+    public double getCart(Long licitacao){
+        return rep.findCart(licitacao);
+    }
+
+
 
 
     public CartDTO insert(Cart cart) {

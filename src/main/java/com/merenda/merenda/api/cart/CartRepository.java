@@ -14,5 +14,9 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
     @Query(value = "SELECT count(id) as item FROM cart WHERE local = :local ", nativeQuery = true)
     double findSoma(Long local);
 
-    
+    @Query(value = "SELECT sum(quantidade) as item FROM cart WHERE licitacao = :licitacao group by produto ", nativeQuery = true)
+    double findCart(Long licitacao);
+
+
+
 }

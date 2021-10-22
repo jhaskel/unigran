@@ -42,6 +42,11 @@ public class CartController {
         return service.getSoma(local);
     }
 
+    @GetMapping("/cart/{licitacao}")
+    public double getCart(@PathVariable("licitacao") Long licitacao) {
+        return service.getCart(licitacao);
+    }
+
 
     @PostMapping
 
