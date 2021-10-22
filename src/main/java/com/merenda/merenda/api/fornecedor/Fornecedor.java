@@ -16,6 +16,7 @@ public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long licitacao;
     private String nome;
     private String alias;
     private String cnpj;
