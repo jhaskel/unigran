@@ -35,8 +35,8 @@ public class CartService {
     }
 
 
-    public double getCart(Long licitacao){
-        return rep.findCart(licitacao);
+    public double getCart(Long produto){
+        return rep.findCart(produto);
     }
 
 
