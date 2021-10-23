@@ -20,19 +20,19 @@ public class Itens {
     private Long setor;
     private Long produto;
     private Long pedido;
+    private String alias;
     private Long categoria;
-    private Long subcategoria;
+    private Long licitacao;
     private Long fornecedor;
+    private String unidade;
     private Long ano;
     private Long af;
     private Double quantidade;
+    private String createdAt;
     private Double valor;
     private Double total;
-    private String alias;
-    private String unidade;
     private String mes;
     private String status;
-    private String createdAt;
     private String modifiedAt;
     private Boolean isativo;
 

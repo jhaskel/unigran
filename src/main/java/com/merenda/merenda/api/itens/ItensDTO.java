@@ -13,19 +13,19 @@ public class ItensDTO {
     private Long pedido;
     private String alias;
     private Long categoria;
-    private Long subcategoria;
+    private Long licitacao;
     private Long fornecedor;
     private String unidade;
     private Long ano;
     private Long af;
-    private String createdAt;
     private Double quantidade;
+    private String createdAt;
     private Double valor;
     private Double total;
-    private String status;
     private String mes;
-    private Boolean isativo;
+    private String status;
     private String modifiedAt;
+    private Boolean isativo;
 
     //join
     private Double tot;

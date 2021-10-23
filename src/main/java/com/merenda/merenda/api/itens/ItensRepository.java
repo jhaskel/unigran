@@ -21,6 +21,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)
     List<Itens> findByPedido(Long pedido);
 
+
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,esc.alias AS nomec \n" +
             "FROM itens ite INNER JOIN unidades esc ON esc.id = ite.local WHERE ite.af = :af AND ite.isativo = TRUE \n" +
             "GROUP BY ite.id\n" +
