@@ -8,6 +8,7 @@ public class AfAddDTO {
     private Long id;
     private Long code;
     private Long nivel;
+    private Long setor;
     private Long fornecedor;
     private String status;
     private Boolean isenviado;

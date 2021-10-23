@@ -8,6 +8,7 @@ public class AfPedidoDTO {
     private Long id;
     private Long af;
     private Long nivel;
+    private Long setor;
     private Long pedido;
     private Double total;
 
