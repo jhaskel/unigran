@@ -1,5 +1,6 @@
 package com.merenda.merenda.api.af;
 
+import com.merenda.merenda.api.categorias.CategoriaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,8 @@ public class AfController {
         return ResponseEntity.ok(af);
     }
 
+
+
    //busca as af por fornecedores
     @GetMapping("/fornecedor/{fornecedor}")
     public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
@@ -36,6 +39,16 @@ public class AfController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(afs);
     }
+
+    //busca as af por fornecedores
+    @GetMapping("/setor/{setor}")
+    public ResponseEntity getSetor(@PathVariable("setor") Long setor) {
+        List<AfDTO> afs = service.getSetor(setor);
+        return afs.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(afs);
+    }
+
 
 
 
