@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 public class AfAddDTO {
     private Long id;
     private Long code;
+    private Long nivel;
     private Long fornecedor;
     private String status;
     private Boolean isenviado;

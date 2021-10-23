@@ -17,6 +17,7 @@ public class AfAdd {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long code;
+    private Long nivel;
     private Long fornecedor;
     private String status;
     private Boolean isenviado;

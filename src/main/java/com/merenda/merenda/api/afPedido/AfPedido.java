@@ -17,6 +17,7 @@ public class AfPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long af;
+    private Long nivel;
     private Long pedido;
     private Double total;
     private Long fornecedor;
