@@ -129,12 +129,12 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     double findTradicional(Long ano);
     //verificado
     @Query(value = "SELECT sum(ite.total) as tot \n" +
-            "            FROM itens ite\n" +
-            "            INNER JOIN af ON af.code = ite.af\n" +
-            "            INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
-            "            INNER JOIN estoque pro ON pro.id = ite.produto\n" +
-            "            WHERE af.isativo= true   AND ite.ano = :ano AND ite.af > 0 \n" +
-            "            AND cat.isalimento = TRUE AND pro.agrofamiliar = true ", nativeQuery = true)
+            "                     FROM itens ite\n" +
+            "                     INNER JOIN af ON af.code = ite.af\n" +
+            "                     INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
+            "                     INNER JOIN estoque pro ON pro.id = ite.produto\n" +
+            "                     WHERE af.ativo= true   AND ite.ano = :ano AND ite.af > 0 \n" +
+            "                     AND cat.isalimento = TRUE AND pro.agrofamiliar = true ", nativeQuery = true)
     double findFamiliar(Long ano);
 
     //verificado
