@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 @Data
 public class CartDTO {
     private Long id;
-    private Long local;
+    private Long escola;
     private Long produto;
     private Long fornecedor;
     private Long categoria;

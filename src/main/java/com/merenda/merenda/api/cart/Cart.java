@@ -16,7 +16,7 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long local;
+    private Long escola;
     private Long produto;
     private Long categoria;
     private Long licitacao;
