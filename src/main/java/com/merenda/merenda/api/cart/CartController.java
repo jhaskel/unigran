@@ -29,17 +29,17 @@ public class CartController {
     }
 
 
-    @GetMapping("/escola/{escola}")
-    public ResponseEntity getCartsByLocal(@PathVariable("escola") Long escola) {
-        List<CartDTO> carts = service.getCartsByLocal(escola);
+    @GetMapping("/local/{local}")
+    public ResponseEntity getCartsByLocal(@PathVariable("local") Long local) {
+        List<CartDTO> carts = service.getCartsByLocal(local);
         return carts.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carts);
     }
 
-    @GetMapping("/itensCart/{escola}")
-    public double getRep(@PathVariable("escola") Long escola) {
-        return service.getSoma(escola);
+    @GetMapping("/itensCart/{local}")
+    public double getRep(@PathVariable("local") Long local) {
+        return service.getSoma(local);
     }
 
     @GetMapping("/cart/{produto}")
